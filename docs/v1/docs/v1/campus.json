@@ -1,0 +1,33 @@
+{
+  "system": "CAMPUS",
+  "validFrom": "2026-06-15",
+  "validTo": "2026-08-28",
+  "dataDate": "2026-06-15",
+  "sourceNote": "清華大學總務處事務組公告（暑假平日班表）",
+  "weekdayDepartures": [
+    { "time": "07:50", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "08:20", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "08:35", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "08:50", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "09:10", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "09:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "09:45", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "10:00", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "10:40", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "11:40", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "12:10", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "12:50", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "13:10", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "13:40", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "13:55", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "14:10", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "15:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "16:40", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "17:10", "routeId": "RED", "isPaidSubstitute": false },
+    { "time": "17:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "18:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "19:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "21:30", "routeId": "GREEN", "isPaidSubstitute": false },
+    { "time": "22:20", "routeId": "GREEN", "isPaidSubstitute": false }
+  ]
+}
