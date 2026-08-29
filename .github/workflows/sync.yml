@@ -1,0 +1,44 @@
+name: 公車公告偵測
+
+on:
+  schedule:
+    - cron: '0 1,13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安裝套件
+        run: pip install requests beautifulsoup4
+
+      - name: 偵測新公告
+        id: crawl
+        run: python scripts/crawl.py
+
+      - name: 開 issue 通知（GitHub 會自動寄信給你）
+        if: steps.crawl.outputs.has_new == 'true' && hashFiles('report.md') != ''
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: ${{ steps.crawl.outputs.issue_title }}
+          content-filepath: report.md
+          labels: 資料更新
+
+      - name: 記錄已看過的公告
+        if: steps.crawl.outputs.has_new == 'true'
+        run: |
+          git config user.name "tsingbus-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state.json
+          git diff --staged --quiet || git commit -m "chore: 更新已知公告清單"
+          git push
