@@ -1,36 +1,179 @@
 {
   "overrides": [
-    { "date": "2026-09-25", "system": "ALL", "suspended": true,
-      "noteZh": "中秋節停駛", "noteEn": "No service (Mid-Autumn Festival)" },
-    { "date": "2026-09-28", "system": "ALL", "suspended": true,
-      "noteZh": "教師節停駛", "noteEn": "No service (Teachers' Day)" },
-    { "date": "2026-10-09", "system": "ALL", "suspended": true,
-      "noteZh": "國慶日補假停駛", "noteEn": "No service (National Day holiday)" },
-    { "date": "2026-10-26", "system": "ALL", "suspended": true,
-      "noteZh": "臺灣光復節補假停駛", "noteEn": "No service (Retrocession Day holiday)" },
-    { "date": "2026-12-25", "system": "ALL", "suspended": true,
-      "noteZh": "行憲紀念日停駛", "noteEn": "No service (Constitution Day)" },
-    { "date": "2027-01-01", "system": "ALL", "suspended": true,
-      "noteZh": "開國紀念日停駛", "noteEn": "No service (Founding Day)" },
-    { "date": "2027-02-04", "system": "ALL", "suspended": true,
-      "noteZh": "小年夜停駛", "noteEn": "No service (Lunar New Year's Eve eve)" },
-    { "date": "2027-02-05", "system": "ALL", "suspended": true,
-      "noteZh": "除夕停駛", "noteEn": "No service (Lunar New Year's Eve)" },
-    { "date": "2027-02-08", "system": "ALL", "suspended": true,
-      "noteZh": "春節停駛", "noteEn": "No service (Lunar New Year)" },
-    { "date": "2027-02-09", "system": "ALL", "suspended": true,
-      "noteZh": "春節停駛", "noteEn": "No service (Lunar New Year)" },
-    { "date": "2027-02-10", "system": "ALL", "suspended": true,
-      "noteZh": "春節停駛", "noteEn": "No service (Lunar New Year)" },
-    { "date": "2027-03-01", "system": "ALL", "suspended": true,
-      "noteZh": "和平紀念日補假停駛", "noteEn": "No service (Peace Memorial Day holiday)" },
-    { "date": "2027-04-05", "system": "ALL", "suspended": true,
-      "noteZh": "清明節停駛", "noteEn": "No service (Tomb Sweeping Day)" },
-    { "date": "2027-04-06", "system": "ALL", "suspended": true,
-      "noteZh": "兒童節補假停駛", "noteEn": "No service (Children's Day holiday)" },
-    { "date": "2027-04-30", "system": "ALL", "suspended": true,
-      "noteZh": "勞動節補假停駛", "noteEn": "No service (Labor Day holiday)" },
-    { "date": "2027-06-09", "system": "ALL", "suspended": true,
-      "noteZh": "端午節停駛", "noteEn": "No service (Dragon Boat Festival)" }
+    {
+      "date": "2026-09-25",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "中秋節停駛",
+      "noteEn": "No service (Mid-Autumn Festival)"
+    },
+    {
+      "date": "2026-09-26",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "中秋節、教師節連續假期停駛",
+      "noteEn": "No service (Mid-Autumn & Teachers' Day holiday)"
+    },
+    {
+      "date": "2026-09-27",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "中秋節、教師節連續假期停駛",
+      "noteEn": "No service (Mid-Autumn & Teachers' Day holiday)"
+    },
+    {
+      "date": "2026-09-28",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "教師節停駛",
+      "noteEn": "No service (Teachers' Day)"
+    },
+    {
+      "date": "2026-10-09",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "國慶日補假停駛",
+      "noteEn": "No service (National Day holiday)"
+    },
+    {
+      "date": "2026-10-10",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "國慶日停駛",
+      "noteEn": "No service (National Day)"
+    },
+    {
+      "date": "2026-10-25",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "臺灣光復節停駛",
+      "noteEn": "No service (Retrocession Day)"
+    },
+    {
+      "date": "2026-10-26",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "臺灣光復節補假停駛",
+      "noteEn": "No service (Retrocession Day holiday)"
+    },
+    {
+      "date": "2026-12-25",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "行憲紀念日停駛",
+      "noteEn": "No service (Constitution Day)"
+    },
+    {
+      "date": "2027-01-01",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "開國紀念日停駛",
+      "noteEn": "No service (Founding Day)"
+    },
+    {
+      "date": "2027-02-04",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "小年夜停駛",
+      "noteEn": "No service (Lunar New Year's Eve eve)"
+    },
+    {
+      "date": "2027-02-05",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "除夕停駛",
+      "noteEn": "No service (Lunar New Year's Eve)"
+    },
+    {
+      "date": "2027-02-06",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "春節停駛",
+      "noteEn": "No service (Lunar New Year)"
+    },
+    {
+      "date": "2027-02-07",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "春節停駛",
+      "noteEn": "No service (Lunar New Year)"
+    },
+    {
+      "date": "2027-02-08",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "春節停駛",
+      "noteEn": "No service (Lunar New Year)"
+    },
+    {
+      "date": "2027-02-09",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "春節停駛",
+      "noteEn": "No service (Lunar New Year)"
+    },
+    {
+      "date": "2027-02-10",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "春節停駛",
+      "noteEn": "No service (Lunar New Year)"
+    },
+    {
+      "date": "2027-02-28",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "和平紀念日停駛",
+      "noteEn": "No service (Peace Memorial Day)"
+    },
+    {
+      "date": "2027-03-01",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "和平紀念日補假停駛",
+      "noteEn": "No service (Peace Memorial Day holiday)"
+    },
+    {
+      "date": "2027-04-04",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "兒童節停駛",
+      "noteEn": "No service (Children's Day)"
+    },
+    {
+      "date": "2027-04-05",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "清明節停駛",
+      "noteEn": "No service (Tomb Sweeping Day)"
+    },
+    {
+      "date": "2027-04-06",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "兒童節補假停駛",
+      "noteEn": "No service (Children's Day holiday)"
+    },
+    {
+      "date": "2027-04-30",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "勞動節補假停駛",
+      "noteEn": "No service (Labor Day holiday)"
+    },
+    {
+      "date": "2027-05-01",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "勞動節停駛",
+      "noteEn": "No service (Labor Day)"
+    },
+    {
+      "date": "2027-06-09",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "端午節停駛",
+      "noteEn": "No service (Dragon Boat Festival)"
+    }
   ]
 }
