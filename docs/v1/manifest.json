@@ -1,10 +1,22 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-08-29T17:00:00+08:00",
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-01T20:00:00+08:00",
   "files": {
-    "campus":    { "path": "campus.json",    "updatedAt": "2026-08-29T17:00:00+08:00" },
-    "nanda":     { "path": "nanda.json",     "updatedAt": "2026-08-29T17:00:00+08:00" },
-    "overrides": { "path": "overrides.json", "updatedAt": "2026-08-26T00:00:00+08:00" },
-    "notice":    { "path": "notice.json",    "updatedAt": "2026-08-26T00:00:00+08:00" }
+    "campus": {
+      "path": "campus.json",
+      "updatedAt": "2026-09-01T20:00:00+08:00"
+    },
+    "nanda": {
+      "path": "nanda.json",
+      "updatedAt": "2026-09-01T20:00:00+08:00"
+    },
+    "overrides": {
+      "path": "overrides.json",
+      "updatedAt": "2026-09-01T20:00:00+08:00"
+    },
+    "notice": {
+      "path": "notice.json",
+      "updatedAt": "2026-08-26T00:00:00+08:00"
+    }
   }
 }
