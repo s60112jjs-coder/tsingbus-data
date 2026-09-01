@@ -1,847 +1,1101 @@
 {
   "system": "CAMPUS",
-  "validFrom": "2026-09-07",
-  "validTo": "2026-10-03",
-  "dataDate": "2026-09-01",
-  "sourceNote": "清華大學總務處事務組公告（校園公車 2026/9/7~2026/10/3）",
-  "weekdayDepartures": [
-    {
-      "time": "07:20",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "07:45",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "07:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:35",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:40",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "08:45",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:45",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:50",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "08:55",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "08:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "09:00",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:15",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:25",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:35",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "09:40",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:40",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "09:45",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:45",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:50",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "09:55",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "09:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "10:00",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:00",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:05",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "10:10",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "10:20",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "10:55",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "11:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "11:35",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "11:55",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "11:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:00",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:00",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "12:05",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "12:10",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:15",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:30",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:30",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:40",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:40",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "12:50",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "12:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "12:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:00",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:00",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "13:05",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "13:10",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:15",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "13:20",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:25",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:45",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:45",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:55",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:00",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "14:10",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:25",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:45",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:55",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "14:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:00",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:05",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:10",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "15:15",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "15:20",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:20",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "15:25",
-      "routeId": "RED",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:30",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "15:50",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:20",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:35",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:05",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:05",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:15",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:20",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:25",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:45",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "17:55",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:00",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "18:05",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:15",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "18:15",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "18:20",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:25",
-      "routeId": "GREEN",
-      "departureStopId": "gen_bldg_2",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:25",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:30",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "18:35",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "18:50",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "19:05",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "19:30",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "19:55",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "20:25",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "20:50",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "21:05",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "21:25",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "21:45",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "22:00",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "22:20",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    }
-  ],
-  "saturdayDepartures": [
-    {
-      "time": "08:40",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false,
-      "isLargeBus": true
-    },
-    {
-      "time": "12:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "13:10",
-      "routeId": "RED",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
-    },
-    {
-      "time": "16:20",
-      "routeId": "GREEN",
-      "departureStopId": "north_gate",
-      "isPaidSubstitute": false
+  "sourceNote": "清華大學總務處事務組公告",
+  "timetables": [
+    {
+      "validFrom": "2026-08-31",
+      "validTo": "2026-09-06",
+      "dataDate": "2026-09-02",
+      "sourceNote": "開學前一周班表（官方適用 8/31~9/4；9/5~9/6 為週末無班次，為避免資料空窗延伸至 9/6）",
+      "weekdayDepartures": [
+        {
+          "time": "07:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:40",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:10",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:40",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:40",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:40",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:15",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:30",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:45",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:00",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "19:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "20:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "21:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "22:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        }
+      ],
+      "saturdayDepartures": []
+    },
+    {
+      "validFrom": "2026-09-07",
+      "validTo": "2026-10-03",
+      "dataDate": "2026-09-02",
+      "sourceNote": "115學年度上學期班表（2026/9/7~2026/10/3）",
+      "weekdayDepartures": [
+        {
+          "time": "07:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "07:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "07:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:35",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "08:45",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:50",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "08:55",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "08:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "09:00",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:15",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:25",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:35",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "09:40",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "09:45",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:50",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "09:55",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "09:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "10:00",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:05",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "10:10",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "10:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "10:55",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:35",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:55",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "11:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:00",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "12:05",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "12:10",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:15",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:30",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:30",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:40",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "12:50",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "12:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "12:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:00",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "13:05",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "13:10",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:15",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "13:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:25",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:45",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:55",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:00",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "14:10",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:25",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:45",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:55",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "14:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:05",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:10",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "15:15",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "15:20",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "15:25",
+          "routeId": "RED",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:30",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "15:50",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:35",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:05",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:05",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:15",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:20",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:25",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:45",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "17:55",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:00",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "18:05",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:15",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "18:15",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "18:20",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:25",
+          "routeId": "GREEN",
+          "departureStopId": "gen_bldg_2",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:25",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:30",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "18:35",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "18:50",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "19:05",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "19:30",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "19:55",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "20:25",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "20:50",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "21:05",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "21:25",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "21:45",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "22:00",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "22:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        }
+      ],
+      "saturdayDepartures": [
+        {
+          "time": "08:40",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false,
+          "isLargeBus": true
+        },
+        {
+          "time": "12:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "13:10",
+          "routeId": "RED",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        },
+        {
+          "time": "16:20",
+          "routeId": "GREEN",
+          "departureStopId": "north_gate",
+          "isPaidSubstitute": false
+        }
+      ]
     }
   ]
 }
