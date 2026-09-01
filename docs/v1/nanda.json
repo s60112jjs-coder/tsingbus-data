@@ -1,31 +1,677 @@
 {
   "system": "NANDA_SHUTTLE",
-  "validFrom": "2026-08-31",
-  "validTo": "2026-09-04",
-  "dataDate": "2026-08-29",
-  "sourceNote": "清華大學總務處事務組公告（南大校區區間車 8/31~9/4 開學前一周平日班表）",
+  "validFrom": "2026-09-07",
+  "validTo": "2026-10-04",
+  "dataDate": "2026-09-01",
+  "sourceNote": "清華大學總務處事務組公告（南大校區區間車 2026/9/7~2026/10/4）",
   "weekdayDepartures": [
-    { "time": "07:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": true },
-    { "time": "07:33", "routeId": "NANDA_INBOUND", "isPaidSubstitute": true },
-    { "time": "08:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "08:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "09:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "09:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "10:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "10:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "12:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "12:23", "routeId": "NANDA_INBOUND", "isPaidSubstitute": true },
-    { "time": "12:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "12:40", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": true },
-    { "time": "13:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "13:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "14:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "14:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "15:18", "routeId": "NANDA_INBOUND", "isPaidSubstitute": true },
-    { "time": "15:45", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": true },
-    { "time": "17:00", "routeId": "NANDA_INBOUND", "isPaidSubstitute": false },
-    { "time": "17:30", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": false },
-    { "time": "18:43", "routeId": "NANDA_INBOUND", "isPaidSubstitute": true },
-    { "time": "19:00", "routeId": "NANDA_OUTBOUND", "isPaidSubstitute": true }
+    {
+      "time": "07:20",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "07:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "07:33",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "07:40",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "08:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "08:20",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "08:35",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "08:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "08:45",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:00",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:20",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:40",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:50",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:55",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:55",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "10:00",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "10:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "10:55",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "11:10",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "11:30",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "11:30",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:05",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:05",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:10",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:15",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:15",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "12:20",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:20",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:23",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "12:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:35",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:35",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:40",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "12:50",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:50",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "13:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "13:00",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "13:10",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "13:20",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "13:30",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:00",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:50",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "15:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:00",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "15:05",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "15:10",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:10",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:15",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:15",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:18",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "15:20",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:25",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "15:45",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "16:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "16:30",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "16:50",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "16:55",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:10",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:30",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:35",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:50",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "18:00",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "18:10",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "18:15",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "18:20",
+      "routeId": "NANDA_ROUTE_2_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "18:30",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "18:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "18:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "18:43",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "18:50",
+      "routeId": "NANDA_ROUTE_2_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "19:00",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": true
+    },
+    {
+      "time": "19:10",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "19:10",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "19:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "19:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "20:00",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "20:15",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "20:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "20:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "20:55",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "21:10",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "21:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "21:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "21:55",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "22:10",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "22:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "22:40",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "22:55",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "23:10",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    },
+    {
+      "time": "23:25",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false,
+      "excludeDays": [
+        "FRIDAY"
+      ]
+    }
+  ],
+  "weekendDepartures": [
+    {
+      "time": "08:30",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "09:00",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "12:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "14:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:00",
+      "routeId": "NANDA_ROUTE_1_INBOUND",
+      "departureStopId": "nanda_gate",
+      "isPaidSubstitute": false
+    },
+    {
+      "time": "17:30",
+      "routeId": "NANDA_ROUTE_1_OUTBOUND",
+      "departureStopId": "north_gate",
+      "isPaidSubstitute": false
+    }
   ]
 }
