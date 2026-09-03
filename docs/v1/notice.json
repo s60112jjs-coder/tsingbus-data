@@ -1,7 +1,12 @@
-{
-  "active": false,
-  "level": "warning",
-  "messageZh": "",
-  "messageEn": "",
-  "expiresAt": null
-}
+  {                                                                                                                                                   
+    "active": true,                                                                                                                                   
+    "style": "banner",                                                                                                                                
+    "level": "info",                                                                                                                                  
+    "titleZh": "",                                                                                                                                    
+    "titleEn": "",                                                                                                                                    
+    "messageZh": "清大學生招募新血，歡迎大家報名參加！",                                                                                              
+    "messageEn": "NTHU student recruitment is open. Everyone is welcome to sign up!",                                                                 
+    "link": "https://cuttlefishball-e01d2.web.app/cbus.html",                                                                                         
+    "expiresAt": "2026-10-31"                                                                                                                         
+  }                                                                                                                                                   
+     
