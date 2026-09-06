@@ -1,12 +1,11 @@
-  {                                                                                                                                                   
-    "active": true,                                                                                                                                   
-    "style": "banner",                                                                                                                                
-    "level": "info",                                                                                                                                  
-    "titleZh": "",                                                                                                                                    
-    "titleEn": "",                                                                                                                                    
-    "messageZh": "清大學生招募新血，歡迎大家報名參加！",                                                                                              
-    "messageEn": "NTHU student recruitment is open. Everyone is welcome to sign up!",                                                                 
-    "link": "https://cuttlefishball-e01d2.web.app/cbus.html",                                                                                         
-    "expiresAt": "2026-10-31"                                                                                                                         
-  }                                                                                                                                                   
-     
+{
+  "active": true,
+  "style": "banner",
+  "level": "info",
+  "titleZh": "",
+  "titleEn": "",
+  "messageZh": "清檸是清大優秀的校內媒體！歡迎追蹤了解校園事。",
+  "messageEn": "NTHU Lemon News is an outstanding campus media outlet! Follow it to stay informed about campus affairs.",
+  "link": "https://nthulemonnews.com",
+  "expiresAt": "2026-10-31"
+}
