@@ -4,8 +4,13 @@
   "level": "info",
   "titleZh": "",
   "titleEn": "",
-  "messageZh": "清檸是清大優秀的校內媒體！歡迎追蹤了解校園事。",
-  "messageEn": "NTHU Lemon News is an outstanding campus media outlet! Follow it to stay informed about campus affairs.",
-  "link": "https://nthulemonnews.com",
-  "expiresAt": "2026-10-31"
+  "notices": [
+    {
+      "messageZh": "清檸是清大優秀的校內媒體！歡迎追蹤了解校園事。",
+      "messageEn": "NTHU Lemon News is an outstanding campus media outlet! Follow it to stay informed about campus affairs.",
+      "link": "https://nthulemonnews.com",
+      "expiresAt": "2026-10-31",
+      "displaySeconds": 9
+    }
+  ]
 }
