@@ -11,6 +11,13 @@
       "link": "https://nthulemonnews.com",
       "expiresAt": "2026-10-31",
       "displaySeconds": 9
+    },
+    {
+      "style": "dialog",
+      "titleZh": "乘車提醒",
+      "titleEn": "Bus Service Reminder",
+      "messageZh": "本校巴App的公車時刻，都以學校時刻表為準。\n\n然而，我注意到有時候公車的發車並不會完全按照時刻表，例如可能會遲到。因此，若依照時刻表看，公車有延誤，敬請見諒，並可向學校和公車營運方反映。",
+      "messageEn": "The bus schedules in this app are based on the official schedules published by the university.\n\nHowever, actual departures may not always follow the timetable exactly and buses may occasionally be delayed. We apologize for any inconvenience. If a bus is delayed according to the published timetable, please report it to the university and the bus operator."
     }
   ]
 }
