@@ -10,7 +10,14 @@
       "messageEn": "NTHU Lemon News is an outstanding campus media outlet! Follow it to stay informed about campus affairs.",
       "link": "https://nthulemonnews.com",
       "expiresAt": "2026-10-31",
-      "displaySeconds": 9
+      "displaySeconds": 5
+    },
+    {
+      "messageZh": "花枝丸全新力作！來下載有趣又迷因的分數計算機！",
+      "messageEn": "A brand-new creation from Cuttlefish Ball! Download the fun and meme-packed Fraction Calculator!",
+      "link": "https://play.google.com/store/apps/details?id=com.cuttlefishball.fractioncalculator",
+      "expiresAt": "2026-10-31",
+      "displaySeconds": 5
     },
     {
       "style": "dialog",
