@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-10-01",
   "files": {
     "campus": {
       "path": "campus.json",
@@ -12,7 +12,7 @@
     },
     "overrides": {
       "path": "overrides.json",
-      "updatedAt": "2026-09-02T21:00:00+08:00"
+      "updatedAt": "2026-10-01T10:59:00+08:00"
     },
     "notice": {
       "path": "notice.json",

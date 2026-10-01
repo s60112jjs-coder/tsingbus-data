@@ -43,6 +43,13 @@
       "noteEn": "No service (National Day)"
     },
     {
+      "date": "2026-10-11",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "國慶連續假期停駛",
+      "noteEn": "No service (National Day holiday)"
+    },
+    {
       "date": "2026-10-25",
       "system": "ALL",
       "suspended": true,
