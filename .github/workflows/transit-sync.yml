@@ -1,0 +1,55 @@
+name: 校外交通靜態班表同步
+
+on:
+  schedule:
+    # UTC -> Taiwan 05:30 / 17:30. GitHub may delay scheduled runs.
+    - cron: '30 21,9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: transit-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # Deployment gate: confirm App frequency-origin label, or explicitly defer 2011.
+    if: vars.TRANSIT_ORIGIN_FREQUENCY_READY == 'true' || vars.TRANSIT_SKIP_2011 == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 驗證資料轉換規則
+        run: python -m unittest discover -s tests -v
+      - name: 查詢並驗證官方靜態資料
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+          ORIGIN_READY: ${{ vars.TRANSIT_ORIGIN_FREQUENCY_READY }}
+          SKIP_2011: ${{ vars.TRANSIT_SKIP_2011 }}
+        run: |
+          args=()
+          if [ "$ORIGIN_READY" = "true" ]; then args+=(--origin-frequency-ready); fi
+          if [ "$SKIP_2011" = "true" ]; then args+=(--skip-2011); fi
+          python scripts/sync_transit.py "${args[@]}"
+      - name: 只提交實質異動
+        run: |
+          git add docs/v1/transit.json docs/v1/manifest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "tsingbus-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git commit -m "data: sync official transit timetables"
+          # Do not force push or overwrite concurrent changes. A conflict fails safely.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  publish:
+    needs: sync
+    uses: ./.github/workflows/pages.yml
