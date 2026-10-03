@@ -51,6 +51,6 @@ GitHub Actions 每天台灣時間 05:30、17:30 查 TDX，cron 為 `30 21,9 * * 
 
 8 項單元測試涵蓋跨午夜、倒序時間拒絕、2011 發布閘門、迴圈站序、校內／路邊站區別、缺路線／業者拒絕、非實質異動不更新、同日兩次實質更新與日曆過期。
 
-實際 App Kotlin 解析器讀取真實資料：10 條路線、3 個分頁、零解析警告；10 組方向查詢、跨午夜、假日與校內站區別檢查通過。先前 9 條路線的 Pages 發布與公開資料比對已通過。完整 10 條路線的驗證以本次手動同步 Actions 結果，以及公開 transit.json 是否包含 2011 為準。
+實際 App Kotlin 解析器讀取真實資料：10 條路線、3 個分頁、零解析警告；10 組方向查詢、跨午夜、假日與校內站區別檢查通過。2026-10-03 完整 10 條路線已實際驗證成功：GitHub Actions 從 Secrets 取得金鑰並向 TDX 查詢，提交 transit／manifest，Pages 發布及所有登錄資料比對通過。公開 transit.json 包含 2011，並同時具有 FREQUENCY 與 STOP_TIME；兩端 FREQUENCY 起站分別為臺北轉運站、新竹轉運站。
 
-2026-10-03 實際手動同步：[Actions run 37113597227](https://github.com/s60112jjs-coder/tsingbus-data/actions/runs/37113597227)。8 項測試通過，TDX 查詢因 `TDX environment variables are missing` 失敗；資料提交與 Pages 發布已安全跳過。公開資料仍為上一版 9 條、尚未包含 2011。需使用者設定 Repository Secrets `TDX_CLIENT_ID`、`TDX_CLIENT_SECRET` 後重跑，才能完成完整 10 條的端到端驗證。
+2026-10-03 使用者設定 Repository Secrets 後，[實際同步 run 37114784487](https://github.com/s60112jjs-coder/tsingbus-data/actions/runs/37114784487) 的 sync 與 publish / deploy 均成功。網站 manifest 的 transit.updatedAt 為 2026-10-03T17:57:42+08:00。先前缺少金鑰的失敗已解除。
