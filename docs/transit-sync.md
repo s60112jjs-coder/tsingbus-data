@@ -1,5 +1,14 @@
 # 清BUS 校外交通同步與發布
 
+## 維護提醒
+
+新增「校外交通維護提醒」Actions：每次校外交通同步完成後檢查結果，另每天台灣時間 05:45 檢查日曆有效期；提醒工作完全不呼叫 TDX，不讀取 TDX Secrets，也不讀取同步工作原始 log。
+
+- 假日日曆 coverageEnd 前 60 天，建立一則 GitHub issue 並指派給 s60112jjs-coder，內容包含官方日曆來源、修改檔案與驗證步驟。目前 coverageEnd=2027-12-31，首次提醒日期為 2027-11-01。相同到期日即使 issue 已關閉，也不重複建立；更新有效期後，下一次到期會有新的提醒。
+- 最新完成的 main 同步失敗時建立並指派提醒，附失敗工作連結。同一個未解決問題不每日新增 issue；同步恢復成功時自動關閉未解決的失敗提醒。
+- GitHub Notifications 的 Participating／@mentions 郵件通知已確認開啟；Actions 已設為只通知失敗。郵件依 GitHub 投遞與使用者信箱設定送達，提醒本身也會保留在 repository Issues 與 GitHub 通知中心。
+- 手動執行可選 dry_run，僅輸出檢查結果，不建立或關閉提醒。沒有新增額外 Secrets。
+
 使用者已於 2026-10-03 確認 App 的 FREQUENCY 起站標示完成並驗證，正式啟用包含 2011 的完整 10 條路線同步。資料端不修改 App 程式碼。每日同步僅從 Actions Secrets 讀取 TDX 金鑰。
 
 ## 使用者會看到的效果

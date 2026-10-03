@@ -1,0 +1,45 @@
+name: 校外交通維護提醒
+
+on:
+  workflow_run:
+    workflows: ['校外交通靜態班表同步']
+    types: [completed]
+    branches: [main]
+  schedule:
+    # Taiwan 05:45 daily; no TDX requests.
+    - cron: '45 21 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只檢查，不建立或關閉提醒'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: transit-maintenance-alerts
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Read only trusted default branch; do not checkout triggering workflow code/artifacts.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 驗證提醒與去重規則
+        run: python -m unittest discover -s tests -v
+      - name: 檢查假日有效期與同步結果
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: python scripts/transit_alerts.py
