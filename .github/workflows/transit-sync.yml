@@ -17,8 +17,7 @@ concurrency:
 
 jobs:
   sync:
-    # Deployment gate: confirm App frequency-origin label, or explicitly defer 2011.
-    if: vars.TRANSIT_ORIGIN_FREQUENCY_READY == 'true' || vars.TRANSIT_SKIP_2011 == 'true'
+    # Approved first release: defer 2011 until App origin labeling is confirmed.
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -33,11 +32,13 @@ jobs:
           TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
           TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
           ORIGIN_READY: ${{ vars.TRANSIT_ORIGIN_FREQUENCY_READY }}
-          SKIP_2011: ${{ vars.TRANSIT_SKIP_2011 }}
         run: |
           args=()
-          if [ "$ORIGIN_READY" = "true" ]; then args+=(--origin-frequency-ready); fi
-          if [ "$SKIP_2011" = "true" ]; then args+=(--skip-2011); fi
+          if [ "$ORIGIN_READY" = "true" ]; then
+            args+=(--origin-frequency-ready)
+          else
+            args+=(--skip-2011)
+          fi
           python scripts/sync_transit.py "${args[@]}"
       - name: 只提交實質異動
         run: |
