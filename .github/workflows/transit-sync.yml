@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   sync:
-    # Approved first release: defer 2011 until App origin labeling is confirmed.
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -31,15 +30,7 @@ jobs:
         env:
           TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
           TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
-          ORIGIN_READY: ${{ vars.TRANSIT_ORIGIN_FREQUENCY_READY }}
-        run: |
-          args=()
-          if [ "$ORIGIN_READY" = "true" ]; then
-            args+=(--origin-frequency-ready)
-          else
-            args+=(--skip-2011)
-          fi
-          python scripts/sync_transit.py "${args[@]}"
+        run: python scripts/sync_transit.py --origin-frequency-ready
       - name: 只提交實質異動
         run: |
           git add docs/v1/transit.json docs/v1/manifest.json

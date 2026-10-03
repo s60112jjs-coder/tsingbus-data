@@ -1,6 +1,6 @@
 # 清BUS 校外交通同步與發布
 
-使用者已於 2026-10-03 確認發布其他 9 條、暫緩 2011。程式與資料已提交 GitHub，Pages 發布及公開資料比對檢查通過。App 程式碼沒有修改。每日自動同步需使用者先完成 Actions Secrets 設定。
+使用者已於 2026-10-03 確認 App 的 FREQUENCY 起站標示完成並驗證，正式啟用包含 2011 的完整 10 條路線同步。資料端不修改 App 程式碼。每日同步僅從 Actions Secrets 讀取 TDX 金鑰。
 
 ## 使用者會看到的效果
 
@@ -31,7 +31,7 @@ GitHub Actions 每天台灣時間 05:30、17:30 查 TDX，cron 為 `30 21,9 * * 
 
 ## 必須了解的兩項限制
 
-1. 2011 的白天班距是起站區間。現有 App 能解析 originZh／originEn，但班距畫面沒有顯示該起站說明，直接發布可能被誤認為清大站服務區間。目前已按使用者確認暫緩 2011、發布其他 9 條。之後由 Claude 補上班距起站標示，確認後才能開啟完整 10 條。本次沒有修改 App。
+1. 2011 的白天班距是起站區間。App 已完成並驗證 FREQUENCY 的 originZh 起站標示，例如「台北轉運站發車：約 10～15 分一班，到 20:00」。同步保留起站名稱與官方班距，夜間保留官方 STOP_TIME，絕不推估清大站時刻。workflow 一律使用 --origin-frequency-ready，不再使用開關或 --skip-2011。
 2. TDX Schedule 的 ServiceDay 僅提供 MON–SUN，沒有各業者國定假日與寒暑假例外。既有 App schema 只能全體假日套用 SUNDAY，無法精準表示逐路線例外。本方案使用人事行政總處 2026／2027 行政機關辦公日曆建立假日清單，排除普通週末；83 國定假日停駛已另以業者確認。其餘路線的國定假日套週日是現有 App 規則，不能宣稱已逐條確認業者適用。日曆有效期至 2027-12-31，過期拒絕同步，必須先更新。
 
 來源：TDX Bus Route／StopOfRoute／Schedule；83 業者 https://www.yosemite-bus.com.tw/no81_bus.asp ；1728 官方 https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=17280 ；日曆 https://data.gov.tw/dataset/14718 。
@@ -45,10 +45,10 @@ GitHub Actions 每天台灣時間 05:30、17:30 查 TDX，cron 為 `30 21,9 * * 
 - Pages 的發布來源改為 GitHub Actions。原因：GITHUB_TOKEN 的資料提交不會自動觸發既有 Pages 分支建置，所以同步工作明確呼叫 Pages 工作。手動 main/docs 更新仍會發布。既有公告同步工作保留。
 - 發布後讀取網站 manifest 和所有登錄 JSON，逐位元組比對當次發布內容；讀取失敗或不一致則工作標示失敗。
 
-使用者自行新增 repository Actions Secrets：TDX_CLIENT_ID、TDX_CLIENT_SECRET。不需要額外 PAT。目前預設同步 9 條，不需額外 Variables。之後確認 App 起站標示完成，才可設定 repository Actions Variable TRANSIT_ORIGIN_FREQUENCY_READY=true 加入 2011。
+使用者自行新增 repository Actions Secrets：TDX_CLIENT_ID、TDX_CLIENT_SECRET。不需要額外 PAT。目前一律同步完整 10 條，不需要任何 2011 開關 Variable。
 
 ## 驗證結果
 
 8 項單元測試涵蓋跨午夜、倒序時間拒絕、2011 發布閘門、迴圈站序、校內／路邊站區別、缺路線／業者拒絕、非實質異動不更新、同日兩次實質更新與日曆過期。
 
-實際 App Kotlin 解析器讀取真實資料：10 條路線、3 個分頁、零解析警告；10 組方向查詢、跨午夜、假日與校內站區別檢查通過。首次 Pages 部署已成功，公開 transit 有 9 條，網站 manifest 與所有登錄資料比對通過；Actions 端向 TDX 查詢仍待金鑰設定後實際執行。
+實際 App Kotlin 解析器讀取真實資料：10 條路線、3 個分頁、零解析警告；10 組方向查詢、跨午夜、假日與校內站區別檢查通過。先前 9 條路線的 Pages 發布與公開資料比對已通過。完整 10 條路線的驗證以本次手動同步 Actions 結果，以及公開 transit.json 是否包含 2011 為準。
