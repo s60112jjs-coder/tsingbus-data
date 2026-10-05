@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04",
+  "updatedAt": "2026-10-05",
   "holidays": [
     "2026-01-01",
     "2026-02-15",
@@ -273,8 +273,8 @@
                 "JINGMEI": "18:19",
                 "DAPINGLIN": "18:23",
                 "XIAOBITAN": "18:34",
-                "NTHU_NORTH_GATE": "20:01",
-                "HSINCHU_BUS_STATION": "20:09"
+                "NTHU_NORTH_GATE": "19:57",
+                "HSINCHU_BUS_STATION": "20:05"
               }
             },
             {
@@ -289,8 +289,8 @@
                 "JINGMEI": "19:21",
                 "DAPINGLIN": "19:24",
                 "XIAOBITAN": "19:34",
-                "NTHU_NORTH_GATE": "20:57",
-                "HSINCHU_BUS_STATION": "21:04"
+                "NTHU_NORTH_GATE": "20:54",
+                "HSINCHU_BUS_STATION": "21:02"
               }
             },
             {
@@ -319,8 +319,8 @@
                 "JINGMEI": "16:37",
                 "DAPINGLIN": "16:40",
                 "XIAOBITAN": "16:50",
-                "NTHU_NORTH_GATE": "18:19",
-                "HSINCHU_BUS_STATION": "18:29"
+                "NTHU_NORTH_GATE": "18:17",
+                "HSINCHU_BUS_STATION": "18:27"
               }
             },
             {
@@ -334,8 +334,8 @@
                 "JINGMEI": "17:03",
                 "DAPINGLIN": "17:06",
                 "XIAOBITAN": "17:17",
-                "NTHU_NORTH_GATE": "18:47",
-                "HSINCHU_BUS_STATION": "18:57"
+                "NTHU_NORTH_GATE": "18:45",
+                "HSINCHU_BUS_STATION": "18:55"
               }
             },
             {
@@ -349,8 +349,8 @@
                 "JINGMEI": "17:55",
                 "DAPINGLIN": "17:58",
                 "XIAOBITAN": "18:08",
-                "NTHU_NORTH_GATE": "19:33",
-                "HSINCHU_BUS_STATION": "19:42"
+                "NTHU_NORTH_GATE": "19:29",
+                "HSINCHU_BUS_STATION": "19:38"
               }
             },
             {
@@ -364,8 +364,8 @@
                 "JINGMEI": "18:49",
                 "DAPINGLIN": "18:53",
                 "XIAOBITAN": "19:05",
-                "NTHU_NORTH_GATE": "20:27",
-                "HSINCHU_BUS_STATION": "20:35"
+                "NTHU_NORTH_GATE": "20:25",
+                "HSINCHU_BUS_STATION": "20:33"
               }
             },
             {
@@ -379,8 +379,8 @@
                 "JINGMEI": "19:51",
                 "DAPINGLIN": "19:54",
                 "XIAOBITAN": "20:03",
-                "NTHU_NORTH_GATE": "21:19",
-                "HSINCHU_BUS_STATION": "21:26"
+                "NTHU_NORTH_GATE": "21:18",
+                "HSINCHU_BUS_STATION": "21:25"
               }
             },
             {
@@ -398,10 +398,10 @@
                 "NTU": "09:09",
                 "GONGGUAN": "09:11",
                 "JINGMEI": "09:17",
-                "DAPINGLIN": "09:20",
-                "XIAOBITAN": "09:30",
-                "NTHU_NORTH_GATE": "10:53",
-                "HSINCHU_BUS_STATION": "11:00"
+                "DAPINGLIN": "09:21",
+                "XIAOBITAN": "09:31",
+                "NTHU_NORTH_GATE": "10:57",
+                "HSINCHU_BUS_STATION": "11:04"
               }
             },
             {
@@ -421,8 +421,8 @@
                 "JINGMEI": "10:18",
                 "DAPINGLIN": "10:21",
                 "XIAOBITAN": "10:30",
-                "NTHU_NORTH_GATE": "11:47",
-                "HSINCHU_BUS_STATION": "11:54"
+                "NTHU_NORTH_GATE": "11:50",
+                "HSINCHU_BUS_STATION": "11:57"
               }
             },
             {
@@ -442,8 +442,8 @@
                 "JINGMEI": "11:17",
                 "DAPINGLIN": "11:21",
                 "XIAOBITAN": "11:30",
-                "NTHU_NORTH_GATE": "12:50",
-                "HSINCHU_BUS_STATION": "12:57"
+                "NTHU_NORTH_GATE": "12:49",
+                "HSINCHU_BUS_STATION": "12:56"
               }
             },
             {
@@ -463,8 +463,8 @@
                 "JINGMEI": "12:18",
                 "DAPINGLIN": "12:22",
                 "XIAOBITAN": "12:31",
-                "NTHU_NORTH_GATE": "13:50",
-                "HSINCHU_BUS_STATION": "13:57"
+                "NTHU_NORTH_GATE": "13:47",
+                "HSINCHU_BUS_STATION": "13:54"
               }
             },
             {
@@ -505,8 +505,8 @@
                 "JINGMEI": "14:16",
                 "DAPINGLIN": "14:20",
                 "XIAOBITAN": "14:29",
-                "NTHU_NORTH_GATE": "15:54",
-                "HSINCHU_BUS_STATION": "16:01"
+                "NTHU_NORTH_GATE": "15:51",
+                "HSINCHU_BUS_STATION": "15:58"
               }
             },
             {
@@ -546,7 +546,7 @@
                 "GONGGUAN": "22:12",
                 "JINGMEI": "22:17",
                 "DAPINGLIN": "22:20",
-                "XIAOBITAN": "22:27",
+                "XIAOBITAN": "22:28",
                 "NTHU_NORTH_GATE": "23:39",
                 "HSINCHU_BUS_STATION": "23:46"
               }
@@ -567,8 +567,8 @@
                 "JINGMEI": "08:15",
                 "DAPINGLIN": "08:18",
                 "XIAOBITAN": "08:27",
-                "NTHU_NORTH_GATE": "10:05",
-                "HSINCHU_BUS_STATION": "10:12"
+                "NTHU_NORTH_GATE": "09:56",
+                "HSINCHU_BUS_STATION": "10:03"
               }
             },
             {
@@ -587,8 +587,8 @@
                 "JINGMEI": "15:17",
                 "DAPINGLIN": "15:21",
                 "XIAOBITAN": "15:30",
-                "NTHU_NORTH_GATE": "16:49",
-                "HSINCHU_BUS_STATION": "16:59"
+                "NTHU_NORTH_GATE": "16:50",
+                "HSINCHU_BUS_STATION": "17:00"
               }
             },
             {
@@ -607,8 +607,8 @@
                 "JINGMEI": "21:19",
                 "DAPINGLIN": "21:22",
                 "XIAOBITAN": "21:30",
-                "NTHU_NORTH_GATE": "22:44",
-                "HSINCHU_BUS_STATION": "22:51"
+                "NTHU_NORTH_GATE": "22:42",
+                "HSINCHU_BUS_STATION": "22:49"
               }
             },
             {
@@ -626,8 +626,8 @@
                 "JINGMEI": "05:46",
                 "DAPINGLIN": "05:48",
                 "XIAOBITAN": "05:54",
-                "NTHU_NORTH_GATE": "07:20",
-                "HSINCHU_BUS_STATION": "07:30"
+                "NTHU_NORTH_GATE": "07:17",
+                "HSINCHU_BUS_STATION": "07:27"
               }
             },
             {
@@ -645,8 +645,8 @@
                 "JINGMEI": "06:06",
                 "DAPINGLIN": "06:08",
                 "XIAOBITAN": "06:14",
-                "NTHU_NORTH_GATE": "07:34",
-                "HSINCHU_BUS_STATION": "07:44"
+                "NTHU_NORTH_GATE": "07:32",
+                "HSINCHU_BUS_STATION": "07:42"
               }
             },
             {
@@ -664,8 +664,8 @@
                 "JINGMEI": "06:31",
                 "DAPINGLIN": "06:33",
                 "XIAOBITAN": "06:39",
-                "NTHU_NORTH_GATE": "08:08",
-                "HSINCHU_BUS_STATION": "08:17"
+                "NTHU_NORTH_GATE": "08:07",
+                "HSINCHU_BUS_STATION": "08:16"
               }
             },
             {
@@ -683,8 +683,8 @@
                 "JINGMEI": "06:56",
                 "DAPINGLIN": "06:58",
                 "XIAOBITAN": "07:04",
-                "NTHU_NORTH_GATE": "08:44",
-                "HSINCHU_BUS_STATION": "08:53"
+                "NTHU_NORTH_GATE": "08:41",
+                "HSINCHU_BUS_STATION": "08:50"
               }
             },
             {
@@ -702,8 +702,8 @@
                 "JINGMEI": "07:25",
                 "DAPINGLIN": "07:28",
                 "XIAOBITAN": "07:36",
-                "NTHU_NORTH_GATE": "09:10",
-                "HSINCHU_BUS_STATION": "09:17"
+                "NTHU_NORTH_GATE": "09:07",
+                "HSINCHU_BUS_STATION": "09:14"
               }
             },
             {
@@ -721,8 +721,8 @@
                 "JINGMEI": "17:30",
                 "DAPINGLIN": "17:33",
                 "XIAOBITAN": "17:44",
-                "NTHU_NORTH_GATE": "19:13",
-                "HSINCHU_BUS_STATION": "19:22"
+                "NTHU_NORTH_GATE": "19:11",
+                "HSINCHU_BUS_STATION": "19:20"
               }
             },
             {
@@ -741,8 +741,8 @@
                 "JINGMEI": "16:17",
                 "DAPINGLIN": "16:20",
                 "XIAOBITAN": "16:30",
-                "NTHU_NORTH_GATE": "18:00",
-                "HSINCHU_BUS_STATION": "18:10"
+                "NTHU_NORTH_GATE": "17:58",
+                "HSINCHU_BUS_STATION": "18:07"
               }
             },
             {
@@ -760,8 +760,8 @@
                 "JINGMEI": "16:57",
                 "DAPINGLIN": "17:00",
                 "XIAOBITAN": "17:11",
-                "NTHU_NORTH_GATE": "18:42",
-                "HSINCHU_BUS_STATION": "18:52"
+                "NTHU_NORTH_GATE": "18:39",
+                "HSINCHU_BUS_STATION": "18:49"
               }
             },
             {
@@ -779,8 +779,8 @@
                 "JINGMEI": "19:41",
                 "DAPINGLIN": "19:44",
                 "XIAOBITAN": "19:54",
-                "NTHU_NORTH_GATE": "21:16",
-                "HSINCHU_BUS_STATION": "21:23"
+                "NTHU_NORTH_GATE": "21:13",
+                "HSINCHU_BUS_STATION": "21:20"
               }
             },
             {
@@ -797,8 +797,8 @@
                 "JINGMEI": "18:00",
                 "DAPINGLIN": "18:04",
                 "XIAOBITAN": "18:15",
-                "NTHU_NORTH_GATE": "19:42",
-                "HSINCHU_BUS_STATION": "19:51"
+                "NTHU_NORTH_GATE": "19:38",
+                "HSINCHU_BUS_STATION": "19:47"
               }
             },
             {
@@ -815,8 +815,8 @@
                 "JINGMEI": "18:29",
                 "DAPINGLIN": "18:33",
                 "XIAOBITAN": "18:44",
-                "NTHU_NORTH_GATE": "20:11",
-                "HSINCHU_BUS_STATION": "20:19"
+                "NTHU_NORTH_GATE": "20:07",
+                "HSINCHU_BUS_STATION": "20:15"
               }
             },
             {
@@ -833,8 +833,8 @@
                 "JINGMEI": "19:11",
                 "DAPINGLIN": "19:14",
                 "XIAOBITAN": "19:24",
-                "NTHU_NORTH_GATE": "20:47",
-                "HSINCHU_BUS_STATION": "20:55"
+                "NTHU_NORTH_GATE": "20:43",
+                "HSINCHU_BUS_STATION": "20:51"
               }
             },
             {
@@ -849,8 +849,8 @@
                 "JINGMEI": "06:16",
                 "DAPINGLIN": "06:18",
                 "XIAOBITAN": "06:24",
-                "NTHU_NORTH_GATE": "07:53",
-                "HSINCHU_BUS_STATION": "08:02"
+                "NTHU_NORTH_GATE": "07:42",
+                "HSINCHU_BUS_STATION": "07:52"
               }
             },
             {
@@ -864,8 +864,8 @@
                 "JINGMEI": "07:15",
                 "DAPINGLIN": "07:18",
                 "XIAOBITAN": "07:26",
-                "NTHU_NORTH_GATE": "09:00",
-                "HSINCHU_BUS_STATION": "09:07"
+                "NTHU_NORTH_GATE": "08:57",
+                "HSINCHU_BUS_STATION": "09:05"
               }
             },
             {
@@ -879,8 +879,8 @@
                 "JINGMEI": "17:20",
                 "DAPINGLIN": "17:23",
                 "XIAOBITAN": "17:34",
-                "NTHU_NORTH_GATE": "19:03",
-                "HSINCHU_BUS_STATION": "19:12"
+                "NTHU_NORTH_GATE": "19:02",
+                "HSINCHU_BUS_STATION": "19:11"
               }
             },
             {
@@ -894,8 +894,8 @@
                 "JINGMEI": "07:45",
                 "DAPINGLIN": "07:48",
                 "XIAOBITAN": "07:56",
-                "NTHU_NORTH_GATE": "09:28",
-                "HSINCHU_BUS_STATION": "09:35"
+                "NTHU_NORTH_GATE": "09:25",
+                "HSINCHU_BUS_STATION": "09:32"
               }
             },
             {
@@ -909,8 +909,8 @@
                 "JINGMEI": "14:56",
                 "DAPINGLIN": "15:00",
                 "XIAOBITAN": "15:09",
-                "NTHU_NORTH_GATE": "16:29",
-                "HSINCHU_BUS_STATION": "16:39"
+                "NTHU_NORTH_GATE": "16:30",
+                "HSINCHU_BUS_STATION": "16:40"
               }
             },
             {
@@ -924,8 +924,8 @@
                 "JINGMEI": "15:37",
                 "DAPINGLIN": "15:41",
                 "XIAOBITAN": "15:50",
-                "NTHU_NORTH_GATE": "17:10",
-                "HSINCHU_BUS_STATION": "17:19"
+                "NTHU_NORTH_GATE": "17:11",
+                "HSINCHU_BUS_STATION": "17:20"
               }
             },
             {
@@ -939,8 +939,8 @@
                 "JINGMEI": "17:40",
                 "DAPINGLIN": "17:43",
                 "XIAOBITAN": "17:54",
-                "NTHU_NORTH_GATE": "19:23",
-                "HSINCHU_BUS_STATION": "19:32"
+                "NTHU_NORTH_GATE": "19:21",
+                "HSINCHU_BUS_STATION": "19:30"
               }
             },
             {
@@ -954,8 +954,8 @@
                 "JINGMEI": "18:59",
                 "DAPINGLIN": "19:03",
                 "XIAOBITAN": "19:13",
-                "NTHU_NORTH_GATE": "20:35",
-                "HSINCHU_BUS_STATION": "20:43"
+                "NTHU_NORTH_GATE": "20:33",
+                "HSINCHU_BUS_STATION": "20:41"
               }
             },
             {
@@ -969,8 +969,8 @@
                 "JINGMEI": "20:59",
                 "DAPINGLIN": "21:03",
                 "XIAOBITAN": "21:11",
-                "NTHU_NORTH_GATE": "22:26",
-                "HSINCHU_BUS_STATION": "22:33"
+                "NTHU_NORTH_GATE": "22:25",
+                "HSINCHU_BUS_STATION": "22:32"
               }
             },
             {
@@ -984,8 +984,8 @@
                 "JINGMEI": "21:39",
                 "DAPINGLIN": "21:42",
                 "XIAOBITAN": "21:50",
-                "NTHU_NORTH_GATE": "23:04",
-                "HSINCHU_BUS_STATION": "23:11"
+                "NTHU_NORTH_GATE": "23:02",
+                "HSINCHU_BUS_STATION": "23:09"
               }
             }
           ]
@@ -1013,12 +1013,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:00",
                 "NTHU_NORTH_GATE": "17:10",
-                "XIAOBITAN": "18:51",
-                "DAPINGLIN": "19:02",
-                "JINGMEI": "19:05",
-                "GONGGUAN": "19:12",
-                "NTU": "19:15",
-                "RENAI_DUNHUA": "19:25"
+                "XIAOBITAN": "18:47",
+                "DAPINGLIN": "18:58",
+                "JINGMEI": "19:01",
+                "GONGGUAN": "19:08",
+                "NTU": "19:11",
+                "RENAI_DUNHUA": "19:21"
               }
             },
             {
@@ -1030,12 +1030,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "19:00",
                 "NTHU_NORTH_GATE": "19:10",
-                "XIAOBITAN": "20:33",
-                "DAPINGLIN": "20:41",
-                "JINGMEI": "20:44",
-                "GONGGUAN": "20:51",
-                "NTU": "20:54",
-                "RENAI_DUNHUA": "21:03"
+                "XIAOBITAN": "20:34",
+                "DAPINGLIN": "20:42",
+                "JINGMEI": "20:45",
+                "GONGGUAN": "20:52",
+                "NTU": "20:55",
+                "RENAI_DUNHUA": "21:04"
               }
             },
             {
@@ -1046,12 +1046,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "18:00",
                 "NTHU_NORTH_GATE": "18:10",
-                "XIAOBITAN": "19:43",
-                "DAPINGLIN": "19:51",
-                "JINGMEI": "19:54",
-                "GONGGUAN": "20:01",
-                "NTU": "20:04",
-                "RENAI_DUNHUA": "20:14"
+                "XIAOBITAN": "19:40",
+                "DAPINGLIN": "19:48",
+                "JINGMEI": "19:51",
+                "GONGGUAN": "19:58",
+                "NTU": "20:01",
+                "RENAI_DUNHUA": "20:11"
               }
             },
             {
@@ -1061,12 +1061,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "16:30",
                 "NTHU_NORTH_GATE": "16:40",
-                "XIAOBITAN": "18:31",
-                "DAPINGLIN": "18:42",
-                "JINGMEI": "18:45",
-                "GONGGUAN": "18:52",
-                "NTU": "18:55",
-                "RENAI_DUNHUA": "19:06"
+                "XIAOBITAN": "18:25",
+                "DAPINGLIN": "18:36",
+                "JINGMEI": "18:39",
+                "GONGGUAN": "18:46",
+                "NTU": "18:49",
+                "RENAI_DUNHUA": "19:00"
               }
             },
             {
@@ -1076,12 +1076,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:30",
                 "NTHU_NORTH_GATE": "17:40",
-                "XIAOBITAN": "19:21",
-                "DAPINGLIN": "19:29",
-                "JINGMEI": "19:32",
-                "GONGGUAN": "19:39",
-                "NTU": "19:42",
-                "RENAI_DUNHUA": "19:52"
+                "XIAOBITAN": "19:17",
+                "DAPINGLIN": "19:25",
+                "JINGMEI": "19:28",
+                "GONGGUAN": "19:35",
+                "NTU": "19:38",
+                "RENAI_DUNHUA": "19:48"
               }
             },
             {
@@ -1091,12 +1091,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "19:30",
                 "NTHU_NORTH_GATE": "19:40",
-                "XIAOBITAN": "21:02",
-                "DAPINGLIN": "21:10",
-                "JINGMEI": "21:13",
-                "GONGGUAN": "21:20",
-                "NTU": "21:23",
-                "RENAI_DUNHUA": "21:32"
+                "XIAOBITAN": "21:00",
+                "DAPINGLIN": "21:08",
+                "JINGMEI": "21:11",
+                "GONGGUAN": "21:18",
+                "NTU": "21:21",
+                "RENAI_DUNHUA": "21:30"
               }
             },
             {
@@ -1112,12 +1112,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:00",
                 "NTHU_NORTH_GATE": "06:08",
-                "XIAOBITAN": "07:30",
-                "DAPINGLIN": "07:40",
-                "JINGMEI": "07:43",
-                "GONGGUAN": "07:50",
-                "NTU": "07:53",
-                "RENAI_DUNHUA": "08:02"
+                "XIAOBITAN": "07:26",
+                "DAPINGLIN": "07:36",
+                "JINGMEI": "07:39",
+                "GONGGUAN": "07:46",
+                "NTU": "07:49",
+                "RENAI_DUNHUA": "07:59"
               }
             },
             {
@@ -1133,12 +1133,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "09:00",
                 "NTHU_NORTH_GATE": "09:09",
-                "XIAOBITAN": "10:37",
-                "DAPINGLIN": "10:45",
-                "JINGMEI": "10:48",
-                "GONGGUAN": "10:55",
-                "NTU": "10:59",
-                "RENAI_DUNHUA": "11:08"
+                "XIAOBITAN": "10:33",
+                "DAPINGLIN": "10:41",
+                "JINGMEI": "10:44",
+                "GONGGUAN": "10:51",
+                "NTU": "10:55",
+                "RENAI_DUNHUA": "11:04"
               }
             },
             {
@@ -1154,12 +1154,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "10:00",
                 "NTHU_NORTH_GATE": "10:10",
-                "XIAOBITAN": "11:29",
-                "DAPINGLIN": "11:38",
-                "JINGMEI": "11:41",
-                "GONGGUAN": "11:48",
-                "NTU": "11:51",
-                "RENAI_DUNHUA": "12:00"
+                "XIAOBITAN": "11:33",
+                "DAPINGLIN": "11:42",
+                "JINGMEI": "11:45",
+                "GONGGUAN": "11:52",
+                "NTU": "11:55",
+                "RENAI_DUNHUA": "12:05"
               }
             },
             {
@@ -1175,12 +1175,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "11:00",
                 "NTHU_NORTH_GATE": "11:09",
-                "XIAOBITAN": "12:26",
-                "DAPINGLIN": "12:34",
-                "JINGMEI": "12:37",
-                "GONGGUAN": "12:44",
-                "NTU": "12:47",
-                "RENAI_DUNHUA": "12:57"
+                "XIAOBITAN": "12:27",
+                "DAPINGLIN": "12:35",
+                "JINGMEI": "12:38",
+                "GONGGUAN": "12:45",
+                "NTU": "12:48",
+                "RENAI_DUNHUA": "12:58"
               }
             },
             {
@@ -1196,12 +1196,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "12:00",
                 "NTHU_NORTH_GATE": "12:09",
-                "XIAOBITAN": "13:31",
-                "DAPINGLIN": "13:39",
-                "JINGMEI": "13:42",
-                "GONGGUAN": "13:48",
-                "NTU": "13:51",
-                "RENAI_DUNHUA": "13:59"
+                "XIAOBITAN": "13:29",
+                "DAPINGLIN": "13:37",
+                "JINGMEI": "13:40",
+                "GONGGUAN": "13:46",
+                "NTU": "13:49",
+                "RENAI_DUNHUA": "13:57"
               }
             },
             {
@@ -1216,13 +1216,13 @@
               ],
               "times": {
                 "HSINCHU_BUS_STATION": "14:00",
-                "NTHU_NORTH_GATE": "14:10",
-                "XIAOBITAN": "15:39",
-                "DAPINGLIN": "15:47",
-                "JINGMEI": "15:50",
-                "GONGGUAN": "15:56",
-                "NTU": "15:59",
-                "RENAI_DUNHUA": "16:07"
+                "NTHU_NORTH_GATE": "14:09",
+                "XIAOBITAN": "15:32",
+                "DAPINGLIN": "15:40",
+                "JINGMEI": "15:43",
+                "GONGGUAN": "15:49",
+                "NTU": "15:52",
+                "RENAI_DUNHUA": "16:00"
               }
             },
             {
@@ -1238,12 +1238,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "15:00",
                 "NTHU_NORTH_GATE": "15:09",
-                "XIAOBITAN": "16:33",
-                "DAPINGLIN": "16:42",
-                "JINGMEI": "16:45",
-                "GONGGUAN": "16:52",
-                "NTU": "16:55",
-                "RENAI_DUNHUA": "17:03"
+                "XIAOBITAN": "16:31",
+                "DAPINGLIN": "16:40",
+                "JINGMEI": "16:43",
+                "GONGGUAN": "16:50",
+                "NTU": "16:53",
+                "RENAI_DUNHUA": "17:01"
               }
             },
             {
@@ -1259,12 +1259,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "21:00",
                 "NTHU_NORTH_GATE": "21:10",
-                "XIAOBITAN": "22:29",
-                "DAPINGLIN": "22:36",
-                "JINGMEI": "22:39",
-                "GONGGUAN": "22:46",
-                "NTU": "22:49",
-                "RENAI_DUNHUA": "22:57"
+                "XIAOBITAN": "22:28",
+                "DAPINGLIN": "22:35",
+                "JINGMEI": "22:38",
+                "GONGGUAN": "22:45",
+                "NTU": "22:48",
+                "RENAI_DUNHUA": "22:56"
               }
             },
             {
@@ -1300,12 +1300,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "07:00",
                 "NTHU_NORTH_GATE": "07:09",
-                "XIAOBITAN": "08:40",
-                "DAPINGLIN": "08:50",
-                "JINGMEI": "08:53",
-                "GONGGUAN": "09:00",
-                "NTU": "09:03",
-                "RENAI_DUNHUA": "09:14"
+                "XIAOBITAN": "08:39",
+                "DAPINGLIN": "08:49",
+                "JINGMEI": "08:52",
+                "GONGGUAN": "08:59",
+                "NTU": "09:02",
+                "RENAI_DUNHUA": "09:13"
               }
             },
             {
@@ -1320,12 +1320,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "08:00",
                 "NTHU_NORTH_GATE": "08:10",
-                "XIAOBITAN": "09:41",
-                "DAPINGLIN": "09:51",
-                "JINGMEI": "09:54",
-                "GONGGUAN": "10:01",
-                "NTU": "10:05",
-                "RENAI_DUNHUA": "10:14"
+                "XIAOBITAN": "09:38",
+                "DAPINGLIN": "09:48",
+                "JINGMEI": "09:51",
+                "GONGGUAN": "09:58",
+                "NTU": "10:01",
+                "RENAI_DUNHUA": "10:10"
               }
             },
             {
@@ -1340,12 +1340,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "13:00",
                 "NTHU_NORTH_GATE": "13:09",
-                "XIAOBITAN": "14:30",
-                "DAPINGLIN": "14:38",
-                "JINGMEI": "14:40",
-                "GONGGUAN": "14:47",
-                "NTU": "14:50",
-                "RENAI_DUNHUA": "14:59"
+                "XIAOBITAN": "14:29",
+                "DAPINGLIN": "14:37",
+                "JINGMEI": "14:39",
+                "GONGGUAN": "14:46",
+                "NTU": "14:49",
+                "RENAI_DUNHUA": "14:58"
               }
             },
             {
@@ -1360,12 +1360,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "16:00",
                 "NTHU_NORTH_GATE": "16:10",
-                "XIAOBITAN": "18:01",
-                "DAPINGLIN": "18:12",
-                "JINGMEI": "18:15",
-                "GONGGUAN": "18:22",
-                "NTU": "18:25",
-                "RENAI_DUNHUA": "18:36"
+                "XIAOBITAN": "17:55",
+                "DAPINGLIN": "18:06",
+                "JINGMEI": "18:09",
+                "GONGGUAN": "18:16",
+                "NTU": "18:19",
+                "RENAI_DUNHUA": "18:30"
               }
             },
             {
@@ -1380,12 +1380,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "20:00",
                 "NTHU_NORTH_GATE": "20:09",
-                "XIAOBITAN": "21:28",
-                "DAPINGLIN": "21:36",
-                "JINGMEI": "21:39",
-                "GONGGUAN": "21:46",
-                "NTU": "21:49",
-                "RENAI_DUNHUA": "21:58"
+                "XIAOBITAN": "21:26",
+                "DAPINGLIN": "21:34",
+                "JINGMEI": "21:37",
+                "GONGGUAN": "21:44",
+                "NTU": "21:47",
+                "RENAI_DUNHUA": "21:56"
               }
             },
             {
@@ -1399,12 +1399,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "05:15",
                 "NTHU_NORTH_GATE": "05:22",
-                "XIAOBITAN": "06:43",
-                "DAPINGLIN": "06:50",
-                "JINGMEI": "06:52",
-                "GONGGUAN": "06:58",
-                "NTU": "07:01",
-                "RENAI_DUNHUA": "07:11"
+                "XIAOBITAN": "06:40",
+                "DAPINGLIN": "06:47",
+                "JINGMEI": "06:49",
+                "GONGGUAN": "06:55",
+                "NTU": "06:58",
+                "RENAI_DUNHUA": "07:07"
               }
             },
             {
@@ -1418,12 +1418,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "05:40",
                 "NTHU_NORTH_GATE": "05:47",
-                "XIAOBITAN": "07:08",
-                "DAPINGLIN": "07:18",
-                "JINGMEI": "07:21",
-                "GONGGUAN": "07:28",
-                "NTU": "07:31",
-                "RENAI_DUNHUA": "07:41"
+                "XIAOBITAN": "07:04",
+                "DAPINGLIN": "07:14",
+                "JINGMEI": "07:17",
+                "GONGGUAN": "07:24",
+                "NTU": "07:27",
+                "RENAI_DUNHUA": "07:37"
               }
             },
             {
@@ -1437,12 +1437,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:20",
                 "NTHU_NORTH_GATE": "06:28",
-                "XIAOBITAN": "08:00",
-                "DAPINGLIN": "08:10",
-                "JINGMEI": "08:13",
-                "GONGGUAN": "08:20",
-                "NTU": "08:23",
-                "RENAI_DUNHUA": "08:33"
+                "XIAOBITAN": "07:56",
+                "DAPINGLIN": "08:06",
+                "JINGMEI": "08:09",
+                "GONGGUAN": "08:16",
+                "NTU": "08:19",
+                "RENAI_DUNHUA": "08:29"
               }
             },
             {
@@ -1456,12 +1456,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:40",
                 "NTHU_NORTH_GATE": "06:48",
-                "XIAOBITAN": "08:20",
-                "DAPINGLIN": "08:30",
-                "JINGMEI": "08:33",
-                "GONGGUAN": "08:40",
-                "NTU": "08:43",
-                "RENAI_DUNHUA": "08:53"
+                "XIAOBITAN": "08:16",
+                "DAPINGLIN": "08:26",
+                "JINGMEI": "08:29",
+                "GONGGUAN": "08:36",
+                "NTU": "08:39",
+                "RENAI_DUNHUA": "08:49"
               }
             },
             {
@@ -1475,12 +1475,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "18:30",
                 "NTHU_NORTH_GATE": "18:40",
-                "XIAOBITAN": "20:12",
-                "DAPINGLIN": "20:20",
-                "JINGMEI": "20:23",
-                "GONGGUAN": "20:30",
-                "NTU": "20:33",
-                "RENAI_DUNHUA": "20:43"
+                "XIAOBITAN": "20:09",
+                "DAPINGLIN": "20:17",
+                "JINGMEI": "20:20",
+                "GONGGUAN": "20:27",
+                "NTU": "20:30",
+                "RENAI_DUNHUA": "20:40"
               }
             },
             {
@@ -1493,12 +1493,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "16:40",
                 "NTHU_NORTH_GATE": "16:50",
-                "XIAOBITAN": "18:41",
-                "DAPINGLIN": "18:52",
-                "JINGMEI": "18:55",
-                "GONGGUAN": "19:02",
-                "NTU": "19:05",
-                "RENAI_DUNHUA": "19:15"
+                "XIAOBITAN": "18:35",
+                "DAPINGLIN": "18:46",
+                "JINGMEI": "18:49",
+                "GONGGUAN": "18:56",
+                "NTU": "18:59",
+                "RENAI_DUNHUA": "19:09"
               }
             },
             {
@@ -1511,12 +1511,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:20",
                 "NTHU_NORTH_GATE": "17:30",
-                "XIAOBITAN": "19:11",
-                "DAPINGLIN": "19:19",
-                "JINGMEI": "19:22",
-                "GONGGUAN": "19:29",
-                "NTU": "19:32",
-                "RENAI_DUNHUA": "19:42"
+                "XIAOBITAN": "19:07",
+                "DAPINGLIN": "19:15",
+                "JINGMEI": "19:18",
+                "GONGGUAN": "19:25",
+                "NTU": "19:28",
+                "RENAI_DUNHUA": "19:38"
               }
             },
             {
@@ -1529,12 +1529,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:50",
                 "NTHU_NORTH_GATE": "18:00",
-                "XIAOBITAN": "19:36",
-                "DAPINGLIN": "19:44",
-                "JINGMEI": "19:47",
-                "GONGGUAN": "19:54",
-                "NTU": "19:57",
-                "RENAI_DUNHUA": "20:07"
+                "XIAOBITAN": "19:33",
+                "DAPINGLIN": "19:41",
+                "JINGMEI": "19:44",
+                "GONGGUAN": "19:51",
+                "NTU": "19:54",
+                "RENAI_DUNHUA": "20:04"
               }
             },
             {
@@ -1547,12 +1547,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "19:20",
                 "NTHU_NORTH_GATE": "19:30",
-                "XIAOBITAN": "20:52",
-                "DAPINGLIN": "21:00",
-                "JINGMEI": "21:03",
-                "GONGGUAN": "21:10",
-                "NTU": "21:13",
-                "RENAI_DUNHUA": "21:22"
+                "XIAOBITAN": "20:50",
+                "DAPINGLIN": "20:58",
+                "JINGMEI": "21:01",
+                "GONGGUAN": "21:08",
+                "NTU": "21:11",
+                "RENAI_DUNHUA": "21:20"
               }
             },
             {
@@ -1562,12 +1562,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "07:30",
                 "NTHU_NORTH_GATE": "07:39",
-                "XIAOBITAN": "09:09",
-                "DAPINGLIN": "09:19",
-                "JINGMEI": "09:22",
-                "GONGGUAN": "09:29",
-                "NTU": "09:32",
-                "RENAI_DUNHUA": "09:43"
+                "XIAOBITAN": "09:05",
+                "DAPINGLIN": "09:15",
+                "JINGMEI": "09:18",
+                "GONGGUAN": "09:25",
+                "NTU": "09:28",
+                "RENAI_DUNHUA": "09:39"
               }
             },
             {
@@ -1577,12 +1577,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "12:40",
                 "NTHU_NORTH_GATE": "12:49",
-                "XIAOBITAN": "14:11",
-                "DAPINGLIN": "14:19",
-                "JINGMEI": "14:21",
-                "GONGGUAN": "14:28",
-                "NTU": "14:31",
-                "RENAI_DUNHUA": "14:40"
+                "XIAOBITAN": "14:10",
+                "DAPINGLIN": "14:18",
+                "JINGMEI": "14:20",
+                "GONGGUAN": "14:27",
+                "NTU": "14:30",
+                "RENAI_DUNHUA": "14:39"
               }
             },
             {
@@ -1592,12 +1592,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "13:10",
                 "NTHU_NORTH_GATE": "13:19",
-                "XIAOBITAN": "14:41",
-                "DAPINGLIN": "14:49",
-                "JINGMEI": "14:51",
-                "GONGGUAN": "14:58",
-                "NTU": "15:01",
-                "RENAI_DUNHUA": "15:09"
+                "XIAOBITAN": "14:40",
+                "DAPINGLIN": "14:48",
+                "JINGMEI": "14:50",
+                "GONGGUAN": "14:57",
+                "NTU": "15:00",
+                "RENAI_DUNHUA": "15:08"
               }
             },
             {
@@ -1607,12 +1607,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "15:40",
                 "NTHU_NORTH_GATE": "15:49",
-                "XIAOBITAN": "17:17",
-                "DAPINGLIN": "17:28",
-                "JINGMEI": "17:31",
-                "GONGGUAN": "17:38",
-                "NTU": "17:41",
-                "RENAI_DUNHUA": "17:50"
+                "XIAOBITAN": "17:15",
+                "DAPINGLIN": "17:26",
+                "JINGMEI": "17:29",
+                "GONGGUAN": "17:36",
+                "NTU": "17:39",
+                "RENAI_DUNHUA": "17:48"
               }
             },
             {
@@ -1622,12 +1622,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "16:20",
                 "NTHU_NORTH_GATE": "16:30",
-                "XIAOBITAN": "18:21",
-                "DAPINGLIN": "18:32",
-                "JINGMEI": "18:35",
-                "GONGGUAN": "18:42",
-                "NTU": "18:45",
-                "RENAI_DUNHUA": "18:56"
+                "XIAOBITAN": "18:15",
+                "DAPINGLIN": "18:26",
+                "JINGMEI": "18:29",
+                "GONGGUAN": "18:36",
+                "NTU": "18:39",
+                "RENAI_DUNHUA": "18:50"
               }
             },
             {
@@ -1637,12 +1637,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:40",
                 "NTHU_NORTH_GATE": "17:50",
-                "XIAOBITAN": "19:27",
-                "DAPINGLIN": "19:35",
-                "JINGMEI": "19:38",
-                "GONGGUAN": "19:45",
-                "NTU": "19:48",
-                "RENAI_DUNHUA": "19:58"
+                "XIAOBITAN": "19:24",
+                "DAPINGLIN": "19:32",
+                "JINGMEI": "19:35",
+                "GONGGUAN": "19:42",
+                "NTU": "19:45",
+                "RENAI_DUNHUA": "19:55"
               }
             },
             {
@@ -1652,12 +1652,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "18:20",
                 "NTHU_NORTH_GATE": "18:30",
-                "XIAOBITAN": "20:02",
-                "DAPINGLIN": "20:10",
-                "JINGMEI": "20:13",
-                "GONGGUAN": "20:20",
-                "NTU": "20:23",
-                "RENAI_DUNHUA": "20:33"
+                "XIAOBITAN": "19:59",
+                "DAPINGLIN": "20:07",
+                "JINGMEI": "20:10",
+                "GONGGUAN": "20:17",
+                "NTU": "20:20",
+                "RENAI_DUNHUA": "20:30"
               }
             },
             {
@@ -1667,12 +1667,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "19:40",
                 "NTHU_NORTH_GATE": "19:50",
-                "XIAOBITAN": "21:12",
-                "DAPINGLIN": "21:20",
-                "JINGMEI": "21:23",
-                "GONGGUAN": "21:30",
-                "NTU": "21:33",
-                "RENAI_DUNHUA": "21:42"
+                "XIAOBITAN": "21:10",
+                "DAPINGLIN": "21:18",
+                "JINGMEI": "21:21",
+                "GONGGUAN": "21:28",
+                "NTU": "21:31",
+                "RENAI_DUNHUA": "21:40"
               }
             },
             {
@@ -1682,12 +1682,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "20:20",
                 "NTHU_NORTH_GATE": "20:29",
-                "XIAOBITAN": "21:47",
-                "DAPINGLIN": "21:55",
-                "JINGMEI": "21:58",
-                "GONGGUAN": "22:05",
-                "NTU": "22:08",
-                "RENAI_DUNHUA": "22:16"
+                "XIAOBITAN": "21:46",
+                "DAPINGLIN": "21:54",
+                "JINGMEI": "21:57",
+                "GONGGUAN": "22:04",
+                "NTU": "22:07",
+                "RENAI_DUNHUA": "22:15"
               }
             }
           ]
@@ -2679,7 +2679,7 @@
               "times": {
                 "HSINCHU_BUS_STATION": "07:30",
                 "NTHU_NORTH_GATE": "07:40",
-                "TAIPEI_BUS_STATION": "08:49"
+                "TAIPEI_BUS_STATION": "08:48"
               }
             },
             {
@@ -2949,7 +2949,7 @@
               ],
               "times": {
                 "HSINCHU_TRA": "16:40",
-                "NTHU_NORTH_GATE": "16:52"
+                "NTHU_NORTH_GATE": "16:53"
               }
             },
             {
@@ -3030,7 +3030,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "09:24",
-                "HSINCHU_TRA": "09:40"
+                "HSINCHU_TRA": "09:39"
               }
             },
             {
@@ -3103,7 +3103,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "06:48",
-                "HSINCHU_TRA": "07:00"
+                "HSINCHU_TRA": "07:01"
               }
             },
             {
@@ -5094,7 +5094,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "20:09",
-                "HSINCHU_TRA_ZHONGZHENG": "20:18"
+                "HSINCHU_TRA_ZHONGZHENG": "20:17"
               }
             },
             {
@@ -5107,7 +5107,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "20:39",
-                "HSINCHU_TRA_ZHONGZHENG": "20:48"
+                "HSINCHU_TRA_ZHONGZHENG": "20:47"
               }
             },
             {
@@ -5347,7 +5347,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "20:19",
-                "HSINCHU_TRA_ZHONGZHENG": "20:28"
+                "HSINCHU_TRA_ZHONGZHENG": "20:27"
               }
             },
             {
@@ -5357,7 +5357,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "20:49",
-                "HSINCHU_TRA_ZHONGZHENG": "20:58"
+                "HSINCHU_TRA_ZHONGZHENG": "20:57"
               }
             }
           ]
@@ -6075,15 +6075,13 @@
       "operatorEn": "Hsinchu Bus Co., Ltd. / San Chung Bus Co., Ltd.",
       "directions": [
         {
-          "id": "9003_0_13_DIRECT_ORIGIN",
+          "id": "9003_0_13_DIRECT_TIMES",
           "stops": [
             "TAIPEI_BUS_STATION",
             "NTHU_NORTH_GATE",
             "HSINCHU_BUS_STATION"
           ],
-          "timeKind": "ORIGIN_DEPARTURE_ONLY",
-          "originZh": "臺北轉運站",
-          "originEn": "Taipei Bus Station",
+          "timeKind": "STOP_TIME",
           "trips": [
             {
               "days": [
@@ -6091,7 +6089,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "11:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:55",
+                "NTHU_NORTH_GATE": "13:03",
+                "HSINCHU_BUS_STATION": "13:11"
+              }
             },
             {
               "days": [
@@ -6099,7 +6101,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "13:35"
+              "times": {
+                "TAIPEI_BUS_STATION": "13:35",
+                "NTHU_NORTH_GATE": "14:42",
+                "HSINCHU_BUS_STATION": "14:50"
+              }
             },
             {
               "days": [
@@ -6107,7 +6113,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "16:30",
+                "NTHU_NORTH_GATE": "17:44",
+                "HSINCHU_BUS_STATION": "17:55"
+              }
             },
             {
               "days": [
@@ -6115,7 +6125,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "16:55",
+                "NTHU_NORTH_GATE": "18:11",
+                "HSINCHU_BUS_STATION": "18:22"
+              }
             },
             {
               "days": [
@@ -6123,7 +6137,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "17:15",
+                "NTHU_NORTH_GATE": "18:32",
+                "HSINCHU_BUS_STATION": "18:43"
+              }
             },
             {
               "days": [
@@ -6131,7 +6149,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:35"
+              "times": {
+                "TAIPEI_BUS_STATION": "17:35",
+                "NTHU_NORTH_GATE": "18:52",
+                "HSINCHU_BUS_STATION": "19:03"
+              }
             },
             {
               "days": [
@@ -6139,7 +6161,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "17:55",
+                "NTHU_NORTH_GATE": "19:09",
+                "HSINCHU_BUS_STATION": "19:18"
+              }
             },
             {
               "days": [
@@ -6147,7 +6173,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "20:20"
+              "times": {
+                "TAIPEI_BUS_STATION": "20:20",
+                "NTHU_NORTH_GATE": "21:26",
+                "HSINCHU_BUS_STATION": "21:33"
+              }
             },
             {
               "days": [
@@ -6155,7 +6185,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "20:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "20:45",
+                "NTHU_NORTH_GATE": "21:51",
+                "HSINCHU_BUS_STATION": "21:58"
+              }
             },
             {
               "days": [
@@ -6163,28 +6197,44 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "21:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "21:10",
+                "NTHU_NORTH_GATE": "22:15",
+                "HSINCHU_BUS_STATION": "22:22"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SUN"
               ],
-              "origin": "12:20"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:20",
+                "NTHU_NORTH_GATE": "13:27",
+                "HSINCHU_BUS_STATION": "13:35"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SUN"
               ],
-              "origin": "12:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:45",
+                "NTHU_NORTH_GATE": "13:52",
+                "HSINCHU_BUS_STATION": "14:00"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SUN"
               ],
-              "origin": "13:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "13:10",
+                "NTHU_NORTH_GATE": "14:17",
+                "HSINCHU_BUS_STATION": "14:25"
+              }
             },
             {
               "days": [
@@ -6196,7 +6246,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "18:15",
+                "NTHU_NORTH_GATE": "19:28",
+                "HSINCHU_BUS_STATION": "19:37"
+              }
             },
             {
               "days": [
@@ -6208,7 +6262,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "21:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "21:30",
+                "NTHU_NORTH_GATE": "22:35",
+                "HSINCHU_BUS_STATION": "22:42"
+              }
             },
             {
               "days": [
@@ -6219,7 +6277,11 @@
                 "FRI",
                 "SUN"
               ],
-              "origin": "11:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:30",
+                "NTHU_NORTH_GATE": "12:41",
+                "HSINCHU_BUS_STATION": "12:49"
+              }
             },
             {
               "days": [
@@ -6229,7 +6291,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "07:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "07:10",
+                "NTHU_NORTH_GATE": "08:24",
+                "HSINCHU_BUS_STATION": "08:33"
+              }
             },
             {
               "days": [
@@ -6239,7 +6305,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "07:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "07:45",
+                "NTHU_NORTH_GATE": "08:59",
+                "HSINCHU_BUS_STATION": "09:07"
+              }
             },
             {
               "days": [
@@ -6249,7 +6319,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "08:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "08:30",
+                "NTHU_NORTH_GATE": "09:45",
+                "HSINCHU_BUS_STATION": "09:52"
+              }
             },
             {
               "days": [
@@ -6258,7 +6332,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "12:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:10",
+                "NTHU_NORTH_GATE": "13:17",
+                "HSINCHU_BUS_STATION": "13:25"
+              }
             },
             {
               "days": [
@@ -6267,7 +6345,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "12:50"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:50",
+                "NTHU_NORTH_GATE": "13:57",
+                "HSINCHU_BUS_STATION": "14:05"
+              }
             },
             {
               "days": [
@@ -6276,7 +6358,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "13:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "13:30",
+                "NTHU_NORTH_GATE": "14:37",
+                "HSINCHU_BUS_STATION": "14:45"
+              }
             },
             {
               "days": [
@@ -6285,7 +6371,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "16:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "16:45",
+                "NTHU_NORTH_GATE": "17:59",
+                "HSINCHU_BUS_STATION": "18:10"
+              }
             },
             {
               "days": [
@@ -6294,7 +6384,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "17:20"
+              "times": {
+                "TAIPEI_BUS_STATION": "17:20",
+                "NTHU_NORTH_GATE": "18:37",
+                "HSINCHU_BUS_STATION": "18:48"
+              }
             },
             {
               "days": [
@@ -6303,7 +6397,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "17:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "17:45",
+                "NTHU_NORTH_GATE": "19:02",
+                "HSINCHU_BUS_STATION": "19:11"
+              }
             },
             {
               "days": [
@@ -6312,71 +6410,105 @@
                 "WED",
                 "THU"
               ],
-              "origin": "20:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "20:30",
+                "NTHU_NORTH_GATE": "21:36",
+                "HSINCHU_BUS_STATION": "21:43"
+              }
             },
             {
               "days": [
                 "SAT",
                 "SUN"
               ],
-              "origin": "07:50"
+              "times": {
+                "TAIPEI_BUS_STATION": "07:50",
+                "NTHU_NORTH_GATE": "09:06",
+                "HSINCHU_BUS_STATION": "09:13"
+              }
             },
             {
               "days": [
                 "SAT",
                 "SUN"
               ],
-              "origin": "08:25"
+              "times": {
+                "TAIPEI_BUS_STATION": "08:25",
+                "NTHU_NORTH_GATE": "09:40",
+                "HSINCHU_BUS_STATION": "09:47"
+              }
             },
             {
               "days": [
                 "SAT",
                 "SUN"
               ],
-              "origin": "09:00"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:00",
+                "NTHU_NORTH_GATE": "10:15",
+                "HSINCHU_BUS_STATION": "10:22"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "11:35"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:35",
+                "NTHU_NORTH_GATE": "12:46",
+                "HSINCHU_BUS_STATION": "12:54"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "12:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:15",
+                "NTHU_NORTH_GATE": "13:22",
+                "HSINCHU_BUS_STATION": "13:30"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "12:35"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:35",
+                "NTHU_NORTH_GATE": "13:42",
+                "HSINCHU_BUS_STATION": "13:50"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "12:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "12:55",
+                "NTHU_NORTH_GATE": "14:01",
+                "HSINCHU_BUS_STATION": "14:09"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "13:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "13:15",
+                "NTHU_NORTH_GATE": "14:22",
+                "HSINCHU_BUS_STATION": "14:30"
+              }
             }
           ]
         },
         {
-          "id": "9003_0_41_DIRECT_ORIGIN",
+          "id": "9003_0_41_DIRECT_TIMES",
           "stops": [
             "TAIPEI_BUS_STATION",
             "NTHU_NORTH_GATE",
             "HSINCHU_BUS_STATION"
           ],
-          "timeKind": "ORIGIN_DEPARTURE_ONLY",
-          "originZh": "臺北轉運站",
-          "originEn": "Taipei Bus Station",
+          "timeKind": "STOP_TIME",
           "trips": [
             {
               "days": [
@@ -6384,7 +6516,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:00"
+              "times": {
+                "TAIPEI_BUS_STATION": "14:00",
+                "NTHU_NORTH_GATE": "15:14",
+                "HSINCHU_BUS_STATION": "15:22"
+              }
             },
             {
               "days": [
@@ -6392,7 +6528,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:25"
+              "times": {
+                "TAIPEI_BUS_STATION": "14:25",
+                "NTHU_NORTH_GATE": "15:39",
+                "HSINCHU_BUS_STATION": "15:47"
+              }
             },
             {
               "days": [
@@ -6400,7 +6540,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "15:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "15:15",
+                "NTHU_NORTH_GATE": "16:25",
+                "HSINCHU_BUS_STATION": "16:35"
+              }
             },
             {
               "days": [
@@ -6408,7 +6552,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "15:40"
+              "times": {
+                "TAIPEI_BUS_STATION": "15:40",
+                "NTHU_NORTH_GATE": "16:50",
+                "HSINCHU_BUS_STATION": "17:00"
+              }
             },
             {
               "days": [
@@ -6416,7 +6564,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:05"
+              "times": {
+                "TAIPEI_BUS_STATION": "16:05",
+                "NTHU_NORTH_GATE": "17:19",
+                "HSINCHU_BUS_STATION": "17:30"
+              }
             },
             {
               "days": [
@@ -6424,7 +6576,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:35"
+              "times": {
+                "TAIPEI_BUS_STATION": "18:35",
+                "NTHU_NORTH_GATE": "19:48",
+                "HSINCHU_BUS_STATION": "19:57"
+              }
             },
             {
               "days": [
@@ -6432,7 +6588,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:50"
+              "times": {
+                "TAIPEI_BUS_STATION": "18:50",
+                "NTHU_NORTH_GATE": "20:01",
+                "HSINCHU_BUS_STATION": "20:10"
+              }
             },
             {
               "days": [
@@ -6440,38 +6600,62 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "19:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:45",
+                "NTHU_NORTH_GATE": "20:54",
+                "HSINCHU_BUS_STATION": "21:03"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SAT"
               ],
-              "origin": "19:25"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:25",
+                "NTHU_NORTH_GATE": "20:34",
+                "HSINCHU_BUS_STATION": "20:43"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "09:40"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:40",
+                "NTHU_NORTH_GATE": "10:55",
+                "HSINCHU_BUS_STATION": "11:02"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "10:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:10",
+                "NTHU_NORTH_GATE": "11:20",
+                "HSINCHU_BUS_STATION": "11:28"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "10:40"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:40",
+                "NTHU_NORTH_GATE": "11:50",
+                "HSINCHU_BUS_STATION": "11:58"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "11:05"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:05",
+                "NTHU_NORTH_GATE": "12:15",
+                "HSINCHU_BUS_STATION": "12:23"
+              }
             },
             {
               "days": [
@@ -6483,7 +6667,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "06:00"
+              "times": {
+                "TAIPEI_BUS_STATION": "06:00",
+                "NTHU_NORTH_GATE": "07:05",
+                "HSINCHU_BUS_STATION": "07:13"
+              }
             },
             {
               "days": [
@@ -6495,7 +6683,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:50"
+              "times": {
+                "TAIPEI_BUS_STATION": "14:50",
+                "NTHU_NORTH_GATE": "16:04",
+                "HSINCHU_BUS_STATION": "16:14"
+              }
             },
             {
               "days": [
@@ -6507,7 +6699,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "19:05"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:05",
+                "NTHU_NORTH_GATE": "20:14",
+                "HSINCHU_BUS_STATION": "20:23"
+              }
             },
             {
               "days": [
@@ -6517,7 +6713,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "05:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "05:30",
+                "NTHU_NORTH_GATE": "06:32",
+                "HSINCHU_BUS_STATION": "06:39"
+              }
             },
             {
               "days": [
@@ -6527,7 +6727,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "06:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "06:30",
+                "NTHU_NORTH_GATE": "07:35",
+                "HSINCHU_BUS_STATION": "07:43"
+              }
             },
             {
               "days": [
@@ -6537,7 +6741,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "09:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:10",
+                "NTHU_NORTH_GATE": "10:25",
+                "HSINCHU_BUS_STATION": "10:32"
+              }
             },
             {
               "days": [
@@ -6547,7 +6755,11 @@
                 "THU",
                 "SUN"
               ],
-              "origin": "10:00"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:00",
+                "NTHU_NORTH_GATE": "11:10",
+                "HSINCHU_BUS_STATION": "11:18"
+              }
             },
             {
               "days": [
@@ -6556,7 +6768,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "10:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:55",
+                "NTHU_NORTH_GATE": "12:05",
+                "HSINCHU_BUS_STATION": "12:13"
+              }
             },
             {
               "days": [
@@ -6565,7 +6781,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "14:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "14:10",
+                "NTHU_NORTH_GATE": "15:24",
+                "HSINCHU_BUS_STATION": "15:32"
+              }
             },
             {
               "days": [
@@ -6574,7 +6794,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "15:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "15:30",
+                "NTHU_NORTH_GATE": "16:40",
+                "HSINCHU_BUS_STATION": "16:50"
+              }
             },
             {
               "days": [
@@ -6583,7 +6807,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "16:10"
+              "times": {
+                "TAIPEI_BUS_STATION": "16:10",
+                "NTHU_NORTH_GATE": "17:24",
+                "HSINCHU_BUS_STATION": "17:35"
+              }
             },
             {
               "days": [
@@ -6592,7 +6820,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "18:40"
+              "times": {
+                "TAIPEI_BUS_STATION": "18:40",
+                "NTHU_NORTH_GATE": "19:53",
+                "HSINCHU_BUS_STATION": "20:02"
+              }
             },
             {
               "days": [
@@ -6601,110 +6833,172 @@
                 "WED",
                 "THU"
               ],
-              "origin": "19:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:30",
+                "NTHU_NORTH_GATE": "20:39",
+                "HSINCHU_BUS_STATION": "20:48"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "06:25"
+              "times": {
+                "TAIPEI_BUS_STATION": "06:25",
+                "NTHU_NORTH_GATE": "07:30",
+                "HSINCHU_BUS_STATION": "07:38"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "06:55"
+              "times": {
+                "TAIPEI_BUS_STATION": "06:55",
+                "NTHU_NORTH_GATE": "08:08",
+                "HSINCHU_BUS_STATION": "08:17"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "07:20"
+              "times": {
+                "TAIPEI_BUS_STATION": "07:20",
+                "NTHU_NORTH_GATE": "08:34",
+                "HSINCHU_BUS_STATION": "08:43"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "09:25"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:25",
+                "NTHU_NORTH_GATE": "10:40",
+                "HSINCHU_BUS_STATION": "10:47"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "09:50"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:50",
+                "NTHU_NORTH_GATE": "11:05",
+                "HSINCHU_BUS_STATION": "11:13"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "10:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:15",
+                "NTHU_NORTH_GATE": "11:25",
+                "HSINCHU_BUS_STATION": "11:33"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "10:45"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:45",
+                "NTHU_NORTH_GATE": "11:55",
+                "HSINCHU_BUS_STATION": "12:03"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "11:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:15",
+                "NTHU_NORTH_GATE": "12:25",
+                "HSINCHU_BUS_STATION": "12:33"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "06:40"
+              "times": {
+                "TAIPEI_BUS_STATION": "06:40",
+                "NTHU_NORTH_GATE": "07:45",
+                "HSINCHU_BUS_STATION": "07:53"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "07:15"
+              "times": {
+                "TAIPEI_BUS_STATION": "07:15",
+                "NTHU_NORTH_GATE": "08:29",
+                "HSINCHU_BUS_STATION": "08:38"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "09:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "09:30",
+                "NTHU_NORTH_GATE": "10:45",
+                "HSINCHU_BUS_STATION": "10:52"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "10:30"
+              "times": {
+                "TAIPEI_BUS_STATION": "10:30",
+                "NTHU_NORTH_GATE": "11:40",
+                "HSINCHU_BUS_STATION": "11:48"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "11:00"
+              "times": {
+                "TAIPEI_BUS_STATION": "11:00",
+                "NTHU_NORTH_GATE": "12:10",
+                "HSINCHU_BUS_STATION": "12:18"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "19:20"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:20",
+                "NTHU_NORTH_GATE": "20:29",
+                "HSINCHU_BUS_STATION": "20:38"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "19:32"
+              "times": {
+                "TAIPEI_BUS_STATION": "19:32",
+                "NTHU_NORTH_GATE": "20:41",
+                "HSINCHU_BUS_STATION": "20:50"
+              }
             }
           ]
         },
         {
-          "id": "9003_1_13_DIRECT_ORIGIN",
+          "id": "9003_1_13_DIRECT_TIMES",
           "stops": [
             "HSINCHU_BUS_STATION",
             "NTHU_NORTH_GATE",
             "TAIPEI_BUS_STATION"
           ],
-          "timeKind": "ORIGIN_DEPARTURE_ONLY",
-          "originZh": "新竹轉運站",
-          "originEn": "Hsinchu bus station",
+          "timeKind": "STOP_TIME",
           "trips": [
             {
               "days": [
@@ -6712,7 +7006,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "06:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "06:00",
+                "NTHU_NORTH_GATE": "06:09",
+                "TAIPEI_BUS_STATION": "07:16"
+              }
             },
             {
               "days": [
@@ -6720,7 +7018,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "06:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "06:40",
+                "NTHU_NORTH_GATE": "06:49",
+                "TAIPEI_BUS_STATION": "07:56"
+              }
             },
             {
               "days": [
@@ -6728,7 +7030,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "14:00",
+                "NTHU_NORTH_GATE": "14:10",
+                "TAIPEI_BUS_STATION": "15:25"
+              }
             },
             {
               "days": [
@@ -6736,7 +7042,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:25"
+              "times": {
+                "HSINCHU_BUS_STATION": "14:25",
+                "NTHU_NORTH_GATE": "14:35",
+                "TAIPEI_BUS_STATION": "15:50"
+              }
             },
             {
               "days": [
@@ -6744,7 +7054,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "15:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "15:15",
+                "NTHU_NORTH_GATE": "15:24",
+                "TAIPEI_BUS_STATION": "16:39"
+              }
             },
             {
               "days": [
@@ -6752,7 +7066,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "15:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "15:40",
+                "NTHU_NORTH_GATE": "15:49",
+                "TAIPEI_BUS_STATION": "17:04"
+              }
             },
             {
               "days": [
@@ -6760,7 +7078,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "16:05",
+                "NTHU_NORTH_GATE": "16:15",
+                "TAIPEI_BUS_STATION": "17:35"
+              }
             },
             {
               "days": [
@@ -6768,7 +7090,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "18:35",
+                "NTHU_NORTH_GATE": "18:46",
+                "TAIPEI_BUS_STATION": "20:03"
+              }
             },
             {
               "days": [
@@ -6776,7 +7102,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:55"
+              "times": {
+                "HSINCHU_BUS_STATION": "18:55",
+                "NTHU_NORTH_GATE": "19:05",
+                "TAIPEI_BUS_STATION": "20:16"
+              }
             },
             {
               "days": [
@@ -6784,7 +7114,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "19:20"
+              "times": {
+                "HSINCHU_BUS_STATION": "19:20",
+                "NTHU_NORTH_GATE": "19:29",
+                "TAIPEI_BUS_STATION": "20:40"
+              }
             },
             {
               "days": [
@@ -6792,37 +7126,61 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "19:45"
+              "times": {
+                "HSINCHU_BUS_STATION": "19:45",
+                "NTHU_NORTH_GATE": "19:54",
+                "TAIPEI_BUS_STATION": "21:06"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "09:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:35",
+                "NTHU_NORTH_GATE": "09:45",
+                "TAIPEI_BUS_STATION": "10:58"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "09:55"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:55",
+                "NTHU_NORTH_GATE": "10:05",
+                "TAIPEI_BUS_STATION": "11:17"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "10:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:15",
+                "NTHU_NORTH_GATE": "10:24",
+                "TAIPEI_BUS_STATION": "11:36"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "10:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:40",
+                "NTHU_NORTH_GATE": "10:49",
+                "TAIPEI_BUS_STATION": "12:01"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "11:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "11:05",
+                "NTHU_NORTH_GATE": "11:15",
+                "TAIPEI_BUS_STATION": "12:24"
+              }
             },
             {
               "days": [
@@ -6834,7 +7192,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "14:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "14:50",
+                "NTHU_NORTH_GATE": "15:00",
+                "TAIPEI_BUS_STATION": "16:15"
+              }
             },
             {
               "days": [
@@ -6844,7 +7206,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "05:20"
+              "times": {
+                "HSINCHU_BUS_STATION": "05:20",
+                "NTHU_NORTH_GATE": "05:28",
+                "TAIPEI_BUS_STATION": "06:32"
+              }
             },
             {
               "days": [
@@ -6854,7 +7220,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "09:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:10",
+                "NTHU_NORTH_GATE": "09:20",
+                "TAIPEI_BUS_STATION": "10:33"
+              }
             },
             {
               "days": [
@@ -6864,7 +7234,11 @@
                 "THU",
                 "SAT"
               ],
-              "origin": "09:45"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:45",
+                "NTHU_NORTH_GATE": "09:55",
+                "TAIPEI_BUS_STATION": "11:09"
+              }
             },
             {
               "days": [
@@ -6874,7 +7248,11 @@
                 "THU",
                 "SAT"
               ],
-              "origin": "10:20"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:20",
+                "NTHU_NORTH_GATE": "10:29",
+                "TAIPEI_BUS_STATION": "11:41"
+              }
             },
             {
               "days": [
@@ -6884,7 +7262,11 @@
                 "THU",
                 "SAT"
               ],
-              "origin": "10:55"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:55",
+                "NTHU_NORTH_GATE": "11:04",
+                "TAIPEI_BUS_STATION": "12:13"
+              }
             },
             {
               "days": [
@@ -6893,7 +7275,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "05:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "05:50",
+                "NTHU_NORTH_GATE": "05:58",
+                "TAIPEI_BUS_STATION": "07:05"
+              }
             },
             {
               "days": [
@@ -6902,7 +7288,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "06:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "06:30",
+                "NTHU_NORTH_GATE": "06:39",
+                "TAIPEI_BUS_STATION": "07:46"
+              }
             },
             {
               "days": [
@@ -6911,7 +7301,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "14:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "14:10",
+                "NTHU_NORTH_GATE": "14:20",
+                "TAIPEI_BUS_STATION": "15:35"
+              }
             },
             {
               "days": [
@@ -6920,7 +7314,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "15:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "15:30",
+                "NTHU_NORTH_GATE": "15:39",
+                "TAIPEI_BUS_STATION": "16:54"
+              }
             },
             {
               "days": [
@@ -6929,7 +7327,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "16:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "16:10",
+                "NTHU_NORTH_GATE": "16:20",
+                "TAIPEI_BUS_STATION": "17:40"
+              }
             },
             {
               "days": [
@@ -6938,7 +7340,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "18:45"
+              "times": {
+                "HSINCHU_BUS_STATION": "18:45",
+                "NTHU_NORTH_GATE": "18:56",
+                "TAIPEI_BUS_STATION": "20:10"
+              }
             },
             {
               "days": [
@@ -6947,87 +7353,133 @@
                 "WED",
                 "THU"
               ],
-              "origin": "19:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "19:30",
+                "NTHU_NORTH_GATE": "19:39",
+                "TAIPEI_BUS_STATION": "20:50"
+              }
             },
             {
               "days": [
                 "SAT",
                 "SUN"
               ],
-              "origin": "07:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "07:15",
+                "NTHU_NORTH_GATE": "07:25",
+                "TAIPEI_BUS_STATION": "08:38"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "09:25"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:25",
+                "NTHU_NORTH_GATE": "09:35",
+                "TAIPEI_BUS_STATION": "10:48"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "10:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:05",
+                "NTHU_NORTH_GATE": "10:14",
+                "TAIPEI_BUS_STATION": "11:26"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "10:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:35",
+                "NTHU_NORTH_GATE": "10:44",
+                "TAIPEI_BUS_STATION": "11:56"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "11:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "11:15",
+                "NTHU_NORTH_GATE": "11:25",
+                "TAIPEI_BUS_STATION": "12:34"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "09:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:30",
+                "NTHU_NORTH_GATE": "09:40",
+                "TAIPEI_BUS_STATION": "10:53"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "09:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:50",
+                "NTHU_NORTH_GATE": "10:00",
+                "TAIPEI_BUS_STATION": "11:12"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "10:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:10",
+                "NTHU_NORTH_GATE": "10:19",
+                "TAIPEI_BUS_STATION": "11:31"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "10:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:30",
+                "NTHU_NORTH_GATE": "10:39",
+                "TAIPEI_BUS_STATION": "11:51"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "10:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "10:50",
+                "NTHU_NORTH_GATE": "10:59",
+                "TAIPEI_BUS_STATION": "12:09"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "11:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "11:10",
+                "NTHU_NORTH_GATE": "11:20",
+                "TAIPEI_BUS_STATION": "12:29"
+              }
             }
           ]
         },
         {
-          "id": "9003_1_41_DIRECT_ORIGIN",
+          "id": "9003_1_41_DIRECT_TIMES",
           "stops": [
             "HSINCHU_BUS_STATION",
             "NTHU_NORTH_GATE",
             "TAIPEI_BUS_STATION"
           ],
-          "timeKind": "ORIGIN_DEPARTURE_ONLY",
-          "originZh": "新竹轉運站",
-          "originEn": "Hsinchu bus station",
+          "timeKind": "STOP_TIME",
           "trips": [
             {
               "days": [
@@ -7035,7 +7487,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:55"
+              "times": {
+                "HSINCHU_BUS_STATION": "16:55",
+                "NTHU_NORTH_GATE": "17:05",
+                "TAIPEI_BUS_STATION": "18:27"
+              }
             },
             {
               "days": [
@@ -7043,7 +7499,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "17:15",
+                "NTHU_NORTH_GATE": "17:26",
+                "TAIPEI_BUS_STATION": "18:48"
+              }
             },
             {
               "days": [
@@ -7051,7 +7511,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "17:35",
+                "NTHU_NORTH_GATE": "17:46",
+                "TAIPEI_BUS_STATION": "19:07"
+              }
             },
             {
               "days": [
@@ -7059,7 +7523,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "17:55"
+              "times": {
+                "HSINCHU_BUS_STATION": "17:55",
+                "NTHU_NORTH_GATE": "18:06",
+                "TAIPEI_BUS_STATION": "19:22"
+              }
             },
             {
               "days": [
@@ -7067,7 +7535,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "18:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "18:15",
+                "NTHU_NORTH_GATE": "18:26",
+                "TAIPEI_BUS_STATION": "19:42"
+              }
             },
             {
               "days": [
@@ -7075,40 +7547,64 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "20:20"
+              "times": {
+                "HSINCHU_BUS_STATION": "20:20",
+                "NTHU_NORTH_GATE": "20:28",
+                "TAIPEI_BUS_STATION": "21:34"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SAT"
               ],
-              "origin": "13:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "13:35",
+                "NTHU_NORTH_GATE": "13:45",
+                "TAIPEI_BUS_STATION": "14:53"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SAT"
               ],
-              "origin": "20:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "20:40",
+                "NTHU_NORTH_GATE": "20:48",
+                "TAIPEI_BUS_STATION": "21:54"
+              }
             },
             {
               "days": [
                 "FRI",
                 "SAT"
               ],
-              "origin": "21:15"
+              "times": {
+                "HSINCHU_BUS_STATION": "21:15",
+                "NTHU_NORTH_GATE": "21:24",
+                "TAIPEI_BUS_STATION": "22:26"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "12:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:00",
+                "NTHU_NORTH_GATE": "12:10",
+                "TAIPEI_BUS_STATION": "13:14"
+              }
             },
             {
               "days": [
                 "FRI"
               ],
-              "origin": "13:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "13:10",
+                "NTHU_NORTH_GATE": "13:20",
+                "TAIPEI_BUS_STATION": "14:28"
+              }
             },
             {
               "days": [
@@ -7120,7 +7616,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "16:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "16:30",
+                "NTHU_NORTH_GATE": "16:40",
+                "TAIPEI_BUS_STATION": "18:00"
+              }
             },
             {
               "days": [
@@ -7132,7 +7632,11 @@
                 "SAT",
                 "SUN"
               ],
-              "origin": "21:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "21:30",
+                "NTHU_NORTH_GATE": "21:39",
+                "TAIPEI_BUS_STATION": "22:41"
+              }
             },
             {
               "days": [
@@ -7143,7 +7647,11 @@
                 "FRI",
                 "SAT"
               ],
-              "origin": "21:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "21:00",
+                "NTHU_NORTH_GATE": "21:09",
+                "TAIPEI_BUS_STATION": "22:11"
+              }
             },
             {
               "days": [
@@ -7154,7 +7662,11 @@
                 "FRI",
                 "SUN"
               ],
-              "origin": "11:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "11:30",
+                "NTHU_NORTH_GATE": "11:40",
+                "TAIPEI_BUS_STATION": "12:49"
+              }
             },
             {
               "days": [
@@ -7164,7 +7676,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "07:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "07:10",
+                "NTHU_NORTH_GATE": "07:20",
+                "TAIPEI_BUS_STATION": "08:33"
+              }
             },
             {
               "days": [
@@ -7174,7 +7690,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "07:45"
+              "times": {
+                "HSINCHU_BUS_STATION": "07:45",
+                "NTHU_NORTH_GATE": "07:55",
+                "TAIPEI_BUS_STATION": "09:06"
+              }
             },
             {
               "days": [
@@ -7184,7 +7704,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "08:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "08:30",
+                "NTHU_NORTH_GATE": "08:41",
+                "TAIPEI_BUS_STATION": "09:52"
+              }
             },
             {
               "days": [
@@ -7194,7 +7718,11 @@
                 "THU",
                 "FRI"
               ],
-              "origin": "12:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:30",
+                "NTHU_NORTH_GATE": "12:40",
+                "TAIPEI_BUS_STATION": "13:44"
+              }
             },
             {
               "days": [
@@ -7204,7 +7732,11 @@
                 "THU",
                 "SUN"
               ],
-              "origin": "13:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "13:30",
+                "NTHU_NORTH_GATE": "13:40",
+                "TAIPEI_BUS_STATION": "14:48"
+              }
             },
             {
               "days": [
@@ -7213,7 +7745,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "17:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "17:00",
+                "NTHU_NORTH_GATE": "17:11",
+                "TAIPEI_BUS_STATION": "18:33"
+              }
             },
             {
               "days": [
@@ -7222,7 +7758,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "17:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "17:30",
+                "NTHU_NORTH_GATE": "17:41",
+                "TAIPEI_BUS_STATION": "19:03"
+              }
             },
             {
               "days": [
@@ -7231,7 +7771,11 @@
                 "WED",
                 "THU"
               ],
-              "origin": "18:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "18:10",
+                "NTHU_NORTH_GATE": "18:21",
+                "TAIPEI_BUS_STATION": "19:37"
+              }
             },
             {
               "days": [
@@ -7240,109 +7784,181 @@
                 "WED",
                 "THU"
               ],
-              "origin": "20:30"
+              "times": {
+                "HSINCHU_BUS_STATION": "20:30",
+                "NTHU_NORTH_GATE": "20:38",
+                "TAIPEI_BUS_STATION": "21:44"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "07:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "07:40",
+                "NTHU_NORTH_GATE": "07:50",
+                "TAIPEI_BUS_STATION": "09:03"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "08:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "08:05",
+                "NTHU_NORTH_GATE": "08:16",
+                "TAIPEI_BUS_STATION": "09:27"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "08:40"
+              "times": {
+                "HSINCHU_BUS_STATION": "08:40",
+                "NTHU_NORTH_GATE": "08:51",
+                "TAIPEI_BUS_STATION": "10:02"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "09:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:05",
+                "NTHU_NORTH_GATE": "09:15",
+                "TAIPEI_BUS_STATION": "10:27"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "11:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "11:35",
+                "NTHU_NORTH_GATE": "11:45",
+                "TAIPEI_BUS_STATION": "12:54"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "12:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:05",
+                "NTHU_NORTH_GATE": "12:15",
+                "TAIPEI_BUS_STATION": "13:19"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "12:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:35",
+                "NTHU_NORTH_GATE": "12:45",
+                "TAIPEI_BUS_STATION": "13:49"
+              }
             },
             {
               "days": [
                 "SAT"
               ],
-              "origin": "13:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "13:05",
+                "NTHU_NORTH_GATE": "13:15",
+                "TAIPEI_BUS_STATION": "14:23"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "07:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "07:50",
+                "NTHU_NORTH_GATE": "08:00",
+                "TAIPEI_BUS_STATION": "09:11"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "08:25"
+              "times": {
+                "HSINCHU_BUS_STATION": "08:25",
+                "NTHU_NORTH_GATE": "08:36",
+                "TAIPEI_BUS_STATION": "09:47"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "09:00"
+              "times": {
+                "HSINCHU_BUS_STATION": "09:00",
+                "NTHU_NORTH_GATE": "09:10",
+                "TAIPEI_BUS_STATION": "10:22"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "12:10"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:10",
+                "NTHU_NORTH_GATE": "12:20",
+                "TAIPEI_BUS_STATION": "13:24"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "12:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "12:50",
+                "NTHU_NORTH_GATE": "13:00",
+                "TAIPEI_BUS_STATION": "14:08"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "20:35"
+              "times": {
+                "HSINCHU_BUS_STATION": "20:35",
+                "NTHU_NORTH_GATE": "20:43",
+                "TAIPEI_BUS_STATION": "21:49"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "20:50"
+              "times": {
+                "HSINCHU_BUS_STATION": "20:50",
+                "NTHU_NORTH_GATE": "20:58",
+                "TAIPEI_BUS_STATION": "22:01"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "21:05"
+              "times": {
+                "HSINCHU_BUS_STATION": "21:05",
+                "NTHU_NORTH_GATE": "21:14",
+                "TAIPEI_BUS_STATION": "22:16"
+              }
             },
             {
               "days": [
                 "SUN"
               ],
-              "origin": "21:18"
+              "times": {
+                "HSINCHU_BUS_STATION": "21:18",
+                "NTHU_NORTH_GATE": "21:27",
+                "TAIPEI_BUS_STATION": "22:29"
+              }
             }
           ]
         }
@@ -7585,8 +8201,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "20:39",
-                "HSINCHU_TRA": "20:48"
+                "NTHU_NORTH_GATE": "20:38",
+                "HSINCHU_TRA": "20:47"
               }
             },
             {
@@ -7673,8 +8289,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "06:01",
-                "HSINCHU_TRA": "06:12"
+                "NTHU_NORTH_GATE": "05:57",
+                "HSINCHU_TRA": "06:08"
               }
             },
             {
@@ -7686,8 +8302,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "06:09",
-                "HSINCHU_TRA": "06:20"
+                "NTHU_NORTH_GATE": "06:08",
+                "HSINCHU_TRA": "06:19"
               }
             },
             {
@@ -7699,8 +8315,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "07:10",
-                "HSINCHU_TRA": "07:27"
+                "NTHU_NORTH_GATE": "07:11",
+                "HSINCHU_TRA": "07:28"
               }
             },
             {
@@ -7712,8 +8328,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "07:29",
-                "HSINCHU_TRA": "07:46"
+                "NTHU_NORTH_GATE": "07:30",
+                "HSINCHU_TRA": "07:47"
               }
             },
             {
@@ -7725,8 +8341,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "07:48",
-                "HSINCHU_TRA": "08:05"
+                "NTHU_NORTH_GATE": "07:49",
+                "HSINCHU_TRA": "08:06"
               }
             },
             {
@@ -7738,8 +8354,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "08:03",
-                "HSINCHU_TRA": "08:19"
+                "NTHU_NORTH_GATE": "08:04",
+                "HSINCHU_TRA": "08:20"
               }
             },
             {
@@ -8073,8 +8689,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "07:38",
-                "HSINCHU_TRA": "07:55"
+                "NTHU_NORTH_GATE": "07:39",
+                "HSINCHU_TRA": "07:56"
               }
             },
             {
@@ -8083,8 +8699,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "07:53",
-                "HSINCHU_TRA": "08:10"
+                "NTHU_NORTH_GATE": "07:54",
+                "HSINCHU_TRA": "08:11"
               }
             },
             {
@@ -8499,7 +9115,7 @@
               ],
               "times": {
                 "HSINCHU_TRA": "20:15",
-                "NTHU_NORTH_GATE": "20:25"
+                "NTHU_NORTH_GATE": "20:24"
               }
             },
             {
@@ -8514,7 +9130,7 @@
               ],
               "times": {
                 "HSINCHU_TRA": "20:40",
-                "NTHU_NORTH_GATE": "20:50"
+                "NTHU_NORTH_GATE": "20:49"
               }
             },
             {
@@ -10115,8 +10731,8 @@
               ],
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "13:13",
-                "NTHU_NORTH_GATE": "13:23",
-                "HSR_HSINCHU": "13:50"
+                "NTHU_NORTH_GATE": "13:24",
+                "HSR_HSINCHU": "13:51"
               }
             },
             {
@@ -10126,8 +10742,8 @@
               ],
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "13:53",
-                "NTHU_NORTH_GATE": "14:03",
-                "HSR_HSINCHU": "14:31"
+                "NTHU_NORTH_GATE": "14:04",
+                "HSR_HSINCHU": "14:32"
               }
             },
             {
@@ -10160,7 +10776,7 @@
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "15:48",
                 "NTHU_NORTH_GATE": "15:58",
-                "HSR_HSINCHU": "16:27"
+                "HSR_HSINCHU": "16:28"
               }
             },
             {
@@ -10171,7 +10787,7 @@
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "16:23",
                 "NTHU_NORTH_GATE": "16:33",
-                "HSR_HSINCHU": "17:02"
+                "HSR_HSINCHU": "17:03"
               }
             },
             {
@@ -10259,7 +10875,7 @@
               "times": {
                 "HSR_HSINCHU": "09:10",
                 "NTHU_NORTH_GATE": "09:38",
-                "HSINCHU_TRA_ZHONGZHENG": "09:45"
+                "HSINCHU_TRA_ZHONGZHENG": "09:46"
               }
             },
             {
