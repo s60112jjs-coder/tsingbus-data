@@ -29,6 +29,34 @@ ROUTES = {
     '9003': ('THB9003', 'InterCity', '9003', ('THB900301', 'THB900302')),
     '1728': ('THB1728', 'InterCity', '1728', ('THB172801', 'THB172802')),
 }
+# Reviewed Ho-Hsin branches whose official stop sequence includes Hsinchu.
+# Optional branches may have no Schedule; F/B pairs are the required core service.
+SOUTH_ROUTES = {
+    '7500': ('THB7500', 'InterCity', '7500',
+             ('THB750001', 'THB750002', 'THB7500D1', 'THB7500D2', 'THB7500F1', 'THB7500F2',
+              'THB7500O1', 'THB7500O2', 'THB7500T1', 'THB7500T2')),
+    '7513': ('THB7513', 'InterCity', '7513',
+             ('THB751301', 'THB751302', 'THB7513B1', 'THB7513B2', 'THB7513D1', 'THB7513D2',
+              'THB7513F1', 'THB7513F2', 'THB7513I1', 'THB7513I2')),
+}
+SOUTH_CORE = {'7500': {'THB7500F1', 'THB7500F2'}, '7513': {'THB7513B1', 'THB7513B2'}}
+# IDs are permanent App selection keys; route-local mapping avoids conflating 5608's 新竹站.
+SOUTH_STOPS = [
+    ('HOHSIN_HSINCHU', '和欣客運新竹站', 'Ho-Hsin Hsinchu Station', 'CAMPUS'),
+    ('XINYING', '新營站', 'Xinying Station', 'DESTINATION'),
+    ('MADOU', '麻豆站轉運站', 'Madou Station', 'DESTINATION'),
+    ('YONGKANG_HOHSIN', '永康轉運站', 'Yongkang Bus Station', 'DESTINATION'),
+    ('LIUJIADING_HOHSIN', '六甲頂站', 'Liujiading Stop', 'DESTINATION'),
+    ('TAINAN_HOHSIN', '臺南轉運站', 'Tainan Bus Station', 'DESTINATION'),
+    ('NANZI', '楠梓站', 'Nanzi Station', 'DESTINATION'),
+    ('JIURU_HOHSIN', '九如站', 'Jiuru Station', 'DESTINATION'),
+    ('KAOHSIUNG_HOHSIN', '建國客運站', 'Kaohsiung Bus Terminal', 'DESTINATION'),
+    ('ZHONGZHENG_HOHSIN', '中正站', 'Zhongzheng Station', 'DESTINATION'),
+    ('LINGYA_SPORTS_PARK', '捷運苓雅運動園區站', 'MRT Lingya Sports Park Station', 'DESTINATION'),
+]
+SOUTH_ALIASES = {s[1]: s[0] for s in SOUTH_STOPS}
+SOUTH_ALIASES['新竹站'] = 'HOHSIN_HSINCHU'
+SOUTH_NON_DESTINATIONS = {'臺北轉運站', '三重站', '經國轉運站', '朝馬站'}
 # Public IDs are owned by this project, never TDX StopUIDs.
 STOP_DEFS = [
     ('NTHU_NORTH_GATE', '清華大學（光復路）', 'NTHU / Guangfu Road', 'CAMPUS'),
@@ -144,7 +172,7 @@ def segments(route_id, stops):
     return [('DIRECT', stops)]
 
 
-def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
+def build_base(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
     if not (calendar['coverageStart'] <= today <= calendar['coverageEnd']):
         raise InvalidData('Official holiday calendar needs renewal')
     output_routes = []
@@ -275,6 +303,171 @@ def sorted_unique(values):
                   key=lambda v: json.dumps(v, ensure_ascii=False, sort_keys=True))
 
 
+def service_exceptions(trip):
+    """Keep official date overrides, independent of service weekday and midnight."""
+    source = trip.get('SpecialDays', [])
+    if not isinstance(source, list):
+        raise InvalidData('Invalid SpecialDays array')
+    intervals = []
+
+    def date(value):
+        try:
+            parsed = dt.date.fromisoformat(value)
+        except (TypeError, ValueError):
+            raise InvalidData('Invalid SpecialDays date') from None
+        if parsed.isoformat() != value:
+            raise InvalidData('SpecialDays date must be YYYY-MM-DD')
+        return parsed
+
+    for entry in source:
+        if not isinstance(entry, dict):
+            raise InvalidData('Invalid SpecialDays entry')
+        # Live Ho-Hsin data has status 0 (not operating). Do not infer unreviewed
+        # status meanings from Description or silently discard new statuses.
+        if type(entry.get('ServiceStatus')) is not int or entry['ServiceStatus'] != 0:
+            raise InvalidData('Unreviewed SpecialDays ServiceStatus; official mapping needs review')
+        if not any(k in entry for k in ('Dates', 'DatePeriod')):
+            raise InvalidData('SpecialDays has no dates')
+        if 'Dates' in entry:
+            if not isinstance(entry['Dates'], list) or not entry['Dates']:
+                raise InvalidData('Invalid SpecialDays Dates')
+            intervals.extend((date(d), date(d), False) for d in entry['Dates'])
+        if 'DatePeriod' in entry:
+            period = entry['DatePeriod']
+            if not isinstance(period, dict):
+                raise InvalidData('Invalid SpecialDays DatePeriod')
+            start, end = date(period.get('StartDate')), date(period.get('EndDate'))
+            if start > end:
+                raise InvalidData('Reversed SpecialDays DatePeriod')
+            intervals.append((start, end, False))
+    merged = []
+    for start, end, runs in sorted(set(intervals)):
+        if merged and start <= merged[-1][1] + dt.timedelta(days=1):
+            if runs != merged[-1][2]:
+                raise InvalidData('Conflicting SpecialDays intervals')
+            merged[-1] = (merged[-1][0], max(end, merged[-1][1]), runs)
+        else:
+            merged.append((start, end, runs))
+    return [{'startDate': start.isoformat(), 'endDate': end.isoformat(), 'runs': runs}
+            for start, end, runs in merged]
+
+
+def south_routes(raw):
+    """Only reviewed Ho-Hsin Hsinchu branches/trips; no travel-time estimates."""
+    output, used_stops = [], set()
+    for rid, (uid, _, name, allowed) in SOUTH_ROUTES.items():
+        bundle = raw.get(uid)
+        if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
+            raise InvalidData(f'Missing required south route {rid}')
+        route = bundle['route']
+        operators = route.get('Operators', [])
+        if (route.get('RouteUID') != uid or zh(route.get('RouteName')) != name or
+                len(operators) != 1 or str(operators[0].get('OperatorID')) != '25' or
+                operators[0].get('OperatorCode') != 'HoHsinBus' or
+                zh(operators[0].get('OperatorName')) != '和欣客運'):
+            raise InvalidData(f'South route/operator identity changed: {rid}')
+        metadata = {(s['SubRouteUID'], s['Direction']): s for s in route.get('SubRoutes', [])}
+        rows = {}
+        for row in bundle['stops']:
+            key = (row['SubRouteUID'], row['Direction'])
+            if key in rows and rows[key]['Stops'] != row['Stops']:
+                raise InvalidData(f'Conflicting south stop sequences: {rid}')
+            rows[key] = row
+        directions, seen_services, seen_core = [], set(), set()
+        for schedule in sorted(bundle['schedules'], key=lambda s: (s['SubRouteUID'], s['Direction'])):
+            sub, direction = schedule['SubRouteUID'], schedule['Direction']
+            key = (sub, direction)
+            row = rows.get(key)
+            if row is None:
+                raise InvalidData(f'Missing south stop sequence: {sub}')
+            stops = sorted(row['Stops'], key=lambda s: s['StopSequence'])
+            hsinchu = [s for s in stops if zh(s['StopName']) == '新竹站']
+            if not hsinchu:
+                continue  # Explicitly exclude all branches bypassing Hsinchu.
+            if sub not in allowed:
+                raise InvalidData(f'Unreviewed south Hsinchu branch: {sub}')
+            if (str(schedule.get('OperatorID')) != '25' or key not in metadata or
+                    {str(o) for o in metadata[key].get('OperatorIDs', [])} != {'25'} or
+                    {str(o['OperatorID']) for o in row.get('Operators', [])} != {'25'}):
+                raise InvalidData(f'South operator/branch mismatch: {sub}')
+            if key in seen_services:
+                raise InvalidData(f'Duplicate south schedule: {sub}')
+            seen_services.add(key)
+            if len(hsinchu) != 1 or len({s['StopSequence'] for s in stops}) != len(stops):
+                raise InvalidData(f'Ambiguous south stop sequence: {sub}')
+            if any(zh(s['StopName']) not in SOUTH_ALIASES and zh(s['StopName']) not in SOUTH_NON_DESTINATIONS for s in stops):
+                raise InvalidData(f'Unreviewed south stop: {sub}')
+            selected = [(s['StopSequence'], SOUTH_ALIASES[zh(s['StopName'])])
+                        for s in stops if zh(s['StopName']) in SOUTH_ALIASES]
+            ids = [sid for _, sid in selected]
+            if len(ids) < 2 or len(set(ids)) != len(ids) or ids.index('HOHSIN_HSINCHU') not in (0, len(ids) - 1):
+                raise InvalidData(f'Invalid south public stop order: {sub}')
+            trips = schedule.get('Timetables', [])
+            if not trips or schedule.get('Frequencys'):
+                raise InvalidData(f'Missing or unreviewed south timetable: {sub}')
+            times_trips, origin_trips = [], []
+            lookup = {s['StopSequence']: s for s in stops}
+            for trip in trips:
+                days = day_list(trip.get('ServiceDay'))
+                exceptions = service_exceptions(trip)
+                official = normalized_stop_times(trip)
+                for seq, (timed_stop, _) in official.items():
+                    if seq not in lookup or timed_stop.get('StopUID') != lookup[seq].get('StopUID'):
+                        raise InvalidData(f'South StopTime identity mismatch: {sub}')
+                mapped = {sid: official[seq][1] for seq, sid in selected if seq in official}
+                if 'HOHSIN_HSINCHU' in mapped:
+                    # A partially timed destination cannot be advertised as served.
+                    if set(mapped) != set(ids):
+                        raise InvalidData(f'Partial south destination times need review: {sub}')
+                    converted = {'days': days, 'times': mapped}
+                    target = times_trips
+                elif len(official) == 1 and min(official) == stops[0]['StopSequence']:
+                    converted = {'days': days, 'origin': next(iter(official.values()))[1]}
+                    target = origin_trips
+                elif sub in ('THB750001', 'THB750002'):
+                    # Audited partial trips terminate before Hsinchu; not proof of
+                    # a boardable Hsinchu trip and not origin-only schedules.
+                    continue
+                else:
+                    raise InvalidData(f'South trip lacks Hsinchu time or origin-only semantics: {sub}')
+                if exceptions:
+                    converted['serviceExceptions'] = exceptions
+                target.append(converted)
+            prefix = f'{rid}_{sub}_25'
+            if times_trips:
+                directions.append({'id': prefix + '_TIMES', 'stops': ids, 'timeKind': 'STOP_TIME',
+                                   'trips': sorted_unique(times_trips)})
+            if origin_trips:
+                origin_name = stops[0]['StopName']
+                directions.append({'id': prefix + '_ORIGIN', 'stops': ids, 'timeKind': 'ORIGIN_DEPARTURE_ONLY',
+                                   'originZh': zh(origin_name), 'originEn': origin_name.get('En', zh(origin_name)),
+                                   'trips': sorted_unique(origin_trips)})
+            if times_trips or origin_trips:
+                seen_core.add(sub)
+                used_stops.update(ids)
+        if not SOUTH_CORE[rid] <= seen_core:
+            raise InvalidData(f'Missing required south core branch: {rid}')
+        if {d['stops'][0] == 'HOHSIN_HSINCHU' for d in directions} != {True, False}:
+            raise InvalidData(f'South route missing one travel direction: {rid}')
+        output.append({'id': rid, 'number': name, 'zh': name, 'en': name,
+                       'operatorZh': zh(operators[0]['OperatorName']),
+                       'operatorEn': operators[0]['OperatorName'].get('En', zh(operators[0]['OperatorName'])),
+                       'directions': sorted(directions, key=lambda d: d['id'])})
+    return output, used_stops
+
+
+def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
+    result = build_base(raw, calendar, today, origin_frequency_ready, skip_2011)
+    routes, used = south_routes(raw)
+    result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
+    result['stops'].extend(dict(zip(('id', 'zh', 'en', 'side'), s)) for s in SOUTH_STOPS if s[0] in used)
+    result['groups'].append({'id': 'SOUTH', 'zh': '南部', 'en': 'South', 'sections': [
+        {'id': 'SOUTH_HOHSIN', 'zh': '台南／高雄', 'en': 'Tainan / Kaohsiung',
+         'destinationStops': [s[0] for s in SOUTH_STOPS if s[0] in used and s[3] == 'DESTINATION'],
+         'routes': ['7500', '7513']}]})
+    return result
+
+
 class TDX:
     def __init__(self):
         self.last_request = 0
@@ -318,7 +511,8 @@ class TDX:
 def collect(client, skip_2011=False):
     bundles = {}
     for scope in ('City/Hsinchu', 'InterCity'):
-        definitions = [v for k, v in ROUTES.items() if v[1] == scope and not (skip_2011 and k == '2011')]
+        definitions = [v for k, v in {**ROUTES, **SOUTH_ROUTES}.items()
+                       if v[1] == scope and not (skip_2011 and k == '2011')]
         route_filter = ' or '.join("RouteUID eq '" + v[0] + "'" for v in definitions)
         routes = client.get('Route/' + scope, route_filter)
         stops = client.get('StopOfRoute/' + scope, route_filter)
@@ -385,7 +579,7 @@ def main():
     candidate = build(raw, calendar, now.date().isoformat(), args.origin_frequency_ready or bool(args.preview), args.skip_2011)
     if args.preview:
         args.preview.write_text(json.dumps(candidate, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        print('Review candidate created. Origin-frequency labeling must be confirmed before publishing.')
+        print('Validated review candidate created; repository data files unchanged.')
     else:
         publish(candidate, args.root, now.isoformat(timespec='seconds'))
 

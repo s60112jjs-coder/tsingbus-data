@@ -53,17 +53,17 @@ class TransitTests(unittest.TestCase):
 
     def test_frequency_origin_gate_and_safe_defer(self):
         with self.assertRaises(m.InvalidData):
-            m.build(fixtures(), CALENDAR, '2026-10-03')
-        candidate = m.build(fixtures(), CALENDAR, '2026-10-03', skip_2011=True)
+            m.build_base(fixtures(), CALENDAR, '2026-10-03')
+        candidate = m.build_base(fixtures(), CALENDAR, '2026-10-03', skip_2011=True)
         self.assertEqual(len(candidate['routes']), 9)
         self.assertNotIn('2011', candidate['groups'][2]['sections'][0]['routes'])
-        full = m.build(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
+        full = m.build_base(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
         f = next(d for r in full['routes'] if r['id'] == '2011' for d in r['directions'] if d['timeKind'] == 'FREQUENCY')
         self.assertEqual(f['originZh'], '新竹轉運站')
         self.assertEqual(f['frequencies'][0]['end'], '20:00')
 
     def test_loop_is_split_and_stops_are_not_conflated(self):
-        candidate = m.build(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
+        candidate = m.build_base(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
         blue = next(r for r in candidate['routes'] if r['id'] == 'BLUE1_LOCAL')
         loop = [d for d in blue['directions'] if d['id'].startswith('BLUE1_LOCAL_0_')]
         self.assertEqual({tuple(d['stops']) for d in loop},
@@ -77,24 +77,24 @@ class TransitTests(unittest.TestCase):
         data = fixtures()
         del data['THB1728']
         with self.assertRaises(m.InvalidData):
-            m.build(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
+            m.build_base(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
         data = fixtures()
         data['THB9003']['route']['SubRoutes'][0]['OperatorIDs'].append('2')
         with self.assertRaises(m.InvalidData):
-            m.build(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
+            m.build_base(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
 
     def test_metadata_and_fetch_order_do_not_create_content_changes(self):
         data = fixtures()
-        first = m.build(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
+        first = m.build_base(data, CALENDAR, '2026-10-03', origin_frequency_ready=True)
         for bundle in data.values():
             bundle['route']['UpdateTime'] = '2099-01-01'
             bundle['schedules'].reverse()
             bundle['stops'].reverse()
-        second = m.build(data, CALENDAR, '2026-10-04', origin_frequency_ready=True)
+        second = m.build_base(data, CALENDAR, '2026-10-04', origin_frequency_ready=True)
         self.assertEqual(m.semantic(first), m.semantic(second))
 
     def test_noop_and_two_real_updates_same_day(self):
-        candidate = m.build(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
+        candidate = m.build_base(fixtures(), CALENDAR, '2026-10-03', origin_frequency_ready=True)
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'docs/v1').mkdir(parents=True)
@@ -114,7 +114,7 @@ class TransitTests(unittest.TestCase):
 
     def test_calendar_expiration_rejects_future_publication(self):
         with self.assertRaises(m.InvalidData):
-            m.build(fixtures(), CALENDAR, '2028-01-01', origin_frequency_ready=True)
+            m.build_base(fixtures(), CALENDAR, '2028-01-01', origin_frequency_ready=True)
 
 
 if __name__ == '__main__':

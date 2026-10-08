@@ -11,9 +11,13 @@
 
 使用者已於 2026-10-03 確認 App 的 FREQUENCY 起站標示完成並驗證，正式啟用包含 2011 的完整 10 條路線同步。資料端不修改 App 程式碼。每日同步僅從 Actions Secrets 讀取 TDX 金鑰。
 
+2026-10-09 南部線候選增加和欣客運 7500／7513，完整同步為 12 條路線。App 已實作 trips[].serviceExceptions 日期例外，schemaVersion 仍為 1；站點代號、雙向與單向站、支線排除及驗證見 [南部線資料同步](transit-south.md)。使用者確認效果後才發布。
+
 ## 使用者會看到的效果
 
 App 的三個目的地為新竹火車站、高鐵新竹站、台北市區。台北市區分為台北轉運站，以及公館／臺大／景美／新店／東區；1728 納入後一組。
+
+新增 SOUTH 資料供 App 設定「回家的公車：南部線」使用；新竹端為和欣客運新竹站，南部端含台南／高雄沿線實際停靠站。台北線仍保留。舊版 App 略過不認得的 SOUTH 分頁。
 
 App 只讀 https://s60112jjs-coder.github.io/tsingbus-data/v1/transit.json 。格式維持現有 schemaVersion 1，manifest 維持 schemaVersion 2。既有校巴、南大、公告等資料維持原內容。
 
@@ -41,7 +45,7 @@ GitHub Actions 每天台灣時間 05:30、17:30 查 TDX，cron 為 `30 21,9 * * 
 ## 必須了解的兩項限制
 
 1. 2011 的白天班距是起站區間。App 已完成並驗證 FREQUENCY 的 originZh 起站標示，例如「台北轉運站發車：約 10～15 分一班，到 20:00」。同步保留起站名稱與官方班距，夜間保留官方 STOP_TIME，絕不推估清大站時刻。workflow 一律使用 --origin-frequency-ready，不再使用開關或 --skip-2011。
-2. TDX Schedule 的 ServiceDay 僅提供 MON–SUN，沒有各業者國定假日與寒暑假例外。既有 App schema 只能全體假日套用 SUNDAY，無法精準表示逐路線例外。本方案使用人事行政總處 2026／2027 行政機關辦公日曆建立假日清單，排除普通週末；83 國定假日停駛已另以業者確認。其餘路線的國定假日套週日是現有 App 規則，不能宣稱已逐條確認業者適用。日曆有效期至 2027-12-31，過期拒絕同步，必須先更新。
+2. ServiceDay 為 MON–SUN，但 TDX 的南部線 Schedule 另提供逐班 SpecialDays 日期例外，必須保留為 serviceExceptions，不能一律宣稱 TDX 沒有例外。App 未命中日期例外時，才沿用全體假日套 SUNDAY。本方案使用人事行政總處 2026／2027 行政機關辦公日曆建立假日清單，排除普通週末；83 國定假日停駛已另以業者確認。既有 10 條路線的例外同步邏輯不在此次南部線變更範圍；其國定假日套週日不能宣稱已逐條確認業者適用。日曆有效期至 2027-12-31，過期拒絕同步，必須先更新。
 
 來源：TDX Bus Route／StopOfRoute／Schedule；83 業者 https://www.yosemite-bus.com.tw/no81_bus.asp ；1728 官方 https://www.taiwanbus.tw/eBUSPage/Query/QueryResult.aspx?rno=17280 ；日曆 https://data.gov.tw/dataset/14718 。
 
@@ -54,7 +58,7 @@ GitHub Actions 每天台灣時間 05:30、17:30 查 TDX，cron 為 `30 21,9 * * 
 - Pages 的發布來源改為 GitHub Actions。原因：GITHUB_TOKEN 的資料提交不會自動觸發既有 Pages 分支建置，所以同步工作明確呼叫 Pages 工作。手動 main/docs 更新仍會發布。既有公告同步工作保留。
 - 發布後讀取網站 manifest 和所有登錄 JSON，逐位元組比對當次發布內容；讀取失敗或不一致則工作標示失敗。
 
-使用者自行新增 repository Actions Secrets：TDX_CLIENT_ID、TDX_CLIENT_SECRET。不需要額外 PAT。目前一律同步完整 10 條，不需要任何 2011 開關 Variable。
+使用者自行新增 repository Actions Secrets：TDX_CLIENT_ID、TDX_CLIENT_SECRET。不需要額外 PAT。南部線發布後一律同步完整 12 條，不需要任何 2011 開關 Variable；既有 workflow 仍使用 --origin-frequency-ready，排程不變。
 
 ## 驗證結果
 
