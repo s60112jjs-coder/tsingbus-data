@@ -4596,7 +4596,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4619,7 +4619,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4642,7 +4642,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4665,7 +4665,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4688,7 +4688,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4711,7 +4711,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -4748,7 +4748,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -5448,10 +5448,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:55",
-                "MADOU": "25:13",
-                "YONGKANG_HOHSIN": "25:31",
-                "LIUJIADING_HOHSIN": "25:46",
-                "TAINAN_HOHSIN": "25:52"
+                "MADOU": "25:12",
+                "YONGKANG_HOHSIN": "25:30",
+                "LIUJIADING_HOHSIN": "25:45",
+                "TAINAN_HOHSIN": "25:51"
               }
             },
             {
@@ -5832,10 +5832,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:34",
-                "MADOU": "25:52",
-                "YONGKANG_HOHSIN": "26:10",
-                "LIUJIADING_HOHSIN": "26:25",
-                "TAINAN_HOHSIN": "26:31"
+                "MADOU": "25:51",
+                "YONGKANG_HOHSIN": "26:09",
+                "LIUJIADING_HOHSIN": "26:24",
+                "TAINAN_HOHSIN": "26:30"
               }
             },
             {
@@ -5877,10 +5877,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:37",
-                "MADOU": "24:55",
-                "YONGKANG_HOHSIN": "25:14",
-                "LIUJIADING_HOHSIN": "25:29",
-                "TAINAN_HOHSIN": "25:35"
+                "MADOU": "24:54",
+                "YONGKANG_HOHSIN": "25:13",
+                "LIUJIADING_HOHSIN": "25:28",
+                "TAINAN_HOHSIN": "25:34"
               }
             },
             {
@@ -5991,7 +5991,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -6013,7 +6013,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -6205,9 +6205,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "17:02",
                 "XINYING": "19:22",
-                "NANZI": "20:18",
-                "LINGYA_SPORTS_PARK": "20:29",
-                "KAOHSIUNG_HOHSIN": "20:41"
+                "NANZI": "20:19",
+                "LINGYA_SPORTS_PARK": "20:30",
+                "KAOHSIUNG_HOHSIN": "20:42"
               }
             },
             {
@@ -6231,9 +6231,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "19:57",
                 "XINYING": "22:08",
-                "NANZI": "23:03",
-                "LINGYA_SPORTS_PARK": "23:13",
-                "KAOHSIUNG_HOHSIN": "23:24"
+                "NANZI": "23:02",
+                "LINGYA_SPORTS_PARK": "23:12",
+                "KAOHSIUNG_HOHSIN": "23:23"
               }
             },
             {
@@ -6460,9 +6460,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "19:53",
                 "XINYING": "22:04",
-                "NANZI": "22:59",
-                "LINGYA_SPORTS_PARK": "23:09",
-                "KAOHSIUNG_HOHSIN": "23:20"
+                "NANZI": "22:58",
+                "LINGYA_SPORTS_PARK": "23:08",
+                "KAOHSIUNG_HOHSIN": "23:19"
               }
             },
             {
@@ -6482,11 +6482,11 @@
                 "SUN"
               ],
               "times": {
-                "HOHSIN_HSINCHU": "21:46",
-                "XINYING": "23:53",
-                "NANZI": "24:44",
-                "LINGYA_SPORTS_PARK": "24:54",
-                "KAOHSIUNG_HOHSIN": "25:06"
+                "HOHSIN_HSINCHU": "21:45",
+                "XINYING": "23:52",
+                "NANZI": "24:43",
+                "LINGYA_SPORTS_PARK": "24:53",
+                "KAOHSIUNG_HOHSIN": "25:05"
               }
             },
             {
@@ -6495,10 +6495,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:44",
-                "XINYING": "24:52",
-                "NANZI": "25:44",
-                "LINGYA_SPORTS_PARK": "25:54",
-                "KAOHSIUNG_HOHSIN": "26:05"
+                "XINYING": "24:53",
+                "NANZI": "25:45",
+                "LINGYA_SPORTS_PARK": "25:55",
+                "KAOHSIUNG_HOHSIN": "26:06"
               }
             },
             {
@@ -6507,10 +6507,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:41",
-                "XINYING": "25:49",
-                "NANZI": "26:40",
-                "LINGYA_SPORTS_PARK": "26:50",
-                "KAOHSIUNG_HOHSIN": "27:02"
+                "XINYING": "25:50",
+                "NANZI": "26:41",
+                "LINGYA_SPORTS_PARK": "26:51",
+                "KAOHSIUNG_HOHSIN": "27:03"
               }
             },
             {
@@ -6547,10 +6547,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:48",
-                "XINYING": "24:56",
-                "NANZI": "25:48",
-                "LINGYA_SPORTS_PARK": "25:58",
-                "KAOHSIUNG_HOHSIN": "26:09"
+                "XINYING": "24:57",
+                "NANZI": "25:49",
+                "LINGYA_SPORTS_PARK": "25:59",
+                "KAOHSIUNG_HOHSIN": "26:10"
               }
             },
             {
@@ -6648,9 +6648,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "20:00",
                 "XINYING": "22:10",
-                "NANZI": "23:05",
-                "LINGYA_SPORTS_PARK": "23:15",
-                "KAOHSIUNG_HOHSIN": "23:26"
+                "NANZI": "23:04",
+                "LINGYA_SPORTS_PARK": "23:14",
+                "KAOHSIUNG_HOHSIN": "23:25"
               }
             },
             {
@@ -6658,11 +6658,11 @@
                 "THU"
               ],
               "times": {
-                "HOHSIN_HSINCHU": "20:57",
-                "XINYING": "23:07",
-                "NANZI": "23:58",
-                "LINGYA_SPORTS_PARK": "24:08",
-                "KAOHSIUNG_HOHSIN": "24:20"
+                "HOHSIN_HSINCHU": "20:56",
+                "XINYING": "23:06",
+                "NANZI": "23:57",
+                "LINGYA_SPORTS_PARK": "24:07",
+                "KAOHSIUNG_HOHSIN": "24:19"
               }
             },
             {
@@ -6717,10 +6717,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:45",
-                "XINYING": "25:53",
-                "NANZI": "26:44",
-                "LINGYA_SPORTS_PARK": "26:54",
-                "KAOHSIUNG_HOHSIN": "27:06"
+                "XINYING": "25:54",
+                "NANZI": "26:45",
+                "LINGYA_SPORTS_PARK": "26:55",
+                "KAOHSIUNG_HOHSIN": "27:07"
               }
             },
             {
@@ -6861,7 +6861,7 @@
               "times": {
                 "HOHSIN_HSINCHU": "16:42",
                 "XINYING": "19:03",
-                "NANZI": "19:59",
+                "NANZI": "20:00",
                 "LINGYA_SPORTS_PARK": "20:11",
                 "KAOHSIUNG_HOHSIN": "20:23"
               }
@@ -6871,11 +6871,11 @@
                 "WED"
               ],
               "times": {
-                "HOHSIN_HSINCHU": "21:20",
-                "XINYING": "23:27",
-                "NANZI": "24:18",
-                "LINGYA_SPORTS_PARK": "24:28",
-                "KAOHSIUNG_HOHSIN": "24:40"
+                "HOHSIN_HSINCHU": "21:19",
+                "XINYING": "23:26",
+                "NANZI": "24:17",
+                "LINGYA_SPORTS_PARK": "24:27",
+                "KAOHSIUNG_HOHSIN": "24:39"
               }
             },
             {
@@ -6884,10 +6884,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:28",
-                "XINYING": "24:36",
-                "NANZI": "25:28",
-                "LINGYA_SPORTS_PARK": "25:38",
-                "KAOHSIUNG_HOHSIN": "25:49"
+                "XINYING": "24:37",
+                "NANZI": "25:29",
+                "LINGYA_SPORTS_PARK": "25:39",
+                "KAOHSIUNG_HOHSIN": "25:50"
               }
             }
           ]
@@ -6996,10 +6996,10 @@
               "times": {
                 "KAOHSIUNG_HOHSIN": "19:41",
                 "ZHONGZHENG_HOHSIN": "19:52",
-                "JIURU_HOHSIN": "20:02",
-                "NANZI": "20:12",
-                "XINYING": "21:07",
-                "HOHSIN_HSINCHU": "23:17"
+                "JIURU_HOHSIN": "20:01",
+                "NANZI": "20:11",
+                "XINYING": "21:04",
+                "HOHSIN_HSINCHU": "23:14"
               }
             },
             {
@@ -7060,11 +7060,11 @@
               ],
               "times": {
                 "KAOHSIUNG_HOHSIN": "15:41",
-                "ZHONGZHENG_HOHSIN": "15:54",
-                "JIURU_HOHSIN": "16:02",
-                "NANZI": "16:14",
-                "XINYING": "17:15",
-                "HOHSIN_HSINCHU": "19:43"
+                "ZHONGZHENG_HOHSIN": "15:53",
+                "JIURU_HOHSIN": "16:01",
+                "NANZI": "16:13",
+                "XINYING": "17:14",
+                "HOHSIN_HSINCHU": "19:42"
               }
             },
             {
@@ -7076,8 +7076,8 @@
                 "ZHONGZHENG_HOHSIN": "16:55",
                 "JIURU_HOHSIN": "17:05",
                 "NANZI": "17:20",
-                "XINYING": "18:21",
-                "HOHSIN_HSINCHU": "20:36"
+                "XINYING": "18:20",
+                "HOHSIN_HSINCHU": "20:35"
               }
             },
             {
@@ -7088,9 +7088,9 @@
                 "KAOHSIUNG_HOHSIN": "17:41",
                 "ZHONGZHENG_HOHSIN": "17:55",
                 "JIURU_HOHSIN": "18:07",
-                "NANZI": "18:24",
-                "XINYING": "19:18",
-                "HOHSIN_HSINCHU": "21:32"
+                "NANZI": "18:25",
+                "XINYING": "19:19",
+                "HOHSIN_HSINCHU": "21:33"
               }
             },
             {
@@ -7215,11 +7215,11 @@
               ],
               "times": {
                 "KAOHSIUNG_HOHSIN": "15:45",
-                "ZHONGZHENG_HOHSIN": "15:58",
-                "JIURU_HOHSIN": "16:06",
-                "NANZI": "16:18",
-                "XINYING": "17:19",
-                "HOHSIN_HSINCHU": "19:47"
+                "ZHONGZHENG_HOHSIN": "15:57",
+                "JIURU_HOHSIN": "16:05",
+                "NANZI": "16:17",
+                "XINYING": "17:18",
+                "HOHSIN_HSINCHU": "19:46"
               }
             },
             {
@@ -7232,8 +7232,8 @@
                 "ZHONGZHENG_HOHSIN": "16:59",
                 "JIURU_HOHSIN": "17:09",
                 "NANZI": "17:24",
-                "XINYING": "18:25",
-                "HOHSIN_HSINCHU": "20:40"
+                "XINYING": "18:24",
+                "HOHSIN_HSINCHU": "20:39"
               }
             },
             {
@@ -7374,8 +7374,8 @@
                 "ZHONGZHENG_HOHSIN": "21:56",
                 "JIURU_HOHSIN": "22:03",
                 "NANZI": "22:13",
-                "XINYING": "23:07",
-                "HOHSIN_HSINCHU": "25:22"
+                "XINYING": "23:04",
+                "HOHSIN_HSINCHU": "25:19"
               }
             },
             {
@@ -7435,9 +7435,9 @@
                 "KAOHSIUNG_HOHSIN": "17:45",
                 "ZHONGZHENG_HOHSIN": "17:59",
                 "JIURU_HOHSIN": "18:11",
-                "NANZI": "18:28",
-                "XINYING": "19:22",
-                "HOHSIN_HSINCHU": "21:36"
+                "NANZI": "18:29",
+                "XINYING": "19:23",
+                "HOHSIN_HSINCHU": "21:37"
               }
             },
             {
@@ -7512,11 +7512,11 @@
               ],
               "times": {
                 "KAOHSIUNG_HOHSIN": "15:05",
-                "ZHONGZHENG_HOHSIN": "15:18",
-                "JIURU_HOHSIN": "15:26",
-                "NANZI": "15:38",
-                "XINYING": "16:35",
-                "HOHSIN_HSINCHU": "19:04"
+                "ZHONGZHENG_HOHSIN": "15:17",
+                "JIURU_HOHSIN": "15:25",
+                "NANZI": "15:37",
+                "XINYING": "16:34",
+                "HOHSIN_HSINCHU": "19:03"
               }
             },
             {
@@ -7528,8 +7528,8 @@
                 "ZHONGZHENG_HOHSIN": "16:39",
                 "JIURU_HOHSIN": "16:49",
                 "NANZI": "17:01",
-                "XINYING": "18:02",
-                "HOHSIN_HSINCHU": "20:17"
+                "XINYING": "18:01",
+                "HOHSIN_HSINCHU": "20:16"
               }
             },
             {
@@ -7539,10 +7539,10 @@
               "times": {
                 "KAOHSIUNG_HOHSIN": "19:05",
                 "ZHONGZHENG_HOHSIN": "19:16",
-                "JIURU_HOHSIN": "19:26",
-                "NANZI": "19:39",
-                "XINYING": "20:32",
-                "HOHSIN_HSINCHU": "22:45"
+                "JIURU_HOHSIN": "19:25",
+                "NANZI": "19:38",
+                "XINYING": "20:31",
+                "HOHSIN_HSINCHU": "22:44"
               }
             },
             {
@@ -7582,7 +7582,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7619,7 +7619,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7643,7 +7643,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7667,7 +7667,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7691,7 +7691,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7715,7 +7715,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7739,7 +7739,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7763,7 +7763,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7787,7 +7787,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7811,7 +7811,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7901,7 +7901,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7936,7 +7936,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7973,7 +7973,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
@@ -7997,7 +7997,7 @@
               },
               "serviceExceptions": [
                 {
-                  "startDate": "2026-10-08",
+                  "startDate": "2026-10-09",
                   "endDate": "2026-10-11",
                   "runs": false
                 },
