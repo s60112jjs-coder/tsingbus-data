@@ -50,6 +50,13 @@
       "noteEn": "No service (National Day holiday)"
     },
     {
+      "date": "2026-10-24",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "臺灣光復節連假停駛",
+      "noteEn": "No service (Retrocession Day holiday)"
+    },
+    {
       "date": "2026-10-25",
       "system": "ALL",
       "suspended": true,
