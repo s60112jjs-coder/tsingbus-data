@@ -1,4 +1,5 @@
 """Synthetic safety fixtures; never used as a real published timetable."""
+import copy
 import unittest
 
 from test_sync_transit import CALENDAR, fixtures, m
@@ -84,6 +85,47 @@ class SouthTests(unittest.TestCase):
         self.assertEqual(direction['trips'][0]['origin'], '08:00')
         self.assertNotIn('THB750002', ' '.join(d['id'] for d in route['directions']))
         self.assertNotIn('HOHSIN_HSINCHU', direction['trips'][0].get('times', {}))
+
+
+    def test_7513_partial_main_trips_keep_valid_rows_and_core_service(self):
+        raw = south_fixture()
+        schedules = {s['SubRouteUID']: s for s in raw['THB7513']['schedules']}
+        for sub in ('THB751301', 'THB751302'):
+            complete = schedules[sub]['Timetables'][0]
+            partial = copy.deepcopy(complete)
+            partial['StopTimes'] = [stop for stop in partial['StopTimes']
+                                    if m.zh(stop['StopName']) != '新竹站']
+            schedules[sub]['Timetables'] = [partial, complete]
+
+        result = build(raw)
+        directions = [d for r in result['routes'] if r['id'] == '7513' for d in r['directions']]
+        for sub in ('THB751301', 'THB751302'):
+            matching = [d for d in directions if sub in d['id']]
+            self.assertEqual(len(matching), 1)
+            self.assertEqual(len(matching[0]['trips']), 1)
+            self.assertIn('HOHSIN_HSINCHU', matching[0]['trips'][0]['times'])
+
+        # A main variant with only incomplete rows is optional; core B1/B2
+        # must still provide both directions and must never be dropped.
+        for sub in ('THB751301', 'THB751302'):
+            schedules[sub]['Timetables'] = schedules[sub]['Timetables'][:1]
+        result = build(raw)
+        directions = [d for r in result['routes'] if r['id'] == '7513' for d in r['directions']]
+        self.assertFalse(any('THB751301' in d['id'] or 'THB751302' in d['id']
+                             for d in directions))
+        self.assertTrue(any('THB7513B1' in d['id'] for d in directions))
+        self.assertTrue(any('THB7513B2' in d['id'] for d in directions))
+
+    def test_7513_partial_main_trip_cannot_bypass_stop_uid_validation(self):
+        raw = south_fixture()
+        schedule = next(s for s in raw['THB7513']['schedules']
+                        if s['SubRouteUID'] == 'THB751301')
+        trip = schedule['Timetables'][0]
+        trip['StopTimes'] = [stop for stop in trip['StopTimes']
+                             if m.zh(stop['StopName']) != '新竹站']
+        trip['StopTimes'][0]['StopUID'] = 'WRONG'
+        with self.assertRaises(m.InvalidData):
+            build(raw)
 
     def test_stop_times_and_service_exceptions_preserved(self):
         route = next(r for r in build(south_fixture())['routes'] if r['id'] == '7513')
