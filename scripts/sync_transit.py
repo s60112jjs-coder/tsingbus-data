@@ -40,6 +40,12 @@ SOUTH_ROUTES = {
               'THB7513F1', 'THB7513F2', 'THB7513I1', 'THB7513I2')),
 }
 SOUTH_CORE = {'7500': {'THB7500F1', 'THB7500F2'}, '7513': {'THB7513B1', 'THB7513B2'}}
+# Only these reviewed main variants may contain multi-stop timetable rows with
+# no Hsinchu timestamp. Exclude such individual unboardable rows, never the
+# entire branch; matching StopUID/StopSequence is still checked first.
+SOUTH_PARTIAL_SKIP_BRANCHES = frozenset({
+    'THB750001', 'THB750002', 'THB751301', 'THB751302',
+})
 # IDs are permanent App selection keys; route-local mapping avoids conflating 5608's 新竹站.
 SOUTH_STOPS = [
     ('HOHSIN_HSINCHU', '和欣客運新竹站', 'Ho-Hsin Hsinchu Station', 'CAMPUS'),
@@ -406,6 +412,7 @@ def south_routes(raw):
             if not trips or schedule.get('Frequencys'):
                 raise InvalidData(f'Missing or unreviewed south timetable: {sub}')
             times_trips, origin_trips = [], []
+            skipped_partial = 0
             lookup = {s['StopSequence']: s for s in stops}
             for trip in trips:
                 days = day_list(trip.get('ServiceDay'))
@@ -424,15 +431,18 @@ def south_routes(raw):
                 elif len(official) == 1 and min(official) == stops[0]['StopSequence']:
                     converted = {'days': days, 'origin': next(iter(official.values()))[1]}
                     target = origin_trips
-                elif sub in ('THB750001', 'THB750002'):
-                    # Audited partial trips terminate before Hsinchu; not proof of
-                    # a boardable Hsinchu trip and not origin-only schedules.
+                elif sub in SOUTH_PARTIAL_SKIP_BRANCHES:
+                    # A verified multi-stop partial row without a Hsinchu time
+                    # cannot establish a boardable trip. Keep any complete rows.
+                    skipped_partial += 1
                     continue
                 else:
                     raise InvalidData(f'South trip lacks Hsinchu time or origin-only semantics: {sub}')
                 if exceptions:
                     converted['serviceExceptions'] = exceptions
                 target.append(converted)
+            if skipped_partial:
+                print(f'Skipped {skipped_partial} partial south timetable row(s) without Hsinchu time: {sub}')
             prefix = f'{rid}_{sub}_25'
             if times_trips:
                 directions.append({'id': prefix + '_TIMES', 'stops': ids, 'timeKind': 'STOP_TIME',
