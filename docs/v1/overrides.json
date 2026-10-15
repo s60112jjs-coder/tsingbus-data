@@ -78,11 +78,39 @@
       "noteEn": "No service (Constitution Day)"
     },
     {
+      "date": "2026-12-26",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "行憲紀念日連續假期停駛",
+      "noteEn": "No service (Constitution Day holiday)"
+    },
+    {
+      "date": "2026-12-27",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "行憲紀念日連續假期停駛",
+      "noteEn": "No service (Constitution Day holiday)"
+    },
+    {
       "date": "2027-01-01",
       "system": "ALL",
       "suspended": true,
       "noteZh": "開國紀念日停駛",
       "noteEn": "No service (Founding Day)"
+    },
+    {
+      "date": "2027-01-02",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "開國紀念日連續假期停駛",
+      "noteEn": "No service (Founding Day holiday)"
+    },
+    {
+      "date": "2027-01-03",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "開國紀念日連續假期停駛",
+      "noteEn": "No service (Founding Day holiday)"
     },
     {
       "date": "2027-02-04",
@@ -134,6 +162,13 @@
       "noteEn": "No service (Lunar New Year)"
     },
     {
+      "date": "2027-02-27",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "和平紀念日連續假期停駛",
+      "noteEn": "No service (Peace Memorial Day holiday)"
+    },
+    {
       "date": "2027-02-28",
       "system": "ALL",
       "suspended": true,
@@ -146,6 +181,13 @@
       "suspended": true,
       "noteZh": "和平紀念日補假停駛",
       "noteEn": "No service (Peace Memorial Day holiday)"
+    },
+    {
+      "date": "2027-04-03",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "兒童節及清明節連續假期停駛",
+      "noteEn": "No service (Children's Day and Tomb Sweeping Day holiday)"
     },
     {
       "date": "2027-04-04",
@@ -181,6 +223,13 @@
       "suspended": true,
       "noteZh": "勞動節停駛",
       "noteEn": "No service (Labor Day)"
+    },
+    {
+      "date": "2027-05-02",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "勞動節連續假期停駛",
+      "noteEn": "No service (Labor Day holiday)"
     },
     {
       "date": "2027-06-09",
