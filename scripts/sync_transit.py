@@ -3,6 +3,7 @@
 import argparse
 import copy
 import datetime as dt
+import hashlib
 import json
 import os
 import sys
@@ -40,6 +41,66 @@ SOUTH_ROUTES = {
               'THB7513F1', 'THB7513F2', 'THB7513I1', 'THB7513I2')),
 }
 SOUTH_CORE = {'7500': {'THB7500F1', 'THB7500F2'}, '7513': {'THB7513B1', 'THB7513B2'}}
+CENTRAL_ROUTES = {
+    '1866': ('THB1866', 'InterCity', '1866',
+             ('THB186601', 'THB186602', 'THB1866A1', 'THB1866A2',
+              'THB1866B1', 'THB1866B2', 'THB1866C2')),
+    '9010': ('THB9010', 'InterCity', '9010', ('THB901001', 'THB901002')),
+}
+CENTRAL_OPERATORS = {'1866': {'45': 'KuoKuangBus'}, '9010': {'13': 'HsinchuBus', '56': 'TaichungBus'}}
+CENTRAL_CORE = {'1866': {('THB1866B1', '45'), ('THB1866B2', '45')},
+                '9010': {('THB901001', '13'), ('THB901001', '56'),
+                         ('THB901002', '13'), ('THB901002', '56')}}
+# Draft public IDs pending user approval, independent of TDX StopUID and operator.
+CENTRAL_STOP_IDS = {
+    '中清交流道': 'ZHONGQING_INTERCHANGE', '水湳轉運中心': 'SHUINAN_TRANSFER',
+    '貿易三村(中清路)': 'MAOYI_SAN_CUN', '頂陳平': 'DINGCHENPING', '陳平': 'CHENPING',
+    '水湳站(大德國中)': 'SHUINAN_DADE_JHS', '捷運文心中清站(中清路)': 'WENXIN_ZHONGQING_MRT',
+    '曉明女中': 'XIAOMING_GIRLS_HS', '中清忠明路口': 'ZHONGQING_ZHONGMING',
+    '中清健行路口': 'ZHONGQING_JIANXING', '臺中二中': 'TAICHUNG_SECOND_HS',
+    '五權學士路口': 'WUQUAN_XUESHI', '莒光新城': 'JUGUANG_NEW_VILLAGE',
+    '臺中一中': 'TAICHUNG_FIRST_HS', '臺中公園(雙十路)': 'TAICHUNG_PARK_SHUANGSHI',
+    '國光客運臺中車站': 'TAICHUNG_KUOKUANG', '中山代售處': 'ZHONGSHAN_AGENCY',
+    '水湳站': 'SHUINAN_STATION', '朝馬(臺灣大道)': 'CHAOMA_TAIWAN_BLVD',
+    '朝馬站(國光)': 'CHAOMA_KUOKUANG', '臺中車站(大智北路)': 'TAICHUNG_STATION_DAZHI',
+    '朝馬站': 'CHAOMA', '黎明僑大三街口站': 'LIMING_QIAODA_3RD', '西屯派出所': 'XITUN_POLICE',
+    '捷運市政府站(臺灣大道)': 'TAICHUNG_CITY_HALL_MRT',
+    '科學博物館(臺灣大道)': 'NATIONAL_MUSEUM_NATURAL_SCIENCE', '民權路口': 'MINQUAN_INTERSECTION',
+    '臺中教育大學': 'TAICHUNG_EDUCATION_UNIVERSITY', '臺中州廳': 'TAICHUNG_PREFECTURAL_HALL',
+    '臺中車站(民族路口)': 'TAICHUNG_STATION_MINZU',
+}
+# Reviewed north-to-south order; GPS metadata jitter must not change publication.
+CENTRAL_STOP_ORDER = ('ZHONGQING_INTERCHANGE',
+ 'SHUINAN_TRANSFER',
+ 'MAOYI_SAN_CUN',
+ 'LIMING_QIAODA_3RD',
+ 'DINGCHENPING',
+ 'CHENPING',
+ 'XITUN_POLICE',
+ 'SHUINAN_DADE_JHS',
+ 'SHUINAN_STATION',
+ 'WENXIN_ZHONGQING_MRT',
+ 'CHAOMA_TAIWAN_BLVD',
+ 'CHAOMA',
+ 'XIAOMING_GIRLS_HS',
+ 'CHAOMA_KUOKUANG',
+ 'TAICHUNG_CITY_HALL_MRT',
+ 'ZHONGQING_ZHONGMING',
+ 'ZHONGQING_JIANXING',
+ 'NATIONAL_MUSEUM_NATURAL_SCIENCE',
+ 'JUGUANG_NEW_VILLAGE',
+ 'WUQUAN_XUESHI',
+ 'TAICHUNG_SECOND_HS',
+ 'ZHONGSHAN_AGENCY',
+ 'TAICHUNG_FIRST_HS',
+ 'MINQUAN_INTERSECTION',
+ 'TAICHUNG_EDUCATION_UNIVERSITY',
+ 'TAICHUNG_PARK_SHUANGSHI',
+ 'TAICHUNG_KUOKUANG',
+ 'TAICHUNG_PREFECTURAL_HALL',
+ 'TAICHUNG_STATION_DAZHI',
+ 'TAICHUNG_STATION_MINZU')
+CENTRAL_HSINCHU = {'清華大學': 'NTHU_NORTH_GATE', '新竹轉運站': 'HSINCHU_BUS_STATION'}
 # Only these reviewed main variants may contain multi-stop timetable rows with
 # no Hsinchu timestamp. Exclude such individual unboardable rows, never the
 # entire branch; matching StopUID/StopSequence is still checked first.
@@ -466,7 +527,7 @@ def south_routes(raw):
     return output, used_stops
 
 
-def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
+def build_without_central(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
     result = build_base(raw, calendar, today, origin_frequency_ready, skip_2011)
     routes, used = south_routes(raw)
     result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
@@ -475,6 +536,144 @@ def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
         {'id': 'SOUTH_HOHSIN', 'zh': '台南／高雄', 'en': 'Tainan / Kaohsiung',
          'destinationStops': [s[0] for s in SOUTH_STOPS if s[0] in used and s[3] == 'DESTINATION'],
          'routes': ['7500', '7513']}]})
+    return result
+
+
+def central_routes(raw):
+    """Review operator-specific sequences and expose only officially timed legs."""
+    output, destination_defs = [], {}
+    for rid, (uid, _, name, allowed) in CENTRAL_ROUTES.items():
+        bundle = raw.get(uid)
+        if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
+            raise InvalidData(f'Missing required central route {rid}')
+        route = bundle['route']
+        operators = route.get('Operators', [])
+        if (route.get('RouteUID') != uid or zh(route.get('RouteName')) != name or
+                {str(o.get('OperatorID')): o.get('OperatorCode') for o in operators} != CENTRAL_OPERATORS[rid]):
+            raise InvalidData(f'Central route/operator identity changed: {rid}')
+        metadata = {(s['SubRouteUID'], s['Direction']): {str(o) for o in s.get('OperatorIDs', [])}
+                    for s in route.get('SubRoutes', [])}
+        rows = {}
+        for row in bundle['stops']:
+            for op in row.get('Operators', []):
+                key = (row['SubRouteUID'], row['Direction'], str(op['OperatorID']))
+                if key in rows and rows[key]['Stops'] != row['Stops']:
+                    raise InvalidData('Conflicting central operator stop sequences')
+                rows[key] = row
+        profiles, served, seen = {}, set(), set()
+        for schedule in sorted(bundle['schedules'], key=lambda s: (s['SubRouteUID'], str(s['OperatorID']), s['Direction'])):
+            sub, direction, op = schedule['SubRouteUID'], schedule['Direction'], str(schedule['OperatorID'])
+            key = (sub, direction, op)
+            row = rows.get(key)
+            if row is None:
+                raise InvalidData(f'Missing operator-specific central stops: {sub}/{op}')
+            stops = sorted(row['Stops'], key=lambda s: s['StopSequence'])
+            if not any(zh(s['StopName']) == '清華大學' for s in stops):
+                continue
+            if sub not in allowed or op not in CENTRAL_OPERATORS[rid] or op not in metadata.get((sub, direction), set()):
+                raise InvalidData(f'Unreviewed central campus service: {sub}/{op}')
+            if key in seen:
+                raise InvalidData(f'Duplicate central operator schedule: {sub}/{op}')
+            seen.add(key)
+            if len({s['StopSequence'] for s in stops}) != len(stops) or sum(zh(s['StopName']) == '清華大學' for s in stops) != 1:
+                raise InvalidData(f'Ambiguous central stop sequence: {sub}')
+            selected, definitions = [], {}
+            for s in stops:
+                stop_name = zh(s['StopName'])
+                sid = CENTRAL_HSINCHU.get(stop_name)
+                if stop_name in CENTRAL_STOP_IDS and s.get('LocationCityCode') != 'TXG':
+                    raise InvalidData(f'Central destination city identity changed: {sub}')
+                if s.get('LocationCityCode') == 'TXG':
+                    if stop_name not in CENTRAL_STOP_IDS:
+                        raise InvalidData(f'Unreviewed Taichung destination: {sub}')
+                    sid = CENTRAL_STOP_IDS[stop_name]
+                    position = s.get('StopPosition', {})
+                    lat = position.get('PositionLat')
+                    if not isinstance(lat, (float, int)) or not 23.9 <= lat <= 24.5:
+                        raise InvalidData(f'Invalid Taichung destination position: {sub}')
+                    definitions[sid] = {'id': sid, 'zh': stop_name,
+                                        'en': s['StopName'].get('En', stop_name), 'side': 'DESTINATION', '_lat': lat}
+                if sid:
+                    selected.append((s['StopSequence'], sid))
+            ids = [sid for _, sid in selected]
+            if len(ids) != len(set(ids)) or 'NTHU_NORTH_GATE' not in ids or not definitions:
+                raise InvalidData(f'Central branch lacks campus or Taichung destination: {sub}')
+            lookup = {s['StopSequence']: s for s in stops}
+            trips = schedule.get('Timetables', [])
+            if not trips or schedule.get('Frequencys'):
+                raise InvalidData(f'Missing or unreviewed central timetable: {sub}')
+            skipped = 0
+            for trip in trips:
+                days = day_list(trip.get('ServiceDay'))
+                exceptions = service_exceptions(trip)
+                official = normalized_stop_times(trip)
+                for seq, (timed, _) in official.items():
+                    if seq not in lookup or timed.get('StopUID') != lookup[seq].get('StopUID'):
+                        raise InvalidData(f'Central StopTime identity mismatch: {sub}/{op}')
+                mapped = {sid: official[seq][1] for seq, sid in selected if seq in official}
+                if 'NTHU_NORTH_GATE' in mapped:
+                    # Partial official rows only advertise the confirmed timed leg.
+                    public_ids = [sid for sid in ids if sid in mapped]
+                    if not any(sid in definitions for sid in public_ids):
+                        raise InvalidData(f'Central timed trip has no confirmed Taichung destination: {sub}')
+                    kind = 'STOP_TIME'
+                    converted = {'days': days, 'times': mapped}
+                elif len(official) == 1 and min(official) == stops[0]['StopSequence']:
+                    public_ids, kind = ids, 'ORIGIN_DEPARTURE_ONLY'
+                    converted = {'days': days, 'origin': next(iter(official.values()))[1]}
+                elif sub == 'THB186602':
+                    skipped += 1  # Audited multi-stop partial rows have no campus time.
+                    continue
+                else:
+                    raise InvalidData(f'Central trip lacks campus time or origin-only semantics: {sub}/{op}')
+                if exceptions:
+                    converted['serviceExceptions'] = exceptions
+                profile = (sub, op, kind, tuple(public_ids))
+                if profile not in profiles:
+                    suffix = '' if public_ids == ids else '_LEG_' + hashlib.sha256('|'.join(public_ids).encode()).hexdigest()[:10]
+                    d = {'id': f'{rid}_{sub}_{op}_{kind}{suffix}', 'stops': public_ids, 'timeKind': kind, 'trips': []}
+                    if kind == 'ORIGIN_DEPARTURE_ONLY':
+                        origin = stops[0]['StopName']
+                        d.update(originZh=zh(origin), originEn=origin.get('En', zh(origin)))
+                    profiles[profile] = d
+                profiles[profile]['trips'].append(converted)
+                served.add((sub, op))
+                for sid in public_ids:
+                    if sid in definitions:
+                        value = definitions[sid]
+                        old = destination_defs.get(sid)
+                        if old and (old['zh'], old['en']) != (value['zh'], value['en']):
+                            raise InvalidData(f'Conflicting central destination names: {sid}')
+                        if old is None or value['_lat'] > old['_lat']:
+                            destination_defs[sid] = value
+            if skipped:
+                print(f'Skipped {skipped} partial central timetable row(s) without campus time: {sub}/{op}')
+        if not CENTRAL_CORE[rid] <= served:
+            raise InvalidData(f'Missing required central core service: {rid}')
+        directions = list(profiles.values())
+        if {d['stops'].index('NTHU_NORTH_GATE') < next(i for i, s in enumerate(d['stops']) if s in destination_defs)
+                for d in directions} != {True, False}:
+            raise InvalidData(f'Central route missing a travel direction: {rid}')
+        for d in directions:
+            d['trips'] = sorted_unique(d['trips'])
+        output.append({'id': rid, 'number': name, 'zh': name, 'en': route['RouteName'].get('En', name),
+                       'operatorZh': '／'.join(sorted({zh(o['OperatorName']) for o in operators})),
+                       'operatorEn': ' / '.join(sorted({o['OperatorName'].get('En', zh(o['OperatorName'])) for o in operators})),
+                       'directions': sorted(directions, key=lambda d: d['id'])})
+    ordered = sorted(destination_defs.values(), key=lambda s: CENTRAL_STOP_ORDER.index(s['id']))
+    return output, [{k: v for k, v in s.items() if k != '_lat'} for s in ordered]
+
+
+def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
+    result = build_without_central(raw, calendar, today, origin_frequency_ready, skip_2011)
+    routes, stops = central_routes(raw)
+    if {s['id'] for s in stops} & {s['id'] for s in result['stops']}:
+        raise InvalidData('Central destination IDs collide with existing public stops')
+    result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
+    result['stops'].extend(stops)
+    result['groups'].append({'id': 'CENTRAL', 'zh': '中部', 'en': 'Central', 'sections': [
+        {'id': 'CENTRAL_TAICHUNG', 'zh': '台中', 'en': 'Taichung',
+         'destinationStops': [s['id'] for s in stops], 'routes': ['1866', '9010']}]})
     return result
 
 
@@ -521,7 +720,7 @@ class TDX:
 def collect(client, skip_2011=False):
     bundles = {}
     for scope in ('City/Hsinchu', 'InterCity'):
-        definitions = [v for k, v in {**ROUTES, **SOUTH_ROUTES}.items()
+        definitions = [v for k, v in {**ROUTES, **SOUTH_ROUTES, **CENTRAL_ROUTES}.items()
                        if v[1] == scope and not (skip_2011 and k == '2011')]
         route_filter = ' or '.join("RouteUID eq '" + v[0] + "'" for v in definitions)
         routes = client.get('Route/' + scope, route_filter)

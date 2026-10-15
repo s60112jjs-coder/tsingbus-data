@@ -50,7 +50,7 @@ def south_fixture():
 
 
 def build(data):
-    return m.build(data, CALENDAR, '2026-10-09', origin_frequency_ready=True)
+    return m.build_without_central(data, CALENDAR, '2026-10-09', origin_frequency_ready=True)
 
 
 class SouthTests(unittest.TestCase):
@@ -91,7 +91,12 @@ class SouthTests(unittest.TestCase):
         raw = south_fixture()
         schedules = {s['SubRouteUID']: s for s in raw['THB7513']['schedules']}
         for sub in ('THB751301', 'THB751302'):
-            complete = schedules[sub]['Timetables'][0]
+            complete = copy.deepcopy(schedules[sub]['Timetables'][0])
+            # The shared 01 fixture is intentionally origin-only. This test
+            # needs actual complete synthetic rows before removing Hsinchu.
+            stops = next(r['Stops'] for r in raw['THB7513']['stops'] if r['SubRouteUID'] == sub)
+            complete['StopTimes'] = [dict(s, DepartureTime=m.clock(8 * 60 + i * 15))
+                                     for i, s in enumerate(stops)]
             partial = copy.deepcopy(complete)
             partial['StopTimes'] = [stop for stop in partial['StopTimes']
                                     if m.zh(stop['StopName']) != '新竹站']
