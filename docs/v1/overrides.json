@@ -50,6 +50,13 @@
       "noteEn": "No service (National Day holiday)"
     },
     {
+      "date": "2026-10-23",
+      "system": "ALL",
+      "suspended": true,
+      "noteZh": "新竹市薔琵颱風停班停課，校巴停駛",
+      "noteEn": "No service (Hsinchu City typhoon closure)"
+    },
+    {
       "date": "2026-10-24",
       "system": "ALL",
       "suspended": true,
