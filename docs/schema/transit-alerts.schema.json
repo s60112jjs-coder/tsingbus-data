@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://s60112jjs-coder.github.io/tsingbus-data/schema/transit-alerts.schema.json",
+  "title": "清BUS 校外公車營運異動",
+  "description": "由校外交通營運異動監測寫入（每 2 小時檢查，內容改變或 12 小時心跳才更新）。routes 沒有列出的路線＝沒有發現異動，不代表官方確認正常（只有 state=NORMAL 才是）。",
+  "type": "object",
+  "required": ["schemaVersion", "lastCheckedAt", "validUntil", "sources", "alerts", "closureHints", "routes"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "updatedAt": {"type": ["string", "null"], "format": "date-time", "description": "內容最後改變的時間"},
+    "lastCheckedAt": {"type": "string", "format": "date-time"},
+    "validUntil": {"type": ["string", "null"], "format": "date-time", "description": "超過這個時間（或 null）App 應視為「營運資訊無法確認」"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "state"],
+        "properties": {
+          "id": {"enum": ["TDX_BUS_ALERT_INTERCITY", "TDX_BUS_ALERT_HSINCHU", "DGPA_CLOSURES"]},
+          "url": {"type": "string", "format": "uri"},
+          "state": {"enum": ["OK", "UNAVAILABLE"]},
+          "lastSuccessAt": {"type": ["string", "null"], "format": "date-time"}
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "description": "TDX 營運通阻原始公告（已對應到本 App 路線）。公告從官方來源消失或超過 endTime／expiresAt 即移除。",
+      "items": {
+        "type": "object",
+        "required": ["id", "sourceId", "alertId", "title", "url", "startTime", "expiresAt", "firstSeenAt", "routes"],
+        "properties": {
+          "id": {"type": "string"},
+          "sourceId": {"type": "string"},
+          "alertId": {"type": "string"},
+          "title": {"type": "string"},
+          "description": {"type": "string"},
+          "department": {"type": "string"},
+          "status": {"type": ["integer", "null"], "description": "TDX：0 全部營運停止、1 全部營運正常、2 有異常狀況"},
+          "cause": {"type": ["integer", "null"], "description": "TDX Cause，6＝氣候"},
+          "effect": {"type": ["integer", "null"], "description": "TDX Effect，3 班次減少、4 班次取消…"},
+          "url": {"type": "string"},
+          "publishTime": {"type": ["string", "null"], "format": "date-time"},
+          "startTime": {"type": "string", "format": "date-time"},
+          "endTime": {"type": ["string", "null"], "format": "date-time"},
+          "expiresAt": {"type": "string", "format": "date-time", "description": "沒有 endTime 時＝開始後 24 小時；過了之後停駛降為 SERVICE_ALERT"},
+          "firstSeenAt": {"type": "string", "format": "date-time"},
+          "sourceUpdateTime": {"type": ["string", "null"]},
+          "conflict": {"const": true, "description": "官方欄位互相矛盾，只標營運異動並通知人工"},
+          "routes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/routeEffect"}}
+        }
+      }
+    },
+    "closureHints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "cities"],
+        "properties": {
+          "date": {"type": "string", "format": "date"},
+          "cities": {"type": "array", "items": {"type": "string"}},
+          "pageUpdatedAt": {"type": ["string", "null"], "format": "date-time"}
+        }
+      }
+    },
+    "routes": {
+      "type": "object",
+      "description": "給 App 直接用的摘要；每條路線依嚴重度排序",
+      "additionalProperties": {"type": "array", "items": {"$ref": "#/$defs/routeEntry"}}
+    }
+  },
+  "$defs": {
+    "state": {"enum": ["SUSPENDED", "PARTIAL_SUSPENSION", "SERVICE_ALERT", "NORMAL", "UNCONFIRMED"]},
+    "routeEffect": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"$ref": "#/$defs/state"},
+        "directions": {"type": "array", "items": {"type": "integer"}, "description": "TDX Direction；只影響這些方向"},
+        "trips": {"type": "array", "items": {"type": "object", "properties": {"direction": {"type": ["integer", "null"]}, "departure": {"type": ["string", "null"], "description": "首站發車 HH:mm"}}}}
+      }
+    },
+    "routeEntry": {
+      "allOf": [{"$ref": "#/$defs/routeEffect"}],
+      "properties": {
+        "startTime": {"type": "string", "format": "date-time"},
+        "endTime": {"type": ["string", "null"], "format": "date-time"},
+        "expiresAt": {"type": "string", "format": "date-time"},
+        "alertIds": {"type": "array", "items": {"type": "string"}},
+        "date": {"type": "string", "format": "date", "description": "UNCONFIRMED 才有：停班停課的日期"},
+        "cities": {"type": "array", "items": {"type": "string"}},
+        "noteZh": {"type": "string"},
+        "noteEn": {"type": "string"},
+        "sourceUrl": {"type": "string"}
+      }
+    }
+  }
+}

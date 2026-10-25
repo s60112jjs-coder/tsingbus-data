@@ -5,11 +5,17 @@ on:
     # UTC -> Taiwan 05:30 / 17:30. GitHub may delay scheduled runs.
     - cron: '30 21,9 * * *'
   workflow_dispatch:
+    inputs:
+      accept_trip_drop:
+        description: '人工確認班次確實大幅減少的路線（逗號分隔，例如 1728）；平常留空'
+        type: string
+        default: ''
 
 permissions:
   contents: write
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: transit-sync
@@ -18,30 +24,131 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Two fetch rounds 5 minutes apart fit comfortably.
+    timeout-minutes: 25
+    outputs:
+      changed: ${{ steps.publish.outputs.changed || steps.stale.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: 驗證資料轉換規則
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest discover -s tests -p 'test_*transit*.py' -v
       - name: 查詢並驗證官方靜態資料
+        id: sync
         env:
           TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
           TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
-        run: python scripts/sync_transit.py --origin-frequency-ready
-      - name: 只提交實質異動
+          ACCEPT_TRIP_DROP: ${{ inputs.accept_trip_drop || '' }}
+        # Transient TDX trouble gets a second full round 5 minutes later; data errors never retry.
+        run: >-
+          python scripts/sync_transit.py --origin-frequency-ready --rounds 2 --retry-wait 300
+          --accept-trip-drop "$ACCEPT_TRIP_DROP"
+          --save-candidate "$RUNNER_TEMP/candidate.json" --result "$RUNNER_TEMP/result.json"
+
+      # Fixed step names let the notifier explain the failure from Actions metadata alone.
+      - name: 失敗：官方 API 暫時異常（已重試兩輪）
+        if: failure() && steps.sync.outputs.category == 'TRANSIENT_SOURCE'
+        run: exit 1
+      - name: 失敗：官方資料缺漏（保留上一版）
+        if: failure() && steps.sync.outputs.category == 'SOURCE_INCOMPLETE'
+        run: exit 1
+      - name: 失敗：資料內容錯誤（停止發布）
+        if: failure() && steps.sync.outputs.category == 'DATA_INVALID'
+        run: exit 1
+      - name: 失敗：官方資料規格變更（需人工檢查）
+        if: failure() && steps.sync.outputs.category == 'SPEC_CHANGED'
+        run: exit 1
+      - name: 失敗：設定或日曆（需人工處理）
+        if: failure() && (steps.sync.outputs.category == 'CONFIG' || steps.sync.outputs.category == 'CALENDAR_EXPIRED')
+        run: exit 1
+
+      - name: 提交並推送（衝突時安全重試）
+        id: publish
         run: |
-          git add docs/v1/transit.json docs/v1/manifest.json
-          if git diff --cached --quiet; then exit 0; fi
           git config user.name "tsingbus-bot"
           git config user.email "bot@users.noreply.github.com"
-          git commit -m "data: sync official transit timetables"
-          # Do not force push or overwrite concurrent changes. A conflict fails safely.
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          for attempt in 1 2 3; do
+            git add docs/v1/transit.json docs/v1/transit-status.json docs/v1/manifest.json
+            if git diff --cached --quiet; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+            git commit -m "data: sync official transit timetables"
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+            # Never force push. Start from the newest main and re-apply the already validated candidate.
+            git rebase --abort 2>/dev/null || true
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            python scripts/sync_transit.py --apply-candidate "$RUNNER_TEMP/candidate.json"
+            sleep $((attempt * 20))
+          done
+          exit 1
+
+      - name: 標記資料過期（同步失敗超過 30 小時才寫入）
+        id: stale
+        if: failure() && steps.sync.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CATEGORY: ${{ steps.sync.outputs.category || 'UNKNOWN' }}
+        run: |
+          last=$(curl -fsS -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/transit-sync.yml/runs?branch=main&status=success&per_page=1" \
+            | python -c "import json,sys; r=json.load(sys.stdin)['workflow_runs']; print(r[0]['updated_at'].replace('Z','+00:00') if r else '')")
+          git config user.name "tsingbus-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git reset --hard HEAD
+          python scripts/sync_transit.py --record-failure "$CATEGORY" ${last:+--last-success "$last"}
+          git add docs/v1/transit-status.json docs/v1/manifest.json
+          if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m "data: mark off-campus transit data as stale"
+          git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
   publish:
     needs: sync
+    if: always() && needs.sync.outputs.changed == 'true'
     uses: ./.github/workflows/pages.yml
+
+  # About 5 minutes after the deploy, read the public site again and compare with main.
+  recheck:
+    needs: publish
+    if: always() && needs.publish.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 發布後複檢（約 5 分鐘後）
+        run: python scripts/verify_pages.py --initial-delay 300 --attempts 6
+
+  # One automatic republish when the deploy itself failed or the delayed re-check disagreed.
+  republish:
+    needs: [sync, publish, recheck]
+    if: always() && needs.sync.outputs.changed == 'true' && (needs.publish.result == 'failure' || needs.recheck.result == 'failure')
+    uses: ./.github/workflows/pages.yml
+
+  recheck-again:
+    needs: republish
+    if: always() && needs.republish.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 發布後複檢（重新發布後約 5 分鐘）
+        if: needs.republish.result == 'success'
+        run: python scripts/verify_pages.py --initial-delay 300 --attempts 6
+      - name: 發布後複檢失敗（重新發布也失敗）
+        if: needs.republish.result != 'success'
+        run: exit 1

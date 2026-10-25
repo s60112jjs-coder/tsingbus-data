@@ -1,0 +1,61 @@
+name: 校外交通營運異動監測
+
+on:
+  schedule:
+    # Every 2 hours (Taiwan :20 past even hours). Two TDX requests per run; commits only on change
+    # or a 12-hour heartbeat so the App can tell a live monitor from a dead one.
+    - cron: '20 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: transit-service-alerts
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      changed: ${{ steps.push.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 驗證監測規則
+        run: python -m unittest discover -s tests -p 'test_*transit*.py' -v
+      - name: 讀取官方營運通阻與停班停課資訊
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+        run: python scripts/transit_service_alerts.py
+      - name: 只提交實質異動或心跳
+        id: push
+        run: |
+          git config user.name "tsingbus-bot"
+          git config user.email "bot@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git add docs/v1/transit-alerts.json docs/v1/manifest.json
+            if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+            git commit -m "data: refresh off-campus service alerts"
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+            # Conflict: rebuild from the newest main instead of forcing anything.
+            git rebase --abort 2>/dev/null || true
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            python scripts/transit_service_alerts.py
+            sleep $((attempt * 20))
+          done
+          exit 1
+
+  publish:
+    needs: monitor
+    if: needs.monitor.outputs.changed == 'true'
+    uses: ./.github/workflows/pages.yml

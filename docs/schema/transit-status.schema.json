@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://s60112jjs-coder.github.io/tsingbus-data/schema/transit-status.schema.json",
+  "title": "清BUS 校外公車資料新鮮度",
+  "description": "由校外交通靜態班表同步寫入。只列出非最新的資料；routes 沒有列出的路線＝班表是最新官方資料。只在狀態改變時更新。",
+  "type": "object",
+  "required": ["schemaVersion", "updatedAt", "feed", "routes"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "updatedAt": {"type": ["string", "null"], "format": "date-time", "description": "內容最後改變的時間"},
+    "feed": {
+      "description": "整份校外資料超過 30 小時沒有同步成功時才出現；同步恢復後變回 null",
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/staleEntry"}]
+    },
+    "routes": {
+      "type": "object",
+      "description": "key 是 transit.json 的路線 id",
+      "additionalProperties": {"$ref": "#/$defs/staleEntry"}
+    }
+  },
+  "$defs": {
+    "staleEntry": {
+      "type": "object",
+      "required": ["state", "reason", "since", "noteZh", "noteEn"],
+      "properties": {
+        "state": {"const": "STALE_DATA"},
+        "reason": {"enum": ["SOURCE_MISSING", "SUDDEN_TRIP_DROP", "SERVICE_DAY_LOST", "FEED_STALE"]},
+        "since": {"type": "string", "format": "date-time", "description": "第一次發現的時間；同一事件不會改"},
+        "dataAsOf": {"type": ["string", "null"], "format": "date-time", "description": "目前顯示的班表是哪一次驗證通過的"},
+        "lastSuccessAt": {"type": ["string", "null"], "format": "date-time"},
+        "noteZh": {"type": "string"},
+        "noteEn": {"type": "string"},
+        "diagnosis": {
+          "type": "object",
+          "properties": {
+            "missingEndpoint": {"enum": ["ROUTE", "STOP_OF_ROUTE", "SCHEDULE"]},
+            "diagnosis": {"enum": ["ROUTE_UID_CHANGED", "ROUTE_NOT_LISTED", "PARTIAL_RESPONSE", "LOOKUP_FAILED"]},
+            "foundRouteUIDs": {"type": "array", "items": {"type": "string"}},
+            "foundOperators": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    }
+  }
+}

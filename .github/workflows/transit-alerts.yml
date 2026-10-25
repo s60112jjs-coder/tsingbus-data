@@ -2,7 +2,7 @@ name: 校外交通維護提醒
 
 on:
   workflow_run:
-    workflows: ['校外交通靜態班表同步']
+    workflows: ['校外交通靜態班表同步', '校外交通營運異動監測']
     types: [completed]
     branches: [main]
   schedule:
@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: 驗證提醒與去重規則
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest discover -s tests -p 'test_*transit*.py' -v
       - name: 檢查假日有效期與同步結果
         env:
           GH_TOKEN: ${{ github.token }}

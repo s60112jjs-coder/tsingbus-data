@@ -162,6 +162,21 @@ class InvalidData(ValueError):
     pass
 
 
+class TransientSourceError(InvalidData):
+    """TDX network/HTTP/auth trouble: retry the whole round later, never relax checks."""
+
+
+class SourceIncomplete(InvalidData):
+    """Too many required routes absent at once: treat the response as incomplete."""
+
+
+# #資料缺漏的容許範圍 //一次最多只能有這麼多條路線整條消失；超過就當成 TDX 回應不完整，整份拒收。
+MAX_CARRIED_ROUTES = 2
+# #班次驟減 //同一條路線的班次少於上一版的這個比例，先保留上一版並通知人工確認（避免把殘缺資料發出去）。
+MIN_TRIP_RATIO = 0.5
+STATUS_PATH = 'docs/v1/transit-status.json'
+
+
 def zh(value):
     return value.get('Zh_tw', '') if isinstance(value, dict) else str(value or '')
 
@@ -239,12 +254,12 @@ def segments(route_id, stops):
     return [('DIRECT', stops)]
 
 
-def build_base(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
+def build_base(raw, calendar, today, origin_frequency_ready=False, skip_2011=False, skip=frozenset()):
     if not (calendar['coverageStart'] <= today <= calendar['coverageEnd']):
         raise InvalidData('Official holiday calendar needs renewal')
     output_routes = []
     for route_id, (uid, scope, expected_name, allowed_subs) in ROUTES.items():
-        if route_id == '2011' and skip_2011:
+        if (route_id == '2011' and skip_2011) or route_id in skip:
             continue
         bundle = raw.get(uid)
         if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
@@ -419,10 +434,12 @@ def service_exceptions(trip):
             for start, end, runs in merged]
 
 
-def south_routes(raw):
+def south_routes(raw, skip=frozenset()):
     """Only reviewed Ho-Hsin Hsinchu branches/trips; no travel-time estimates."""
     output, used_stops = [], set()
     for rid, (uid, _, name, allowed) in SOUTH_ROUTES.items():
+        if rid in skip:
+            continue
         bundle = raw.get(uid)
         if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
             raise InvalidData(f'Missing required south route {rid}')
@@ -527,9 +544,9 @@ def south_routes(raw):
     return output, used_stops
 
 
-def build_without_central(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
-    result = build_base(raw, calendar, today, origin_frequency_ready, skip_2011)
-    routes, used = south_routes(raw)
+def build_without_central(raw, calendar, today, origin_frequency_ready=False, skip_2011=False, skip=frozenset()):
+    result = build_base(raw, calendar, today, origin_frequency_ready, skip_2011, skip)
+    routes, used = south_routes(raw, skip)
     result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
     result['stops'].extend(dict(zip(('id', 'zh', 'en', 'side'), s)) for s in SOUTH_STOPS if s[0] in used)
     result['groups'].append({'id': 'SOUTH', 'zh': '南部', 'en': 'South', 'sections': [
@@ -539,10 +556,12 @@ def build_without_central(raw, calendar, today, origin_frequency_ready=False, sk
     return result
 
 
-def central_routes(raw):
+def central_routes(raw, skip=frozenset()):
     """Review operator-specific sequences and expose only officially timed legs."""
     output, destination_defs = [], {}
     for rid, (uid, _, name, allowed) in CENTRAL_ROUTES.items():
+        if rid in skip:
+            continue
         bundle = raw.get(uid)
         if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
             raise InvalidData(f'Missing required central route {rid}')
@@ -664,9 +683,9 @@ def central_routes(raw):
     return output, [{k: v for k, v in s.items() if k != '_lat'} for s in ordered]
 
 
-def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
-    result = build_without_central(raw, calendar, today, origin_frequency_ready, skip_2011)
-    routes, stops = central_routes(raw)
+def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False, skip=frozenset()):
+    result = build_without_central(raw, calendar, today, origin_frequency_ready, skip_2011, skip)
+    routes, stops = central_routes(raw, skip)
     if {s['id'] for s in stops} & {s['id'] for s in result['stops']}:
         raise InvalidData('Central destination IDs collide with existing public stops')
     result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
@@ -680,6 +699,7 @@ def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False):
 class TDX:
     def __init__(self):
         self.last_request = 0
+        self.requests = 0
         client_id, secret = os.environ.get('TDX_CLIENT_ID'), os.environ.get('TDX_CLIENT_SECRET')
         if not client_id or not secret:
             raise InvalidData('TDX environment variables are missing')
@@ -689,38 +709,58 @@ class TDX:
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
                 self.token = json.load(response)['access_token']
+        except urllib.error.HTTPError as error:
+            if error.code in (400, 401, 403):
+                raise InvalidData('TDX authentication rejected; check Actions Secrets (credentials were not logged)') from None
+            raise TransientSourceError(f'TDX authentication HTTP {error.code}; credentials were not logged') from None
         except Exception:
-            raise InvalidData('TDX authentication failed; credentials were not logged') from None
+            raise TransientSourceError('TDX authentication failed; credentials were not logged') from None
 
-    def get(self, endpoint, query):
-        url = 'https://tdx.transportdata.tw/api/basic/v2/Bus/' + endpoint + '?' + urllib.parse.urlencode({'$filter': query, '$format': 'JSON'})
+    def get(self, endpoint, query=None, allow_empty=False, api='basic/v2/Bus/'):
+        params = {'$format': 'JSON'}
+        if query:
+            params['$filter'] = query
+        url = 'https://tdx.transportdata.tw/api/' + api + endpoint + '?' + urllib.parse.urlencode(params)
         for attempt in range(4):
             time.sleep(max(0, 15 - (time.monotonic() - self.last_request)))
             self.last_request = time.monotonic()
+            self.requests += 1
             try:
                 request = urllib.request.Request(url, headers={'Authorization': 'Bearer ' + self.token})
                 with urllib.request.urlopen(request, timeout=45) as response:
                     result = json.load(response)
-                if not isinstance(result, list) or not result:
-                    raise InvalidData(f'TDX returned empty/invalid {endpoint}')
+                if not isinstance(result, list) or (not result and not allow_empty):
+                    # An empty whitelist answer is an incomplete source, not "no service".
+                    raise TransientSourceError(f'TDX returned empty/invalid {endpoint}')
                 return result
             except urllib.error.HTTPError as error:
                 if error.code in (429, 500, 502, 503, 504) and attempt < 3:
                     time.sleep(45)
                     continue
+                if error.code in (429, 500, 502, 503, 504):
+                    raise TransientSourceError(f'TDX {endpoint} HTTP {error.code}') from None
                 raise InvalidData(f'TDX {endpoint} HTTP {error.code}') from None
+            except TransientSourceError:
+                if attempt < 3:
+                    time.sleep(15)
+                    continue
+                raise
             except (OSError, ValueError):
                 if attempt < 3:
                     time.sleep(15)
                     continue
-                raise InvalidData(f'TDX {endpoint} failed') from None
-        raise InvalidData('TDX retries exhausted')
+                raise TransientSourceError(f'TDX {endpoint} failed') from None
+        raise TransientSourceError('TDX retries exhausted')
+
+
+def all_route_defs():
+    return {**ROUTES, **SOUTH_ROUTES, **CENTRAL_ROUTES}
 
 
 def collect(client, skip_2011=False):
     bundles = {}
     for scope in ('City/Hsinchu', 'InterCity'):
-        definitions = [v for k, v in {**ROUTES, **SOUTH_ROUTES, **CENTRAL_ROUTES}.items()
+        definitions = [v for k, v in all_route_defs().items()
                        if v[1] == scope and not (skip_2011 and k == '2011')]
         route_filter = ' or '.join("RouteUID eq '" + v[0] + "'" for v in definitions)
         routes = client.get('Route/' + scope, route_filter)
@@ -734,42 +774,327 @@ def collect(client, skip_2011=False):
     return bundles
 
 
+def absent_routes(raw, skip_2011=False):
+    """Route ids whose whole official bundle is missing; malformed data is never 'absent'."""
+    result = set()
+    for rid, (uid, *_rest) in all_route_defs().items():
+        if skip_2011 and rid == '2011':
+            continue
+        bundle = raw.get(uid)
+        if not bundle or not bundle.get('stops') or not bundle.get('schedules'):
+            result.add(rid)
+    return result
+
+
+def diagnose_absent(client, raw, absent):
+    """One extra Route query per scope, only when something vanished: detect renamed RouteUIDs."""
+    result = {}
+    defs = all_route_defs()
+    for scope in sorted({defs[rid][1] for rid in absent}):
+        names = [defs[rid][2] for rid in absent if defs[rid][1] == scope]
+        query = ' or '.join("RouteName/Zh_tw eq '" + n + "'" for n in names)
+        try:
+            found = client.get('Route/' + scope, query, allow_empty=True)
+        except TransientSourceError:
+            found = None
+        for rid in absent:
+            uid, route_scope, name, _ = defs[rid]
+            if route_scope != scope:
+                continue
+            bundle = raw.get(uid) or {}
+            part = ('ROUTE' if not bundle else 'STOP_OF_ROUTE' if not bundle.get('stops') else 'SCHEDULE')
+            info = {'missingEndpoint': part}
+            if found is None:
+                info['diagnosis'] = 'LOOKUP_FAILED'
+            else:
+                same = [r for r in found if zh(r.get('RouteName')) == name]
+                uids = sorted({r.get('RouteUID', '') for r in same})
+                info['foundRouteUIDs'] = uids
+                info['foundOperators'] = sorted({zh(o.get('OperatorName')) for r in same for o in r.get('Operators', [])})
+                info['diagnosis'] = ('ROUTE_UID_CHANGED' if uids and uid not in uids
+                                     else 'PARTIAL_RESPONSE' if uid in uids else 'ROUTE_NOT_LISTED')
+            result[rid] = info
+    return result
+
+
+def day_counts(route):
+    counts = dict.fromkeys(DAYS, 0)
+    for d in route.get('directions', []):
+        for item in d.get('trips', []) + d.get('frequencies', []):
+            for day in item.get('days', []):
+                counts[day] += 1
+    return counts
+
+
+def trip_count(route):
+    return sum(len(d.get('trips', [])) + len(d.get('frequencies', [])) for d in route.get('directions', []))
+
+
+def merge_carried(result, previous, carried):
+    """Insert last verified route objects; keep stops/groups consistent for the App."""
+    if not carried:
+        return result
+    prev_routes = {r['id']: r for r in previous['routes']}
+    prev_stops = {s['id']: s for s in previous['stops']}
+    routes = {r['id']: r for r in result['routes']}
+    for rid in carried:
+        routes[rid] = copy.deepcopy(prev_routes[rid])
+    result['routes'] = sorted(routes.values(), key=lambda r: r['id'])
+    have = {s['id'] for s in result['stops']}
+    needed = [sid for rid in sorted(carried) for d in prev_routes[rid]['directions'] for sid in d['stops']]
+    for sid in dict.fromkeys(needed):
+        if sid not in have:
+            if sid not in prev_stops:
+                raise InvalidData(f'Carried route references unknown stop: {sid}')
+            result['stops'].append(copy.deepcopy(prev_stops[sid]))
+            have.add(sid)
+    prev_groups = {g['id']: g for g in previous.get('groups', [])}
+    for group in result['groups']:
+        old = prev_groups.get(group['id'])
+        if not old:
+            continue
+        old_sections = {s['id']: s for s in old['sections']}
+        for section in group['sections']:
+            if not set(section['routes']) & set(carried) or section['id'] not in old_sections:
+                continue
+            # Ordered union: previously published destinations first, then any new ones.
+            merged = list(dict.fromkeys(old_sections[section['id']]['destinationStops'] + section['destinationStops']))
+            section['destinationStops'] = [sid for sid in merged if sid in have]
+    return result
+
+
+def build_resilient(raw, calendar, today, previous, origin_frequency_ready=False, skip_2011=False,
+                    accept_drops=frozenset()):
+    """Strict build per route; an absent or suddenly shrunken route keeps its last verified copy.
+
+    Returns (candidate, held) where held maps route id -> reason. Malformed, renamed or
+    unreviewed data is still rejected by the strict builders; only *absence* is tolerated.
+    """
+    absent = absent_routes(raw, skip_2011)
+    prev_routes = {r['id']: r for r in (previous or {}).get('routes', [])}
+    if absent:
+        if len(absent) > MAX_CARRIED_ROUTES:
+            raise SourceIncomplete(f'Too many required routes missing at once: {", ".join(sorted(absent))}')
+        lost = sorted(rid for rid in absent if rid not in prev_routes)
+        if lost:
+            raise SourceIncomplete(f'Missing required route {", ".join(lost)} with no verified copy to keep')
+    held = {rid: 'SOURCE_MISSING' for rid in absent}
+    candidate = build(raw, calendar, today, origin_frequency_ready, skip_2011, frozenset(absent))
+    for route in candidate['routes']:
+        old = prev_routes.get(route['id'])
+        if (old and route['id'] not in accept_drops and trip_count(old) >= 4
+                and trip_count(route) < trip_count(old) * MIN_TRIP_RATIO):
+            held[route['id']] = 'SUDDEN_TRIP_DROP'
+        elif old and route['id'] not in accept_drops:
+            # #整天消失 //原本有班的星期突然一班都沒有（2026-10-24 的 1728 就是這樣：只剩週一、週日）
+            before, after = day_counts(old), day_counts(route)
+            if any(before[d] > 0 and after[d] == 0 for d in DAYS):
+                held[route['id']] = 'SERVICE_DAY_LOST'
+    if len(held) > MAX_CARRIED_ROUTES:
+        raise SourceIncomplete(f'Too many routes held at once: {", ".join(sorted(held))}')
+    return merge_carried(candidate, previous, set(held)), held
+
+
 def semantic(value):
     value = copy.deepcopy(value)
     value.pop('updatedAt', None)
     return value
 
 
-def publish(candidate, root, stamp):
+# #失敗分類 //決定要不要重試、要不要立刻通知；訊息字串來自上面各個 raise，不含任何金鑰或原始回應。
+def classify(error):
+    if isinstance(error, TransientSourceError):
+        return 'TRANSIENT_SOURCE'
+    if isinstance(error, SourceIncomplete):
+        return 'SOURCE_INCOMPLETE'
+    text = str(error)
+    if 'calendar' in text:
+        return 'CALENDAR_EXPIRED'
+    if 'authentication rejected' in text or 'environment variables' in text:
+        return 'CONFIG'
+    if any(k in text for k in ('identity changed', 'Unreviewed', 'needs review', 'unreviewed', 'Unrecognized')):
+        return 'SPEC_CHANGED'
+    return 'DATA_INVALID'
+
+
+RETRYABLE = {'TRANSIENT_SOURCE', 'SOURCE_INCOMPLETE'}
+STATUS_NOTES = {
+    'SOURCE_MISSING': ('官方資料暫時缺少這條路線，顯示的是最後一次驗證成功的班表，可能與實際營運不符。',
+                       'Official data is temporarily missing this route; showing the last verified timetable, which may be outdated.'),
+    'SUDDEN_TRIP_DROP': ('官方班次數突然大幅減少，正在人工確認；顯示的是最後一次驗證成功的班表。',
+                         'Official trip count dropped sharply and is under review; showing the last verified timetable.'),
+    'SERVICE_DAY_LOST': ('官方班表某些星期突然一班都沒有，正在人工確認；顯示的是最後一次驗證成功的班表。',
+                         'Official data suddenly has no trips on some weekdays and is under review; showing the last verified timetable.'),
+    'FEED_STALE': ('校外公車資料已超過一天無法與官方同步，班表可能與實際營運不符。',
+                   'Off-campus bus data has not synced with official sources for over a day and may be outdated.'),
+}
+FEED_STALE_HOURS = 30
+
+
+def empty_status():
+    return {'schemaVersion': 1, 'updatedAt': None, 'feed': None, 'routes': {}}
+
+
+def load_status(root):
+    path = root / STATUS_PATH
+    if not path.exists():
+        return empty_status()
+    value = json.loads(path.read_text(encoding='utf-8'))
+    if value.get('schemaVersion') != 1 or not isinstance(value.get('routes'), dict):
+        raise InvalidData('Invalid existing transit-status.json')
+    return value
+
+
+def next_status(previous, held, diagnosis, stamp, data_as_of):
+    """Route freshness after a successful sync. Unchanged entries keep their original 'since'."""
+    status = empty_status()
+    status['updatedAt'] = previous.get('updatedAt')
+    for rid, reason in sorted(held.items()):
+        old = previous['routes'].get(rid) or {}
+        same = old.get('reason') == reason
+        zh_note, en_note = STATUS_NOTES[reason]
+        entry = {'state': 'STALE_DATA', 'reason': reason,
+                 'since': old['since'] if same else stamp,
+                 'dataAsOf': old.get('dataAsOf') or data_as_of,
+                 'noteZh': zh_note, 'noteEn': en_note}
+        if rid in diagnosis:
+            entry['diagnosis'] = diagnosis[rid]
+        elif same and 'diagnosis' in old:
+            entry['diagnosis'] = old['diagnosis']
+        status['routes'][rid] = entry
+    return status
+
+
+def stale_feed_status(previous, stamp, now, last_success, data_as_of):
+    status = copy.deepcopy(previous)
+    if previous.get('feed'):
+        return status
+    if last_success and now - dt.datetime.fromisoformat(last_success) < dt.timedelta(hours=FEED_STALE_HOURS):
+        return status
+    zh_note, en_note = STATUS_NOTES['FEED_STALE']
+    status['feed'] = {'state': 'STALE_DATA', 'reason': 'FEED_STALE', 'since': stamp,
+                      'lastSuccessAt': last_success, 'dataAsOf': data_as_of, 'noteZh': zh_note, 'noteEn': en_note}
+    return status
+
+
+def write_json(path, value):
+    staged = path.with_suffix('.json.tmp')
+    staged.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    staged.replace(path)
+
+
+def publish(candidate, root, stamp, status=None):
     transit_path = root / 'docs/v1/transit.json'
     manifest_path = root / 'docs/v1/manifest.json'
+    status_path = root / STATUS_PATH
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
     files = manifest.get('files')
     if not isinstance(files, dict):
         raise InvalidData('Invalid existing manifest')
     old = json.loads(transit_path.read_text(encoding='utf-8')) if transit_path.exists() else None
-    content_changed = old is None or semantic(old) != semantic(candidate)
-    if not content_changed:
+    if candidate is not None:
+        candidate = copy.deepcopy(candidate)
+        # #人工停駛 //suspensions 是人工在 GitHub 上加的（App 已支援）；同步不可以把它洗掉。
+        if old and 'suspensions' in old and 'suspensions' not in candidate:
+            candidate['suspensions'] = old['suspensions']
+    content_changed = candidate is not None and (old is None or semantic(old) != semantic(candidate))
+    if candidate is None or not content_changed:
         candidate = old
-    entry = {'path': 'transit.json', 'updatedAt': stamp if content_changed else candidate['updatedAt']}
-    if (not content_changed and files.get('transit', {}).get('path') == 'transit.json'
-            and files.get('transit', {}).get('updatedAt')):
+    transit_registered = files.get('transit', {}).get('path') == 'transit.json' and files.get('transit', {}).get('updatedAt')
+    status_changed = False
+    if status is not None:
+        old_status = json.loads(status_path.read_text(encoding='utf-8')) if status_path.exists() else None
+        status = copy.deepcopy(status)
+        status_changed = old_status is None or semantic(old_status) != semantic(status)
+        status['updatedAt'] = stamp if status_changed else old_status.get('updatedAt')
+        status_registered = files.get('transitStatus', {}).get('path') == 'transit-status.json'
+        status_changed = status_changed or not status_registered
+    if not content_changed and transit_registered and not status_changed:
         print('No substantive change; files and timestamps unchanged.')
         return False
-    files['transit'] = entry
+    if content_changed or not transit_registered:
+        files['transit'] = {'path': 'transit.json', 'updatedAt': stamp if content_changed else candidate['updatedAt']}
+    if status_changed:
+        files['transitStatus'] = {'path': 'transit-status.json', 'updatedAt': status['updatedAt']}
     manifest['updatedAt'] = stamp
-    # Both payloads validated/serialized before either file is replaced. Git commit is atomic publication.
-    transit_text = json.dumps(candidate, ensure_ascii=False, indent=2) + '\n'
-    manifest_text = json.dumps(manifest, ensure_ascii=False, indent=2) + '\n'
+    # Every payload is validated/serialized before any file is replaced. Git commit is atomic publication.
+    json.dumps(candidate, ensure_ascii=False)
     if content_changed:
-        staged = transit_path.with_suffix('.json.tmp')
-        staged.write_text(transit_text, encoding='utf-8')
-        staged.replace(transit_path)
-    staged = manifest_path.with_suffix('.json.tmp')
-    staged.write_text(manifest_text, encoding='utf-8')
-    staged.replace(manifest_path)
-    print('Validated transit and manifest updated locally.')
+        write_json(transit_path, candidate)
+    if status_changed:
+        write_json(status_path, status)
+    write_json(manifest_path, manifest)
+    print('Validated transit data updated locally: '
+          f'timetable changed={content_changed}, status changed={status_changed}.')
     return True
+
+
+def emit(result_path, result):
+    if result_path:
+        Path(result_path).write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    output = os.environ.get('GITHUB_OUTPUT')
+    if output:
+        with open(output, 'a', encoding='utf-8') as stream:
+            stream.write(f"category={result['category']}\nchanged={'true' if result.get('changed') else 'false'}\n")
+
+
+def run(args, now, client_factory=None, sleep=time.sleep):
+    stamp = now.isoformat(timespec='seconds')
+    root = args.root
+    if args.apply_candidate:
+        saved = json.loads(Path(args.apply_candidate).read_text(encoding='utf-8'))
+        changed = publish(saved['candidate'], root, saved['stamp'], saved['status'])
+        return {'category': 'OK_CHANGED' if changed else 'OK_UNCHANGED', 'changed': changed}
+    manifest = json.loads((root / 'docs/v1/manifest.json').read_text(encoding='utf-8'))
+    data_as_of = manifest.get('files', {}).get('transit', {}).get('updatedAt')
+    previous_status = load_status(root)
+    if args.record_failure:
+        status = stale_feed_status(previous_status, stamp, now, args.last_success, data_as_of)
+        changed = publish(None, root, stamp, status) if status != previous_status else False
+        return {'category': args.record_failure, 'changed': changed, 'feedStale': bool(status.get('feed'))}
+    if not args.preview and not args.origin_frequency_ready and not args.skip_2011:
+        raise InvalidData('Confirm App origin-frequency labeling or explicitly defer 2011 before publication')
+    calendar = json.loads((root / 'scripts/transit-holidays.json').read_text(encoding='utf-8'))
+    transit_path = root / 'docs/v1/transit.json'
+    previous = json.loads(transit_path.read_text(encoding='utf-8')) if transit_path.exists() else None
+    accept = frozenset(x for x in (args.accept_trip_drop or '').replace(' ', '').split(',') if x)
+    client_factory = client_factory or TDX
+    for attempt in range(1, args.rounds + 1):
+        try:
+            client = None
+            if args.input:
+                raw = json.loads(args.input.read_text(encoding='utf-8'))
+            else:
+                client = client_factory()
+                raw = collect(client, args.skip_2011)
+            absent = absent_routes(raw, args.skip_2011)
+            diagnosis = diagnose_absent(client, raw, absent) if absent and client else {}
+            for rid, info in diagnosis.items():
+                print(f'Route {rid} absent from TDX {info["missingEndpoint"]}: {info.get("diagnosis")} '
+                      f'(found {info.get("foundRouteUIDs")}, operators {info.get("foundOperators")})')
+            candidate, held = build_resilient(raw, calendar, now.date().isoformat(), previous,
+                                              args.origin_frequency_ready or bool(args.preview), args.skip_2011, accept)
+            break
+        except InvalidData as error:
+            category = classify(error)
+            if category not in RETRYABLE or attempt == args.rounds or args.input:
+                raise
+            print(f'Round {attempt} rejected ({category}: {error}); retrying in {args.retry_wait}s.')
+            sleep(args.retry_wait)
+    for rid, reason in sorted(held.items()):
+        print(f'Keeping last verified copy of route {rid}: {reason}')
+    status = next_status(previous_status, held, diagnosis, stamp, data_as_of)
+    if args.preview:
+        args.preview.write_text(json.dumps(candidate, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        print('Validated review candidate created; repository data files unchanged.')
+        return {'category': 'PREVIEW', 'changed': False, 'held': held}
+    if args.save_candidate:
+        Path(args.save_candidate).write_text(json.dumps({'candidate': candidate, 'status': status, 'stamp': stamp},
+                                                        ensure_ascii=False), encoding='utf-8')
+    changed = publish(candidate, root, stamp, status)
+    if client is not None:
+        print(f'TDX data requests this run: {client.requests}')
+    return {'category': 'OK_CHANGED' if changed else 'OK_UNCHANGED', 'changed': changed, 'held': held}
 
 
 def main():
@@ -779,18 +1104,22 @@ def main():
     parser.add_argument('--preview', type=Path, help='Review candidate only; does not publish')
     parser.add_argument('--origin-frequency-ready', action='store_true')
     parser.add_argument('--skip-2011', action='store_true')
+    parser.add_argument('--rounds', type=int, default=1, help='Full fetch rounds for transient TDX trouble')
+    parser.add_argument('--retry-wait', type=int, default=300, help='Seconds between rounds')
+    parser.add_argument('--accept-trip-drop', help='Comma-separated route ids whose sharp trip drop a human confirmed')
+    parser.add_argument('--result', help='Write machine-readable outcome JSON here')
+    parser.add_argument('--save-candidate', help='Keep the validated candidate for a safe git-conflict retry')
+    parser.add_argument('--apply-candidate', help='Re-apply a saved validated candidate onto a fresh checkout')
+    parser.add_argument('--record-failure', help='Failure category of this run; marks the feed stale when overdue')
+    parser.add_argument('--last-success', help='ISO time of the last successful sync run (for --record-failure)')
     args = parser.parse_args()
-    if not args.preview and not args.origin_frequency_ready and not args.skip_2011:
-        raise InvalidData('Confirm App origin-frequency labeling or explicitly defer 2011 before publication')
     now = dt.datetime.now(ZoneInfo('Asia/Taipei'))
-    calendar = json.loads((args.root / 'scripts/transit-holidays.json').read_text(encoding='utf-8'))
-    raw = json.loads(args.input.read_text(encoding='utf-8')) if args.input else collect(TDX(), args.skip_2011)
-    candidate = build(raw, calendar, now.date().isoformat(), args.origin_frequency_ready or bool(args.preview), args.skip_2011)
-    if args.preview:
-        args.preview.write_text(json.dumps(candidate, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        print('Validated review candidate created; repository data files unchanged.')
-    else:
-        publish(candidate, args.root, now.isoformat(timespec='seconds'))
+    try:
+        result = run(args, now)
+    except InvalidData as error:
+        emit(args.result, {'category': classify(error), 'changed': False, 'message': str(error)})
+        raise
+    emit(args.result, result)
 
 
 if __name__ == '__main__':
