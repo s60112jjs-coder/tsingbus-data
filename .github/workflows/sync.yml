@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: '0 1,13 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync.yml'
+      - 'scripts/campus_autoupdate.py'
+      - 'scripts/campus_issues.py'
+      - 'tests/test_campus_autoupdate.py'
 
 permissions:
   contents: write
