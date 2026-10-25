@@ -1,4 +1,4 @@
-name: 公車公告偵測
+name: 校內公車公告自動檢查與安全更新
 
 on:
   schedule:
@@ -8,37 +8,115 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: campus-safe-autoupdate
+  cancel-in-progress: false
 
 jobs:
-  crawl:
+  scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      data_changed: ${{ steps.commit.outputs.data_changed }}
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: 安裝套件
-        run: pip install requests beautifulsoup4
-
-      - name: 偵測新公告
-        id: crawl
-        run: python scripts/crawl.py
-
-      - name: 開 issue 通知（GitHub 會自動寄信給你）
-        if: steps.crawl.outputs.has_new == 'true' && hashFiles('report.md') != ''
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: ${{ steps.crawl.outputs.issue_title }}
-          content-filepath: report.md
-          labels: 資料更新
-
-      - name: 記錄已看過的公告
-        if: steps.crawl.outputs.has_new == 'true'
+      - name: Install dependencies
+        run: python -m pip install requests beautifulsoup4
+      - name: Inspect official notices and prepare safe updates
+        run: python scripts/campus_autoupdate.py
+      - name: Validate shuttle automation
+        run: python -m unittest discover -s tests -p 'test_campus_autoupdate.py' -v
+      - name: Commit source-verified changes
+        id: commit
+        shell: bash
         run: |
-          git config user.name "tsingbus-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add state.json
-          git diff --staged --quiet || git commit -m "chore: 更新已知公告清單"
-          git push
+          set -euo pipefail
+          git add state.json docs/v1/campus.json docs/v1/nanda.json docs/v1/overrides.json docs/v1/manifest.json
+          if git diff --cached --name-only | grep -q '^docs/v1/'; then
+            echo 'data_changed=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'data_changed=false' >> "$GITHUB_OUTPUT"
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'tsingbus-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git commit -m 'data: apply verified official campus shuttle announcement'
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Notify only on unparseable official updates or coverage gaps
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/campus_issues.py --sync
+
+  publish:
+    needs: scan
+    if: needs.scan.outputs.data_changed == 'true'
+    uses: ./.github/workflows/pages.yml
+
+  verify:
+    needs: [scan, publish]
+    if: always() && needs.scan.result == 'success' && needs.scan.outputs.data_changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Five-minute post-publication verification
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          sleep 300
+          git fetch origin main
+          git reset --hard origin/main
+          PAGES_URL="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url')"
+          echo "PAGES_URL=$PAGES_URL" >> "$GITHUB_ENV"
+          if PAGES_URL="$PAGES_URL" python scripts/verify_pages.py; then
+            echo 'verified=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'verified=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Republish once, wait five minutes and verify again
+        if: steps.check.outputs.verified != 'true'
+        id: retry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pages.yml --ref main
+          sleep 300
+          git fetch origin main
+          git reset --hard origin/main
+          if PAGES_URL="$PAGES_URL" python scripts/verify_pages.py; then
+            echo 'verified=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'verified=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Alert only after repeated publication verification failure
+        if: steps.check.outputs.verified != 'true' && steps.retry.outputs.verified != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/campus_issues.py --publication-failed
+          exit 1
+      - name: Resolve successful publication
+        if: steps.check.outputs.verified == 'true' || steps.retry.outputs.verified == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/campus_issues.py --publication-ok
