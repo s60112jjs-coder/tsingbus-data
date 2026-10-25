@@ -18307,5 +18307,16 @@
         }
       ]
     }
+  ],
+  "suspensions": [
+    {
+      "startDate": "2026-10-26",
+      "endDate": "2026-11-01",
+      "routes": [
+        "1728"
+      ],
+      "noteZh": "公路客運官網目前查無 1728 班次，搭車前請向亞聯客運確認。",
+      "noteEn": "The official intercity bus site currently lists no 1728 trips; please confirm with the operator before travelling."
+    }
   ]
 }
