@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-10-27T08:40:25+08:00",
+  "updatedAt": "2026-10-27T15:55:37+08:00",
   "files": {
     "campus": {
       "path": "campus.json",
@@ -28,7 +28,7 @@
     },
     "transitAlerts": {
       "path": "transit-alerts.json",
-      "updatedAt": "2026-10-26T23:13:55+08:00"
+      "updatedAt": "2026-10-27T15:55:37+08:00"
     },
     "transitStatus": {
       "path": "transit-status.json",
