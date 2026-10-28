@@ -1,23 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T08:40:25+08:00",
+  "updatedAt": "2026-10-28T08:39:06+08:00",
   "feed": null,
-  "routes": {
-    "7500": {
-      "state": "STALE_DATA",
-      "reason": "SERVICE_DAY_LOST",
-      "since": "2026-10-27T08:40:25+08:00",
-      "dataAsOf": "2026-10-26T02:31:37+08:00",
-      "noteZh": "官方班表某些星期突然一班都沒有，正在人工確認；顯示的是最後一次驗證成功的班表。",
-      "noteEn": "Official data suddenly has no trips on some weekdays and is under review; showing the last verified timetable."
-    },
-    "7513": {
-      "state": "STALE_DATA",
-      "reason": "SERVICE_DAY_LOST",
-      "since": "2026-10-27T08:40:25+08:00",
-      "dataAsOf": "2026-10-26T02:31:37+08:00",
-      "noteZh": "官方班表某些星期突然一班都沒有，正在人工確認；顯示的是最後一次驗證成功的班表。",
-      "noteEn": "Official data suddenly has no trips on some weekdays and is under review; showing the last verified timetable."
-    }
-  }
+  "routes": {}
 }
