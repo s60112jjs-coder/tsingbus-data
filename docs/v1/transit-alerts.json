@@ -1,29 +1,111 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T23:13:55+08:00",
-  "lastCheckedAt": "2026-10-29T00:40:48+08:00",
-  "validUntil": "2026-10-30T06:40:48+08:00",
+  "updatedAt": "2026-10-29T13:52:16+08:00",
+  "lastCheckedAt": "2026-10-29T13:52:16+08:00",
+  "validUntil": "2026-10-30T19:52:16+08:00",
   "sources": [
     {
       "id": "TDX_BUS_ALERT_INTERCITY",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/InterCity",
       "state": "OK",
-      "lastSuccessAt": "2026-10-29T00:40:48+08:00"
+      "lastSuccessAt": "2026-10-29T13:52:16+08:00"
     },
     {
       "id": "TDX_BUS_ALERT_HSINCHU",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
       "state": "OK",
-      "lastSuccessAt": "2026-10-29T00:40:48+08:00"
+      "lastSuccessAt": "2026-10-29T13:52:16+08:00"
     },
     {
       "id": "DGPA_CLOSURES",
       "url": "https://www.dgpa.gov.tw/typh/daily/nds.html",
       "state": "OK",
-      "lastSuccessAt": "2026-10-29T00:40:48+08:00"
+      "lastSuccessAt": "2026-10-29T13:52:16+08:00"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "id": "TDX_BUS_ALERT_HSINCHU:36799",
+      "sourceId": "TDX_BUS_ALERT_HSINCHU",
+      "alertId": "36799",
+      "title": "【國光客運】配合「2026新竹市萬聖遊行」活動，本新竹市公車「【182】北大橋—高鐵新竹站」路線影響班次及停靠站點",
+      "description": "配合「2026新竹市萬聖變裝遊行」活動，本新竹市公車路線「【182】北大橋—高鐵新竹站」於115年10月31日取消停靠「地方法院」、「東門市場」、「火車站」、「東區區公所」站位",
+      "department": "新竹市政府交通處",
+      "status": 2,
+      "cause": 254,
+      "effect": 254,
+      "url": "https://www.kingbus.com.tw/page.html?seq=41414",
+      "publishTime": "2026-10-29T08:32:03+08:00",
+      "startTime": "2026-10-28T13:23:00+08:00",
+      "endTime": "2026-10-31T23:59:00+08:00",
+      "expiresAt": "2026-10-31T23:59:00+08:00",
+      "firstSeenAt": "2026-10-29T13:52:16+08:00",
+      "sourceUpdateTime": "2026-10-29T08:32:03+08:00",
+      "routes": {
+        "182": {
+          "state": "SERVICE_ALERT",
+          "directions": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "id": "TDX_BUS_ALERT_HSINCHU:36800",
+      "sourceId": "TDX_BUS_ALERT_HSINCHU",
+      "alertId": "36800",
+      "title": "【國光客運】配合「2026新竹市萬聖變裝遊行」活動，本新竹市公車「【先導A公車】北大橋—高鐵新竹站」路線影響班次及停靠站點",
+      "description": "配合「2026新竹市萬聖變裝遊行」活動，本新竹市公車路線「【先導A公車】北大橋—高鐵新竹站」於115年10月31日取消停靠「北大教堂」(單向)、「地方法院」、「東門市場」、「火車站」、「東區區公所」站位",
+      "department": "新竹市政府交通處",
+      "status": 2,
+      "cause": 254,
+      "effect": 254,
+      "url": "https://www.kingbus.com.tw/page.html?seq=41415",
+      "publishTime": "2026-10-29T08:32:08+08:00",
+      "startTime": "2026-10-28T13:27:00+08:00",
+      "endTime": "2026-10-31T23:59:00+08:00",
+      "expiresAt": "2026-10-31T23:59:00+08:00",
+      "firstSeenAt": "2026-10-29T13:52:16+08:00",
+      "sourceUpdateTime": "2026-10-29T08:32:08+08:00",
+      "routes": {
+        "PIONEER": {
+          "state": "SERVICE_ALERT",
+          "directions": [
+            0
+          ]
+        }
+      }
+    }
+  ],
   "closureHints": [],
-  "routes": {}
+  "routes": {
+    "182": [
+      {
+        "state": "SERVICE_ALERT",
+        "startTime": "2026-10-28T13:23:00+08:00",
+        "endTime": "2026-10-31T23:59:00+08:00",
+        "expiresAt": "2026-10-31T23:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_HSINCHU:36799"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ],
+    "PIONEER": [
+      {
+        "state": "SERVICE_ALERT",
+        "startTime": "2026-10-28T13:27:00+08:00",
+        "endTime": "2026-10-31T23:59:00+08:00",
+        "expiresAt": "2026-10-31T23:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_HSINCHU:36800"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ]
+  }
 }
