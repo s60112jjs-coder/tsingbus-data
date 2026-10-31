@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-29T13:52:16+08:00",
-  "lastCheckedAt": "2026-10-31T13:49:16+08:00",
-  "validUntil": "2026-11-01T19:49:16+08:00",
+  "updatedAt": "2026-10-31T20:38:06+08:00",
+  "lastCheckedAt": "2026-10-31T20:38:06+08:00",
+  "validUntil": "2026-11-02T02:38:06+08:00",
   "sources": [
     {
       "id": "TDX_BUS_ALERT_INTERCITY",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/InterCity",
       "state": "OK",
-      "lastSuccessAt": "2026-10-31T13:49:16+08:00"
+      "lastSuccessAt": "2026-10-31T20:38:06+08:00"
     },
     {
       "id": "TDX_BUS_ALERT_HSINCHU",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
       "state": "OK",
-      "lastSuccessAt": "2026-10-31T13:49:16+08:00"
+      "lastSuccessAt": "2026-10-31T20:38:06+08:00"
     },
     {
       "id": "DGPA_CLOSURES",
       "url": "https://www.dgpa.gov.tw/typh/daily/nds.html",
       "state": "OK",
-      "lastSuccessAt": "2026-10-31T13:49:16+08:00"
+      "lastSuccessAt": "2026-10-31T20:38:06+08:00"
     }
   ],
   "alerts": [
@@ -75,6 +75,38 @@
           ]
         }
       }
+    },
+    {
+      "id": "TDX_BUS_ALERT_HSINCHU:36872",
+      "sourceId": "TDX_BUS_ALERT_HSINCHU",
+      "alertId": "36872",
+      "title": "配合2026萬聖節活動，新竹市區部分道路實施管制，本公司現行相關路線配合改道行駛詳如說明。",
+      "description": "(一)管制時段一：15時至22時中正路(中央路至世界街)封閉。\n      (圓環未封閉時仍行駛圓環)\n(1)藍線(火車站—漁會區間)、藍15區、27路：往程由民族路—東大路—恢復原路線行駛；回程由東大路—右轉民族路—於三角花圃處轉；取消停靠：東門市場、地方法院、鄭氏家廟、中正經國路口、中正城北街口、竹光新村(單邊)、國軍新竹地區醫院\n(2)10路：新竹總站發車—中華路—育英路—恢復原路線行駛；回程依反方向行駛(中正路改新竹總站停靠(中華路二段471號)；火車站(中正路)、東門市場、城隍廟、西門市場、棒球場、服務中心、新竹監獄、監獄邊、三廠、台貿四村、中和路不停靠。\n(3)11、11甲：改由新竹總站發車—中華路—育英路—中山路—恢復原路線行駛；回程依反方向行駛(中正路改新竹總站停靠(中華路二段471號)；火車站(中正路)、東門市場、城隍廟、西門市場、西門口、西門派出所不停靠\n(4)12路：新竹總站發車—中華路—民族路—東大路—恢復原路線行駛；回程依反方向行駛，火車站(中正路)、東門市場、地方法院、北大橋不停靠)\n(5)16路：起站改民族路—東大路—恢復原路線行駛；回程依反方向行駛，火車站(中正路)、東門市場、地方法院、北大橋不停靠)\n(6)20路：總站—民族路—東大路—南大路—恢復原路線行駛；回程左轉南大路—振興陸橋—林森路行駛；火車站(中正路)、東門市場、城隍廟、西門市場、南門市場不停靠。\n(二)管制時段二：17時至22時圓環周邊道路封閉。\n藍線(火車站—竹中區間)、藍1區、2路(含支線)、世博5號：往程由民族路—右轉東大陸橋—恢復原路線行駛；回程：東大陸橋—左轉民族路—於三角花圃處轉；取消停靠：東門市場、親仁里、火車站(中正路)。",
+      "department": "新竹市政府交通處",
+      "status": 2,
+      "cause": 11,
+      "effect": 4,
+      "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
+      "publishTime": "2026-10-31T15:17:46+08:00",
+      "startTime": "2026-10-30T15:29:00+08:00",
+      "endTime": "2026-10-31T23:59:00+08:00",
+      "expiresAt": "2026-10-31T23:59:00+08:00",
+      "firstSeenAt": "2026-10-31T20:38:06+08:00",
+      "sourceUpdateTime": "2026-10-31T15:17:46+08:00",
+      "routes": {
+        "2": {
+          "state": "PARTIAL_SUSPENSION",
+          "directions": [
+            0
+          ]
+        },
+        "BLUE1_LOCAL": {
+          "state": "PARTIAL_SUSPENSION",
+          "directions": [
+            0
+          ]
+        }
+      }
     }
   ],
   "closureHints": [],
@@ -87,6 +119,34 @@
         "expiresAt": "2026-10-31T23:59:00+08:00",
         "alertIds": [
           "TDX_BUS_ALERT_HSINCHU:36799"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ],
+    "2": [
+      {
+        "state": "PARTIAL_SUSPENSION",
+        "startTime": "2026-10-30T15:29:00+08:00",
+        "endTime": "2026-10-31T23:59:00+08:00",
+        "expiresAt": "2026-10-31T23:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_HSINCHU:36872"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ],
+    "BLUE1_LOCAL": [
+      {
+        "state": "PARTIAL_SUSPENSION",
+        "startTime": "2026-10-30T15:29:00+08:00",
+        "endTime": "2026-10-31T23:59:00+08:00",
+        "expiresAt": "2026-10-31T23:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_HSINCHU:36872"
         ],
         "directions": [
           0
