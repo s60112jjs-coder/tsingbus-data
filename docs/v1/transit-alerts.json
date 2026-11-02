@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-11-01T02:35:53+08:00",
-  "lastCheckedAt": "2026-11-02T14:12:57+08:00",
-  "validUntil": "2026-11-03T20:12:57+08:00",
+  "lastCheckedAt": "2026-11-03T07:34:49+08:00",
+  "validUntil": "2026-11-04T13:34:49+08:00",
   "sources": [
     {
       "id": "TDX_BUS_ALERT_INTERCITY",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/InterCity",
       "state": "OK",
-      "lastSuccessAt": "2026-11-02T14:12:57+08:00"
+      "lastSuccessAt": "2026-11-03T07:34:49+08:00"
     },
     {
       "id": "TDX_BUS_ALERT_HSINCHU",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
       "state": "OK",
-      "lastSuccessAt": "2026-11-02T14:12:57+08:00"
+      "lastSuccessAt": "2026-11-03T07:34:49+08:00"
     },
     {
       "id": "DGPA_CLOSURES",
       "url": "https://www.dgpa.gov.tw/typh/daily/nds.html",
       "state": "OK",
-      "lastSuccessAt": "2026-11-02T14:12:57+08:00"
+      "lastSuccessAt": "2026-11-03T07:34:49+08:00"
     }
   ],
   "alerts": [],
