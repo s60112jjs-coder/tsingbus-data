@@ -1,14 +1,14 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-04T20:12:00+08:00",
+  "updatedAt": "2026-11-04T23:30:23+08:00",
   "files": {
     "campus": {
       "path": "campus.json",
-      "updatedAt": "2026-10-26T14:45:54+08:00"
+      "updatedAt": "2026-11-04T23:30:23+08:00"
     },
     "nanda": {
       "path": "nanda.json",
-      "updatedAt": "2026-10-01T18:37:00+08:00"
+      "updatedAt": "2026-11-04T23:30:23+08:00"
     },
     "overrides": {
       "path": "overrides.json",
