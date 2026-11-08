@@ -1,111 +1,29 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04T00:17:01+08:00",
-  "lastCheckedAt": "2026-11-08T00:28:27+08:00",
-  "validUntil": "2026-11-09T06:28:27+08:00",
+  "updatedAt": "2026-11-08T17:02:56+08:00",
+  "lastCheckedAt": "2026-11-08T17:02:56+08:00",
+  "validUntil": "2026-11-09T23:02:56+08:00",
   "sources": [
     {
       "id": "TDX_BUS_ALERT_INTERCITY",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/InterCity",
       "state": "OK",
-      "lastSuccessAt": "2026-11-08T00:28:27+08:00"
+      "lastSuccessAt": "2026-11-08T17:02:56+08:00"
     },
     {
       "id": "TDX_BUS_ALERT_HSINCHU",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
       "state": "OK",
-      "lastSuccessAt": "2026-11-08T00:28:27+08:00"
+      "lastSuccessAt": "2026-11-08T17:02:56+08:00"
     },
     {
       "id": "DGPA_CLOSURES",
       "url": "https://www.dgpa.gov.tw/typh/daily/nds.html",
       "state": "OK",
-      "lastSuccessAt": "2026-11-08T00:28:27+08:00"
+      "lastSuccessAt": "2026-11-08T17:02:56+08:00"
     }
   ],
-  "alerts": [
-    {
-      "id": "TDX_BUS_ALERT_HSINCHU:36961",
-      "sourceId": "TDX_BUS_ALERT_HSINCHU",
-      "alertId": "36961",
-      "title": "為配合「2026 ZEPRO RUN 全國半程馬拉松：新竹場」活動，本新竹市公車「【先導A公車】高鐵新竹站→北大橋」路線配合取消站位停靠",
-      "description": "為配合「2026 ZEPRO RUN 全國半程馬拉松：新竹場」活動，本新竹市公車「【先導A公車】高鐵新竹站→北大橋」路線配合取消站位停靠：哈洛德(文興路)、文興嘉豐南路口、新瓦屋(文興路)、文興嘉興路口",
-      "department": "新竹市政府交通處",
-      "status": 2,
-      "cause": 254,
-      "effect": 254,
-      "url": "https://www.kingbus.com.tw/page.html?seq=41425",
-      "publishTime": "2026-11-03T18:50:40+08:00",
-      "startTime": "2026-11-03T18:47:00+08:00",
-      "endTime": "2026-11-08T10:00:00+08:00",
-      "expiresAt": "2026-11-08T10:00:00+08:00",
-      "firstSeenAt": "2026-11-04T00:17:01+08:00",
-      "sourceUpdateTime": "2026-11-03T18:50:40+08:00",
-      "routes": {
-        "PIONEER": {
-          "state": "SERVICE_ALERT",
-          "directions": [
-            0
-          ]
-        }
-      }
-    },
-    {
-      "id": "TDX_BUS_ALERT_HSINCHU:36962",
-      "sourceId": "TDX_BUS_ALERT_HSINCHU",
-      "alertId": "36962",
-      "title": "為配合「2026 ZEPRO RUN 全國半程馬拉松：新竹場」活動，本新竹市公車「【182】高鐵新竹站→北大橋」路線配合取消站位停靠",
-      "description": "為配合「2026 ZEPRO RUN 全國半程馬拉松：新竹場」活動，本新竹市公車「【182】高鐵新竹站→北大橋」路線配合取消站位停靠：哈洛德(文興路)、文興嘉豐南路口、新瓦屋(文興路)、文興嘉興路口",
-      "department": "新竹市政府交通處",
-      "status": 2,
-      "cause": 254,
-      "effect": 254,
-      "url": "https://www.kingbus.com.tw/page.html?seq=41424",
-      "publishTime": "2026-11-03T18:50:46+08:00",
-      "startTime": "2026-11-03T18:43:00+08:00",
-      "endTime": "2026-11-08T10:00:00+08:00",
-      "expiresAt": "2026-11-08T10:00:00+08:00",
-      "firstSeenAt": "2026-11-04T00:17:01+08:00",
-      "sourceUpdateTime": "2026-11-03T18:50:46+08:00",
-      "routes": {
-        "182": {
-          "state": "SERVICE_ALERT",
-          "directions": [
-            0
-          ]
-        }
-      }
-    }
-  ],
+  "alerts": [],
   "closureHints": [],
-  "routes": {
-    "182": [
-      {
-        "state": "SERVICE_ALERT",
-        "startTime": "2026-11-03T18:43:00+08:00",
-        "endTime": "2026-11-08T10:00:00+08:00",
-        "expiresAt": "2026-11-08T10:00:00+08:00",
-        "alertIds": [
-          "TDX_BUS_ALERT_HSINCHU:36962"
-        ],
-        "directions": [
-          0
-        ]
-      }
-    ],
-    "PIONEER": [
-      {
-        "state": "SERVICE_ALERT",
-        "startTime": "2026-11-03T18:47:00+08:00",
-        "endTime": "2026-11-08T10:00:00+08:00",
-        "expiresAt": "2026-11-08T10:00:00+08:00",
-        "alertIds": [
-          "TDX_BUS_ALERT_HSINCHU:36961"
-        ],
-        "directions": [
-          0
-        ]
-      }
-    ]
-  }
+  "routes": {}
 }
