@@ -73,6 +73,57 @@ class CentralTests(unittest.TestCase):
         self.assertNotIn('TAICHUNG_KUOKUANG', direction['trips'][0]['times'])
         self.assertEqual(direction['timeKind'], 'STOP_TIME')
 
+    def test_new_shared_terminal_keeps_legacy_stop_and_platform_identities_distinct(self):
+        raw = central_fixture()
+        bundle = raw['THB1866']
+        row = next(r for r in bundle['stops'] if r['SubRouteUID'] == 'THB186601')
+        schedule = next(s for s in bundle['schedules'] if s['SubRouteUID'] == 'THB186601')
+        terminal = row['Stops'][-1]
+        terminal.update(StopUID='THB312555', StopSequence=23,
+                        StopName={'Zh_tw': '臺中轉運中心', 'En': 'Taichung Transit Center'},
+                        StopPosition={'PositionLat': 24.139928, 'PositionLon': 120.686026})
+        trip = schedule['Timetables'][0]
+        trip['StopTimes'].extend(
+            dict(stop, DepartureTime=time)
+            for stop, time in zip(row['Stops'][-2:], ('08:30', '08:40'))
+        )
+
+        bundle_9010 = raw['THB9010']
+        for r in bundle_9010['stops']:
+            if r['SubRouteUID'] != 'THB901001':
+                continue
+            platform = r['Stops'][0]
+            platform.update(StopUID='THB312549', StopName=dict(terminal['StopName']),
+                            StopPosition={'PositionLat': 24.139402})
+            for schedule_9010 in bundle_9010['schedules']:
+                if (schedule_9010['SubRouteUID'] == r['SubRouteUID']
+                        and schedule_9010['OperatorID'] == r['Operators'][0]['OperatorID']):
+                    schedule_9010['Timetables'][0]['StopTimes'][0].update(platform)
+
+        result = build(raw)
+        route = next(r for r in result['routes'] if r['id'] == '1866')
+        outbound = next(d for d in route['directions'] if 'THB186601' in d['id'])
+        legacy = next(d for d in route['directions'] if 'THB1866B1' in d['id'])
+        new_id = 'TAICHUNG_TRANSFER_CENTER'
+        old_id = 'TAICHUNG_KUOKUANG'
+        self.assertEqual(outbound['stops'][-2:], ['SHUINAN_TRANSFER', new_id])
+        self.assertEqual(outbound['trips'][0]['times'][new_id], '08:40')
+        self.assertNotIn(old_id, outbound['stops'])
+        self.assertIn(old_id, legacy['stops'])
+        self.assertNotIn(new_id, legacy['stops'])
+        names = {s['id']: s['zh'] for s in result['stops']}
+        self.assertEqual(names[new_id], '臺中轉運中心')
+        self.assertEqual(names[old_id], '國光客運臺中車站')
+        self.assertEqual(names['SHUINAN_TRANSFER'], '水湳轉運中心')
+        route_9010 = next(r for r in result['routes'] if r['id'] == '9010')
+        inbound_9010 = [d for d in route_9010['directions'] if 'THB901001' in d['id']]
+        self.assertEqual(len(inbound_9010), 2)
+        self.assertTrue(all(d['stops'][0] == new_id for d in inbound_9010))
+
+        trip['StopTimes'][-1]['StopUID'] = 'WRONG_TERMINAL_FIXTURE'
+        with self.assertRaisesRegex(m.InvalidData, 'Central StopTime identity mismatch: THB186601/45'):
+            build(raw)
+
     def test_partial_inbound_without_campus_is_not_origin_only(self):
         route = next(r for r in build(central_fixture())['routes'] if r['id'] == '1866')
         self.assertFalse(any('THB186602' in d['id'] for d in route['directions']))
