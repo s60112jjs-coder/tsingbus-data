@@ -1,7 +1,9 @@
 """Sync reliability: carry-forward, retries, conflict re-apply, Pages re-check. Synthetic data only."""
 import argparse
+from contextlib import redirect_stdout
 import datetime as dt
 import importlib.util
+import io
 import json
 import tempfile
 import unittest
@@ -77,7 +79,93 @@ def factory(client):
     return make
 
 
+def changed_central_stop(raw, uid='THB1866', sub='THB186601', name='尚待核對的測試站'):
+    bundle = raw[uid]
+    for row in bundle['stops']:
+        if row['SubRouteUID'] != sub:
+            continue
+        stop = next(s for s in row['Stops'] if s['LocationCityCode'] == 'TXG')
+        stop['StopName'] = {'Zh_tw': name, 'En': 'Unreviewed fixture stop'}
+        for schedule in bundle['schedules']:
+            if (schedule['SubRouteUID'] == sub and schedule['OperatorID'] == row['Operators'][0]['OperatorID']):
+                for trip in schedule['Timetables']:
+                    for item in trip['StopTimes']:
+                        if item['StopUID'] == stop['StopUID']:
+                            item['StopName'] = dict(stop['StopName'])
+    return raw
+
+
 class ReliabilityTests(unittest.TestCase):
+    def test_new_central_stop_retains_only_one_route_and_publishes_taipei(self):
+        previous = full()
+        directory, root = workspace(previous)
+        with directory:
+            raw = changed_central_stop(central_fixture())
+            raw['THB2011']['schedules'][0]['Frequencys'][0]['MaxHeadwayMins'] = 20
+            log = io.StringIO()
+            with redirect_stdout(log):
+                result = m.run(args(root, raw, accept_trip_drop='1866'), NOW)
+            self.assertIn('Central route 1866 has an unreviewed destination on THB186601/45', log.getvalue())
+            self.assertNotIn('尚待核對的測試站', log.getvalue())
+            self.assertTrue(result['changed'])
+            self.assertEqual(result['held'], {'1866': 'UNREVIEWED_STOP'})
+            manifest = json.loads((root / 'docs/v1/manifest.json').read_text())['files']
+            self.assertEqual(manifest['transit'], {'path': 'transit.json', 'updatedAt': NOW.isoformat()})
+            self.assertEqual(manifest['transitStatus'], {'path': 'transit-status.json', 'updatedAt': NOW.isoformat()})
+            self.assertEqual(manifest['campus']['updatedAt'], 'keep')
+            doc = json.loads((root / 'docs/v1/transit.json').read_text())
+            routes = {r['id']: r for r in doc['routes']}
+            self.assertEqual(routes['1866'], next(r for r in previous['routes'] if r['id'] == '1866'))
+            self.assertNotIn('尚待核對的測試站', json.dumps(doc, ensure_ascii=False))
+            self.assertIn(20, [f['maxHeadway'] for d in routes['2011']['directions'] for f in d.get('frequencies', [])])
+            path = root / 'docs/v1/transit-status.json'
+            status = json.loads(path.read_text())
+            self.assertIsNone(status['feed'])
+            entry = status['routes']['1866']
+            self.assertEqual(entry['reason'], 'SOURCE_MISSING')
+            self.assertEqual(entry['dataAsOf'], '2026-10-24T07:54:42+08:00')
+            self.assertIn('上車地點', entry['noteZh'])
+            self.assertIs(entry['diagnosis']['unreviewedStop'], True)
+            m.run(args(root, raw), NOW + dt.timedelta(hours=12))
+            self.assertEqual(json.loads(path.read_text())['routes']['1866'], entry)
+            m.run(args(root, central_fixture()), NOW + dt.timedelta(hours=24))
+            self.assertEqual(json.loads(path.read_text())['routes'], {})
+
+    def test_both_9010_operators_are_retained_as_one_route(self):
+        raw = changed_central_stop(central_fixture(), 'THB9010', 'THB901001')
+        previous = full()
+        candidate, held = m.build_resilient(raw, CALENDAR, '2026-10-25', previous, True)
+        self.assertEqual(held, {'9010': 'UNREVIEWED_STOP'})
+        self.assertEqual(next(r for r in candidate['routes'] if r['id'] == '9010'),
+                         next(r for r in previous['routes'] if r['id'] == '9010'))
+
+    def test_unreviewed_central_stop_without_baseline_or_with_shared_identity_rejects(self):
+        raw = changed_central_stop(central_fixture())
+        with self.assertRaisesRegex(m.InvalidData, 'without verified baseline'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', None, True)
+        changed_central_stop(raw, 'THB9010', 'THB901001')
+        with self.assertRaisesRegex(m.InvalidData, 'shared Taichung destination'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', full(), True)
+
+    def test_unreviewed_central_stop_does_not_mask_unrelated_input_or_baseline_errors(self):
+        raw = changed_central_stop(central_fixture())
+        wrong_uid = raw['THB1866']['schedules'][0]['Timetables'][0]['StopTimes'][0]
+        wrong_uid['StopUID'] = 'WRONG'
+        with self.assertRaisesRegex(m.InvalidData, 'StopTime identity mismatch'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', full(), True)
+        raw = changed_central_stop(central_fixture())
+        previous = full()
+        previous['stops'] = [s for s in previous['stops'] if s['id'] != 'NTHU_NORTH_GATE']
+        with self.assertRaisesRegex(m.InvalidData, 'Carried route references unknown stop'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', previous, True)
+        previous = full()
+        next(s for s in previous['stops'] if s['id'] == 'SHUINAN_TRANSFER')['en'] = 'Conflict'
+        with self.assertRaisesRegex(m.InvalidData, 'conflicts with updated stop definition'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', previous, True)
+        del raw['THB1728'], raw['THB9003']
+        with self.assertRaisesRegex(m.SourceIncomplete, 'Too many routes held'):
+            m.build_resilient(raw, CALENDAR, '2026-10-25', full(), True)
+
     def test_missing_1728_keeps_last_verified_copy_and_marks_it_stale(self):
         previous = full()
         directory, root = workspace(previous)

@@ -183,18 +183,23 @@ def maintain_status(episodes, status, alerts_doc, now, last_success=None):
     for rid, entry in sorted((status or {}).get('routes', {}).items()):
         key = route_key(rid, entry['since'])
         keep.append(key)
+        diag = entry.get('diagnosis') or {}
+        unreviewed_stop = diag.get('unreviewedStop') is True
         urgent = (entry.get('reason') in ('SUDDEN_TRIP_DROP', 'SERVICE_DAY_LOST')
-                  or entry.get('diagnosis', {}).get('diagnosis') == 'ROUTE_UID_CHANGED')
+                  or diag.get('diagnosis') == 'ROUTE_UID_CHANGED' or unreviewed_stop)
         overdue = now - parse_time(entry['since']) >= dt.timedelta(hours=ROUTE_STALE_NOTIFY_HOURS)
         if urgent or overdue:
-            diag = entry.get('diagnosis') or {}
+            reason = 'UNREVIEWED_STOP' if unreviewed_stop else entry['reason']
+            partial_help = ('站點變動仍未核實。請核對 TDX 站名、站序及業者公告；切勿自動新增或套用映射。\n'
+                            if unreviewed_stop else
+                            '- `PARTIAL_RESPONSE`：路線還在但站序或時刻缺漏，通常是 TDX 暫時問題。\n')
             episodes.open(key, f'清BUS：校外路線 {rid} 暫用舊班表，請確認',
-                          f'路線 **{rid}** 自 {entry["since"]} 起無法使用最新官方資料（原因：`{entry["reason"]}`），'
-                          f'App 目前顯示 {entry.get("dataAsOf")} 驗證過的班表並標示「資料可能過期」。\n\n'
+                          f'路線 **{rid}** 自 {entry["since"]} 起無法使用最新官方資料（原因：`{reason}`），'
+                          f'公開班表沿用 {entry.get("dataAsOf")} 驗證過的版本，狀態檔標示「資料可能過期」。\n\n'
                           f'診斷：`{json.dumps(diag, ensure_ascii=False)}`\n\n'
                           '- `ROUTE_UID_CHANGED`：TDX 換了路線代號（常見於換業者），請確認新業者與站序後更新 `scripts/sync_transit.py` 白名單。\n'
                           '- `ROUTE_NOT_LISTED`：TDX 完全查不到這條路線，請到業者／公路局網站確認是否停駛或改號。\n'
-                          '- `PARTIAL_RESPONSE`：路線還在但站序或時刻缺漏，通常是 TDX 暫時問題。\n'
+                          f'{partial_help}'
                           '- `SERVICE_DAY_LOST`：某些星期突然一班都沒有；確認官方真的停開那幾天後，同樣用 accept_trip_drop 放行。\n'
                           '- `SUDDEN_TRIP_DROP`：班次突然少一半以上；確認是官方真的減班後，手動執行同步並在 accept_trip_drop 填入路線。\n\n'
                           '路線恢復正常同步後，本提醒會自動關閉。')
