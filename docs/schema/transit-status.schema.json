@@ -35,6 +35,7 @@
           "properties": {
             "missingEndpoint": {"enum": ["ROUTE", "STOP_OF_ROUTE", "SCHEDULE"]},
             "diagnosis": {"enum": ["ROUTE_UID_CHANGED", "ROUTE_NOT_LISTED", "PARTIAL_RESPONSE", "LOOKUP_FAILED"]},
+            "unreviewedStop": {"type": "boolean", "description": "站點變動尚未人工核實；不採用新的路線資料。"},
             "foundRouteUIDs": {"type": "array", "items": {"type": "string"}},
             "foundOperators": {"type": "array", "items": {"type": "string"}}
           }

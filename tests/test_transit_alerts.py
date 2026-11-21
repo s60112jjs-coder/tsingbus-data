@@ -91,6 +91,16 @@ class StatusIssueTests(unittest.TestCase):
             m.maintain_status(ep, status, None, NOW)
             self.assertEqual(len(api.writes), 1)
 
+    def test_unreviewed_stop_notifies_immediately_without_mislabelling_it_as_missing(self):
+        status = stale('2026-10-26T07:59:00+08:00', diagnosis='PARTIAL_RESPONSE')
+        status['routes']['1728']['diagnosis']['unreviewedStop'] = True
+        api, ep = self.episodes()
+        m.maintain_status(ep, status, None, NOW)
+        self.assertEqual(len(api.writes), 1)
+        self.assertIn('UNREVIEWED_STOP', api.writes[0][2]['body'])
+        self.assertIn('請核對', api.writes[0][2]['body'])
+        self.assertNotIn('通常是 TDX 暫時問題', api.writes[0][2]['body'])
+
     def test_recovered_route_closes_its_issue(self):
         key = m.route_key('1728', '2026-10-25T21:50:00+08:00')
         api, ep = self.episodes([{'body': key, 'state': 'open', 'number': 13}])

@@ -558,9 +558,10 @@ def build_without_central(raw, calendar, today, origin_frequency_ready=False, sk
     return result
 
 
-def central_routes(raw, skip=frozenset()):
+def central_routes(raw, skip=frozenset(), review=None):
     """Review operator-specific sequences and expose only officially timed legs."""
-    output, destination_defs = [], {}
+    output, destination_defs, checked_defs = [], {}, {}
+    stop_owners, unknown_keys = {}, set()
     for rid, (uid, _, name, allowed) in CENTRAL_ROUTES.items():
         if rid in skip:
             continue
@@ -582,6 +583,7 @@ def central_routes(raw, skip=frozenset()):
                     raise InvalidData('Conflicting central operator stop sequences')
                 rows[key] = row
         profiles, served, seen = {}, set(), set()
+        route_defs, unreviewed_services = {}, set()
         for schedule in sorted(bundle['schedules'], key=lambda s: (s['SubRouteUID'], str(s['OperatorID']), s['Direction'])):
             sub, direction, op = schedule['SubRouteUID'], schedule['Direction'], str(schedule['OperatorID'])
             key = (sub, direction, op)
@@ -605,9 +607,24 @@ def central_routes(raw, skip=frozenset()):
                 if stop_name in CENTRAL_STOP_IDS and s.get('LocationCityCode') != 'TXG':
                     raise InvalidData(f'Central destination city identity changed: {sub}')
                 if s.get('LocationCityCode') == 'TXG':
-                    if stop_name not in CENTRAL_STOP_IDS:
-                        raise InvalidData(f'Unreviewed Taichung destination: {sub}')
-                    sid = CENTRAL_STOP_IDS[stop_name]
+                    sid = CENTRAL_STOP_IDS.get(stop_name)
+                    if review is not None:
+                        stop_uid = s.get('StopUID')
+                        if not isinstance(stop_uid, str) or not stop_uid or not stop_name.strip():
+                            raise InvalidData(f'Invalid Taichung destination identity: {sub}')
+                        identity_keys = {('name', stop_name), ('uid', stop_uid)}
+                        station_id = s.get('StationID')
+                        if station_id:
+                            identity_keys.add(('station', str(station_id)))
+                        for identity_key in identity_keys:
+                            stop_owners.setdefault(identity_key, set()).add(rid)
+                    if sid is None:
+                        if review is None:
+                            raise InvalidData(f'Unreviewed Taichung destination: {sub}')
+                        # Internal only: run all other structural checks but never publish this route.
+                        unreviewed_services.add((sub, op))
+                        unknown_keys.update(identity_keys)
+                        sid = ('unreviewed', stop_name)
                     position = s.get('StopPosition', {})
                     lat = position.get('PositionLat')
                     if not isinstance(lat, (float, int)) or not 23.9 <= lat <= 24.5:
@@ -651,7 +668,7 @@ def central_routes(raw, skip=frozenset()):
                     converted['serviceExceptions'] = exceptions
                 profile = (sub, op, kind, tuple(public_ids))
                 if profile not in profiles:
-                    suffix = '' if public_ids == ids else '_LEG_' + hashlib.sha256('|'.join(public_ids).encode()).hexdigest()[:10]
+                    suffix = '' if public_ids == ids else '_LEG_' + hashlib.sha256('|'.join(map(str, public_ids)).encode()).hexdigest()[:10]
                     d = {'id': f'{rid}_{sub}_{op}_{kind}{suffix}', 'stops': public_ids, 'timeKind': kind, 'trips': []}
                     if kind == 'ORIGIN_DEPARTURE_ONLY':
                         origin = stops[0]['StopName']
@@ -662,32 +679,46 @@ def central_routes(raw, skip=frozenset()):
                 for sid in public_ids:
                     if sid in definitions:
                         value = definitions[sid]
-                        old = destination_defs.get(sid)
+                        old = checked_defs.get(sid)
                         if old and (old['zh'], old['en']) != (value['zh'], value['en']):
                             raise InvalidData(f'Conflicting central destination names: {sid}')
                         if old is None or value['_lat'] > old['_lat']:
-                            destination_defs[sid] = value
+                            checked_defs[sid] = value
+                        old_route = route_defs.get(sid)
+                        if old_route is None or value['_lat'] > old_route['_lat']:
+                            route_defs[sid] = value
             if skipped:
                 print(f'Skipped {skipped} partial central timetable row(s) without campus time: {sub}/{op}')
         if not CENTRAL_CORE[rid] <= served:
             raise InvalidData(f'Missing required central core service: {rid}')
         directions = list(profiles.values())
-        if {d['stops'].index('NTHU_NORTH_GATE') < next(i for i, s in enumerate(d['stops']) if s in destination_defs)
+        if {d['stops'].index('NTHU_NORTH_GATE') < next(i for i, s in enumerate(d['stops']) if s in route_defs)
                 for d in directions} != {True, False}:
             raise InvalidData(f'Central route missing a travel direction: {rid}')
+        if unreviewed_services:
+            review.add(rid)
+            services = ', '.join(f'{sub}/{op}' for sub, op in sorted(unreviewed_services))
+            print(f'Central route {rid} has an unreviewed destination on {services}')
+            continue
+        for sid, definition in route_defs.items():
+            old = destination_defs.get(sid)
+            if old is None or definition['_lat'] > old['_lat']:
+                destination_defs[sid] = definition
         for d in directions:
             d['trips'] = sorted_unique(d['trips'])
         output.append({'id': rid, 'number': name, 'zh': name, 'en': route['RouteName'].get('En', name),
                        'operatorZh': '／'.join(sorted({zh(o['OperatorName']) for o in operators})),
                        'operatorEn': ' / '.join(sorted({o['OperatorName'].get('En', zh(o['OperatorName'])) for o in operators})),
                        'directions': sorted(directions, key=lambda d: d['id'])})
+    if any(len(stop_owners[key]) > 1 for key in unknown_keys):
+        raise InvalidData('Unreviewed shared Taichung destination')
     ordered = sorted(destination_defs.values(), key=lambda s: CENTRAL_STOP_ORDER.index(s['id']))
     return output, [{k: v for k, v in s.items() if k != '_lat'} for s in ordered]
 
 
-def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False, skip=frozenset()):
+def build(raw, calendar, today, origin_frequency_ready=False, skip_2011=False, skip=frozenset(), review=None):
     result = build_without_central(raw, calendar, today, origin_frequency_ready, skip_2011, skip)
-    routes, stops = central_routes(raw, skip)
+    routes, stops = central_routes(raw, skip, review)
     if {s['id'] for s in stops} & {s['id'] for s in result['stops']}:
         raise InvalidData('Central destination IDs collide with existing public stops')
     result['routes'] = sorted(result['routes'] + routes, key=lambda r: r['id'])
@@ -842,12 +873,15 @@ def merge_carried(result, previous, carried):
     for rid in carried:
         routes[rid] = copy.deepcopy(prev_routes[rid])
     result['routes'] = sorted(routes.values(), key=lambda r: r['id'])
-    have = {s['id'] for s in result['stops']}
+    fresh_stops = {s['id']: s for s in result['stops']}
+    have = set(fresh_stops)
     needed = [sid for rid in sorted(carried) for d in prev_routes[rid]['directions'] for sid in d['stops']]
     for sid in dict.fromkeys(needed):
+        if sid not in prev_stops:
+            raise InvalidData(f'Carried route references unknown stop: {sid}')
+        if sid in fresh_stops and fresh_stops[sid] != prev_stops[sid]:
+            raise InvalidData(f'Carried route conflicts with updated stop definition: {sid}')
         if sid not in have:
-            if sid not in prev_stops:
-                raise InvalidData(f'Carried route references unknown stop: {sid}')
             result['stops'].append(copy.deepcopy(prev_stops[sid]))
             have.add(sid)
     prev_groups = {g['id']: g for g in previous.get('groups', [])}
@@ -860,8 +894,12 @@ def merge_carried(result, previous, carried):
             if not set(section['routes']) & set(carried) or section['id'] not in old_sections:
                 continue
             # Ordered union: previously published destinations first, then any new ones.
-            merged = list(dict.fromkeys(old_sections[section['id']]['destinationStops'] + section['destinationStops']))
-            section['destinationStops'] = [sid for sid in merged if sid in have]
+            carried_section_stops = {sid for rid in set(section['routes']) & set(carried)
+                                     for direction in prev_routes[rid]['directions'] for sid in direction['stops']}
+            fresh_section_stops = section['destinationStops']
+            previous_destinations = [sid for sid in old_sections[section['id']]['destinationStops']
+                                     if sid in carried_section_stops or sid in fresh_section_stops]
+            section['destinationStops'] = list(dict.fromkeys(previous_destinations + fresh_section_stops))
     return result
 
 
@@ -869,8 +907,8 @@ def build_resilient(raw, calendar, today, previous, origin_frequency_ready=False
                     accept_drops=frozenset()):
     """Strict build per route; an absent or suddenly shrunken route keeps its last verified copy.
 
-    Returns (candidate, held) where held maps route id -> reason. Malformed, renamed or
-    unreviewed data is still rejected by the strict builders; only *absence* is tolerated.
+    Only a proven central route-local stop review can use the fallback path.
+    Malformed, shared or otherwise unreviewed data still fails closed.
     """
     absent = absent_routes(raw, skip_2011)
     prev_routes = {r['id']: r for r in (previous or {}).get('routes', [])}
@@ -881,7 +919,12 @@ def build_resilient(raw, calendar, today, previous, origin_frequency_ready=False
         if lost:
             raise SourceIncomplete(f'Missing required route {", ".join(lost)} with no verified copy to keep')
     held = {rid: 'SOURCE_MISSING' for rid in absent}
-    candidate = build(raw, calendar, today, origin_frequency_ready, skip_2011, frozenset(absent))
+    review = set()
+    candidate = build(raw, calendar, today, origin_frequency_ready, skip_2011, frozenset(absent), review)
+    if review - prev_routes.keys():
+        raise InvalidData('Unreviewed Taichung destination without verified baseline: '
+                          + ', '.join(sorted(review - prev_routes.keys())))
+    held.update({rid: 'UNREVIEWED_STOP' for rid in review})
     for route in candidate['routes']:
         old = prev_routes.get(route['id'])
         if (old and route['id'] not in accept_drops and trip_count(old) >= 4
@@ -927,6 +970,8 @@ STATUS_NOTES = {
                          'Official trip count dropped sharply and is under review; showing the last verified timetable.'),
     'SERVICE_DAY_LOST': ('官方班表某些星期突然一班都沒有，正在人工確認；顯示的是最後一次驗證成功的班表。',
                          'Official data suddenly has no trips on some weekdays and is under review; showing the last verified timetable.'),
+    'UNREVIEWED_STOP': ('官方站點有變動，尚待核對；舊班表及上車地點可能不適用，請先查業者公告。',
+                        'An official stop change is under review. The previous timetable and boarding location may no longer apply; check the operator.'),
     'FEED_STALE': ('校外公車資料已超過一天無法與官方同步，班表可能與實際營運不符。',
                    'Off-campus bus data has not synced with official sources for over a day and may be outdated.'),
 }
@@ -953,13 +998,21 @@ def next_status(previous, held, diagnosis, stamp, data_as_of):
     status['updatedAt'] = previous.get('updatedAt')
     for rid, reason in sorted(held.items()):
         old = previous['routes'].get(rid) or {}
-        same = old.get('reason') == reason
+        unreviewed_stop = reason == 'UNREVIEWED_STOP'
+        # Keep the v1 reason enum compatible with deployed readers. The note explains
+        # that this route's verified data is missing, not that the route disappeared.
+        public_reason = 'SOURCE_MISSING' if unreviewed_stop else reason
+        same = (old.get('reason') == public_reason and
+                bool((old.get('diagnosis') or {}).get('unreviewedStop')) == unreviewed_stop)
         zh_note, en_note = STATUS_NOTES[reason]
-        entry = {'state': 'STALE_DATA', 'reason': reason,
+        entry = {'state': 'STALE_DATA', 'reason': public_reason,
                  'since': old['since'] if same else stamp,
                  'dataAsOf': old.get('dataAsOf') or data_as_of,
                  'noteZh': zh_note, 'noteEn': en_note}
-        if rid in diagnosis:
+        if unreviewed_stop:
+            entry['diagnosis'] = {'missingEndpoint': 'STOP_OF_ROUTE', 'diagnosis': 'PARTIAL_RESPONSE',
+                                  'unreviewedStop': True}
+        elif rid in diagnosis:
             entry['diagnosis'] = diagnosis[rid]
         elif same and 'diagnosis' in old:
             entry['diagnosis'] = old['diagnosis']
