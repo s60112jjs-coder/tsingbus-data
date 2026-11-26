@@ -1,29 +1,91 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T08:26:05+08:00",
-  "lastCheckedAt": "2026-11-25T22:28:03+08:00",
-  "validUntil": "2026-11-27T04:28:03+08:00",
+  "updatedAt": "2026-11-26T18:57:37+08:00",
+  "lastCheckedAt": "2026-11-26T18:57:37+08:00",
+  "validUntil": "2026-11-28T00:57:37+08:00",
   "sources": [
     {
       "id": "TDX_BUS_ALERT_INTERCITY",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/InterCity",
       "state": "OK",
-      "lastSuccessAt": "2026-11-25T22:28:03+08:00"
+      "lastSuccessAt": "2026-11-26T18:57:37+08:00"
     },
     {
       "id": "TDX_BUS_ALERT_HSINCHU",
       "url": "https://tdx.transportdata.tw/api/basic/v2/Bus/Alert/City/Hsinchu",
       "state": "OK",
-      "lastSuccessAt": "2026-11-25T22:28:03+08:00"
+      "lastSuccessAt": "2026-11-26T18:57:37+08:00"
     },
     {
       "id": "DGPA_CLOSURES",
       "url": "https://www.dgpa.gov.tw/typh/daily/nds.html",
       "state": "OK",
-      "lastSuccessAt": "2026-11-25T22:28:03+08:00"
+      "lastSuccessAt": "2026-11-26T18:57:37+08:00"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "id": "TDX_BUS_ALERT_INTERCITY:37455",
+      "sourceId": "TDX_BUS_ALERT_INTERCITY",
+      "alertId": "37455",
+      "title": "【國光客運】因應「2026新竹市馬拉松路跑」活動，本公司【1804】、【1822】、【1865】、【1866】 (含支線)國道客運路線於活動期間進行改道動線及取消停靠站位",
+      "description": "因應「2026新竹市馬拉松路跑」活動，本公司【1804】、【1822】、【1865】、【1866】 (含支線)國道客運路線於活動期間取消「公園路」、「二分局」、「馬偕醫院」、「清華大學」、「陽明交大光復路」站點。\n\n※如需乘車旅客請至新竹轉運站搭乘。",
+      "department": "THB",
+      "status": 2,
+      "cause": 254,
+      "effect": 254,
+      "url": "https://www.kingbus.com.tw/page.html?seq=41440",
+      "publishTime": "2026-11-26T15:33:04+08:00",
+      "startTime": "2026-11-25T18:42:00+08:00",
+      "endTime": "2026-12-06T09:59:00+08:00",
+      "expiresAt": "2026-12-06T09:59:00+08:00",
+      "firstSeenAt": "2026-11-26T18:57:37+08:00",
+      "sourceUpdateTime": "2026-11-26T15:33:04+08:00",
+      "routes": {
+        "1822": {
+          "state": "SERVICE_ALERT",
+          "directions": [
+            0
+          ]
+        },
+        "1866": {
+          "state": "SERVICE_ALERT",
+          "directions": [
+            0
+          ]
+        }
+      }
+    }
+  ],
   "closureHints": [],
-  "routes": {}
+  "routes": {
+    "1822": [
+      {
+        "state": "SERVICE_ALERT",
+        "startTime": "2026-11-25T18:42:00+08:00",
+        "endTime": "2026-12-06T09:59:00+08:00",
+        "expiresAt": "2026-12-06T09:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_INTERCITY:37455"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ],
+    "1866": [
+      {
+        "state": "SERVICE_ALERT",
+        "startTime": "2026-11-25T18:42:00+08:00",
+        "endTime": "2026-12-06T09:59:00+08:00",
+        "expiresAt": "2026-12-06T09:59:00+08:00",
+        "alertIds": [
+          "TDX_BUS_ALERT_INTERCITY:37455"
+        ],
+        "directions": [
+          0
+        ]
+      }
+    ]
+  }
 }
