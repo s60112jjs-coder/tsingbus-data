@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "holidays": [
     "2026-01-01",
     "2026-02-15",
@@ -576,11 +576,11 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "18:00",
-                "NTU": "18:12",
-                "GONGGUAN": "18:14",
-                "JINGMEI": "18:21",
-                "DAPINGLIN": "18:25",
-                "XIAOBITAN": "18:37",
+                "NTU": "18:13",
+                "GONGGUAN": "18:15",
+                "JINGMEI": "18:22",
+                "DAPINGLIN": "18:26",
+                "XIAOBITAN": "18:38",
                 "NTHU_NORTH_GATE": "20:00",
                 "HSINCHU_BUS_STATION": "20:09"
               }
@@ -657,8 +657,8 @@
                 "JINGMEI": "17:57",
                 "DAPINGLIN": "18:00",
                 "XIAOBITAN": "18:12",
-                "NTHU_NORTH_GATE": "19:35",
-                "HSINCHU_BUS_STATION": "19:45"
+                "NTHU_NORTH_GATE": "19:34",
+                "HSINCHU_BUS_STATION": "19:44"
               }
             },
             {
@@ -667,13 +667,13 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "18:30",
-                "NTU": "18:42",
-                "GONGGUAN": "18:44",
-                "JINGMEI": "18:51",
-                "DAPINGLIN": "18:55",
-                "XIAOBITAN": "19:07",
-                "NTHU_NORTH_GATE": "20:24",
-                "HSINCHU_BUS_STATION": "20:33"
+                "NTU": "18:43",
+                "GONGGUAN": "18:45",
+                "JINGMEI": "18:52",
+                "DAPINGLIN": "18:56",
+                "XIAOBITAN": "19:08",
+                "NTHU_NORTH_GATE": "20:25",
+                "HSINCHU_BUS_STATION": "20:34"
               }
             },
             {
@@ -729,8 +729,8 @@
                 "JINGMEI": "10:17",
                 "DAPINGLIN": "10:20",
                 "XIAOBITAN": "10:28",
-                "NTHU_NORTH_GATE": "11:46",
-                "HSINCHU_BUS_STATION": "11:55"
+                "NTHU_NORTH_GATE": "11:47",
+                "HSINCHU_BUS_STATION": "11:56"
               }
             },
             {
@@ -750,8 +750,8 @@
                 "JINGMEI": "11:16",
                 "DAPINGLIN": "11:19",
                 "XIAOBITAN": "11:27",
-                "NTHU_NORTH_GATE": "12:42",
-                "HSINCHU_BUS_STATION": "12:53"
+                "NTHU_NORTH_GATE": "12:43",
+                "HSINCHU_BUS_STATION": "12:54"
               }
             },
             {
@@ -853,10 +853,10 @@
                 "NTU": "22:09",
                 "GONGGUAN": "22:11",
                 "JINGMEI": "22:18",
-                "DAPINGLIN": "22:22",
-                "XIAOBITAN": "22:30",
-                "NTHU_NORTH_GATE": "23:36",
-                "HSINCHU_BUS_STATION": "23:42"
+                "DAPINGLIN": "22:21",
+                "XIAOBITAN": "22:29",
+                "NTHU_NORTH_GATE": "23:35",
+                "HSINCHU_BUS_STATION": "23:41"
               }
             },
             {
@@ -870,13 +870,13 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "08:00",
-                "NTU": "08:09",
-                "GONGGUAN": "08:11",
-                "JINGMEI": "08:18",
-                "DAPINGLIN": "08:21",
-                "XIAOBITAN": "08:30",
-                "NTHU_NORTH_GATE": "09:58",
-                "HSINCHU_BUS_STATION": "10:07"
+                "NTU": "08:08",
+                "GONGGUAN": "08:10",
+                "JINGMEI": "08:17",
+                "DAPINGLIN": "08:20",
+                "XIAOBITAN": "08:29",
+                "NTHU_NORTH_GATE": "09:57",
+                "HSINCHU_BUS_STATION": "10:06"
               }
             },
             {
@@ -894,9 +894,9 @@
                 "GONGGUAN": "15:11",
                 "JINGMEI": "15:17",
                 "DAPINGLIN": "15:21",
-                "XIAOBITAN": "15:30",
-                "NTHU_NORTH_GATE": "16:50",
-                "HSINCHU_BUS_STATION": "16:59"
+                "XIAOBITAN": "15:29",
+                "NTHU_NORTH_GATE": "16:49",
+                "HSINCHU_BUS_STATION": "16:58"
               }
             },
             {
@@ -1011,7 +1011,7 @@
                 "DAPINGLIN": "07:28",
                 "XIAOBITAN": "07:36",
                 "NTHU_NORTH_GATE": "09:09",
-                "HSINCHU_BUS_STATION": "09:18"
+                "HSINCHU_BUS_STATION": "09:20"
               }
             },
             {
@@ -1105,8 +1105,8 @@
                 "JINGMEI": "18:02",
                 "DAPINGLIN": "18:06",
                 "XIAOBITAN": "18:18",
-                "NTHU_NORTH_GATE": "19:42",
-                "HSINCHU_BUS_STATION": "19:52"
+                "NTHU_NORTH_GATE": "19:41",
+                "HSINCHU_BUS_STATION": "19:51"
               }
             },
             {
@@ -1118,11 +1118,11 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "18:10",
-                "NTU": "18:22",
-                "GONGGUAN": "18:24",
-                "JINGMEI": "18:31",
-                "DAPINGLIN": "18:35",
-                "XIAOBITAN": "18:47",
+                "NTU": "18:23",
+                "GONGGUAN": "18:25",
+                "JINGMEI": "18:32",
+                "DAPINGLIN": "18:36",
+                "XIAOBITAN": "18:48",
                 "NTHU_NORTH_GATE": "20:09",
                 "HSINCHU_BUS_STATION": "20:18"
               }
@@ -1136,13 +1136,13 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "18:50",
-                "NTU": "19:02",
-                "GONGGUAN": "19:04",
-                "JINGMEI": "19:12",
-                "DAPINGLIN": "19:15",
-                "XIAOBITAN": "19:25",
-                "NTHU_NORTH_GATE": "20:42",
-                "HSINCHU_BUS_STATION": "20:51"
+                "NTU": "19:03",
+                "GONGGUAN": "19:05",
+                "JINGMEI": "19:13",
+                "DAPINGLIN": "19:16",
+                "XIAOBITAN": "19:26",
+                "NTHU_NORTH_GATE": "20:43",
+                "HSINCHU_BUS_STATION": "20:52"
               }
             },
             {
@@ -1173,7 +1173,7 @@
                 "DAPINGLIN": "07:18",
                 "XIAOBITAN": "07:26",
                 "NTHU_NORTH_GATE": "09:00",
-                "HSINCHU_BUS_STATION": "09:09"
+                "HSINCHU_BUS_STATION": "09:11"
               }
             },
             {
@@ -1203,7 +1203,7 @@
                 "DAPINGLIN": "07:48",
                 "XIAOBITAN": "07:56",
                 "NTHU_NORTH_GATE": "09:26",
-                "HSINCHU_BUS_STATION": "09:35"
+                "HSINCHU_BUS_STATION": "09:37"
               }
             },
             {
@@ -1216,9 +1216,9 @@
                 "GONGGUAN": "14:51",
                 "JINGMEI": "14:57",
                 "DAPINGLIN": "15:00",
-                "XIAOBITAN": "15:09",
-                "NTHU_NORTH_GATE": "16:27",
-                "HSINCHU_BUS_STATION": "16:36"
+                "XIAOBITAN": "15:08",
+                "NTHU_NORTH_GATE": "16:26",
+                "HSINCHU_BUS_STATION": "16:35"
               }
             },
             {
@@ -1231,9 +1231,9 @@
                 "GONGGUAN": "15:31",
                 "JINGMEI": "15:37",
                 "DAPINGLIN": "15:41",
-                "XIAOBITAN": "15:50",
-                "NTHU_NORTH_GATE": "17:12",
-                "HSINCHU_BUS_STATION": "17:22"
+                "XIAOBITAN": "15:49",
+                "NTHU_NORTH_GATE": "17:11",
+                "HSINCHU_BUS_STATION": "17:21"
               }
             },
             {
@@ -1257,13 +1257,13 @@
               ],
               "times": {
                 "RENAI_DUNHUA": "18:40",
-                "NTU": "18:52",
-                "GONGGUAN": "18:54",
-                "JINGMEI": "19:01",
-                "DAPINGLIN": "19:04",
-                "XIAOBITAN": "19:14",
-                "NTHU_NORTH_GATE": "20:31",
-                "HSINCHU_BUS_STATION": "20:40"
+                "NTU": "18:53",
+                "GONGGUAN": "18:55",
+                "JINGMEI": "19:02",
+                "DAPINGLIN": "19:05",
+                "XIAOBITAN": "19:15",
+                "NTHU_NORTH_GATE": "20:32",
+                "HSINCHU_BUS_STATION": "20:41"
               }
             },
             {
@@ -1321,12 +1321,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:00",
                 "NTHU_NORTH_GATE": "17:10",
-                "XIAOBITAN": "18:47",
-                "DAPINGLIN": "18:58",
-                "JINGMEI": "19:01",
-                "GONGGUAN": "19:08",
-                "NTU": "19:11",
-                "RENAI_DUNHUA": "19:21"
+                "XIAOBITAN": "18:46",
+                "DAPINGLIN": "18:57",
+                "JINGMEI": "19:00",
+                "GONGGUAN": "19:07",
+                "NTU": "19:10",
+                "RENAI_DUNHUA": "19:20"
               }
             },
             {
@@ -1384,12 +1384,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:30",
                 "NTHU_NORTH_GATE": "17:40",
-                "XIAOBITAN": "19:17",
-                "DAPINGLIN": "19:26",
-                "JINGMEI": "19:29",
-                "GONGGUAN": "19:36",
-                "NTU": "19:39",
-                "RENAI_DUNHUA": "19:49"
+                "XIAOBITAN": "19:16",
+                "DAPINGLIN": "19:25",
+                "JINGMEI": "19:28",
+                "GONGGUAN": "19:35",
+                "NTU": "19:38",
+                "RENAI_DUNHUA": "19:48"
               }
             },
             {
@@ -1404,7 +1404,7 @@
                 "JINGMEI": "21:11",
                 "GONGGUAN": "21:18",
                 "NTU": "21:21",
-                "RENAI_DUNHUA": "21:30"
+                "RENAI_DUNHUA": "21:29"
               }
             },
             {
@@ -1441,12 +1441,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "09:00",
                 "NTHU_NORTH_GATE": "09:09",
-                "XIAOBITAN": "10:32",
-                "DAPINGLIN": "10:40",
-                "JINGMEI": "10:43",
-                "GONGGUAN": "10:50",
-                "NTU": "10:54",
-                "RENAI_DUNHUA": "11:04"
+                "XIAOBITAN": "10:33",
+                "DAPINGLIN": "10:41",
+                "JINGMEI": "10:44",
+                "GONGGUAN": "10:51",
+                "NTU": "10:55",
+                "RENAI_DUNHUA": "11:05"
               }
             },
             {
@@ -1462,11 +1462,11 @@
               "times": {
                 "HSINCHU_BUS_STATION": "10:00",
                 "NTHU_NORTH_GATE": "10:08",
-                "XIAOBITAN": "11:28",
-                "DAPINGLIN": "11:37",
-                "JINGMEI": "11:40",
-                "GONGGUAN": "11:47",
-                "NTU": "11:51",
+                "XIAOBITAN": "11:29",
+                "DAPINGLIN": "11:38",
+                "JINGMEI": "11:41",
+                "GONGGUAN": "11:48",
+                "NTU": "11:52",
                 "RENAI_DUNHUA": "12:02"
               }
             },
@@ -1488,7 +1488,7 @@
                 "JINGMEI": "12:35",
                 "GONGGUAN": "12:42",
                 "NTU": "12:46",
-                "RENAI_DUNHUA": "12:57"
+                "RENAI_DUNHUA": "12:55"
               }
             },
             {
@@ -1648,12 +1648,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "13:00",
                 "NTHU_NORTH_GATE": "13:09",
-                "XIAOBITAN": "14:27",
-                "DAPINGLIN": "14:35",
-                "JINGMEI": "14:37",
-                "GONGGUAN": "14:44",
-                "NTU": "14:47",
-                "RENAI_DUNHUA": "14:56"
+                "XIAOBITAN": "14:26",
+                "DAPINGLIN": "14:34",
+                "JINGMEI": "14:36",
+                "GONGGUAN": "14:43",
+                "NTU": "14:46",
+                "RENAI_DUNHUA": "14:55"
               }
             },
             {
@@ -1687,12 +1687,12 @@
               ],
               "times": {
                 "HSINCHU_BUS_STATION": "20:00",
-                "NTHU_NORTH_GATE": "20:09",
-                "XIAOBITAN": "21:29",
-                "DAPINGLIN": "21:36",
-                "JINGMEI": "21:39",
-                "GONGGUAN": "21:46",
-                "NTU": "21:49",
+                "NTHU_NORTH_GATE": "20:10",
+                "XIAOBITAN": "21:30",
+                "DAPINGLIN": "21:37",
+                "JINGMEI": "21:40",
+                "GONGGUAN": "21:47",
+                "NTU": "21:50",
                 "RENAI_DUNHUA": "21:58"
               }
             },
@@ -1708,11 +1708,11 @@
                 "HSINCHU_BUS_STATION": "05:15",
                 "NTHU_NORTH_GATE": "05:23",
                 "XIAOBITAN": "06:24",
-                "DAPINGLIN": "06:32",
-                "JINGMEI": "06:34",
-                "GONGGUAN": "06:41",
-                "NTU": "06:44",
-                "RENAI_DUNHUA": "06:50"
+                "DAPINGLIN": "06:31",
+                "JINGMEI": "06:33",
+                "GONGGUAN": "06:40",
+                "NTU": "06:43",
+                "RENAI_DUNHUA": "06:49"
               }
             },
             {
@@ -1727,11 +1727,11 @@
                 "HSINCHU_BUS_STATION": "05:40",
                 "NTHU_NORTH_GATE": "05:48",
                 "XIAOBITAN": "06:54",
-                "DAPINGLIN": "07:02",
-                "JINGMEI": "07:05",
-                "GONGGUAN": "07:12",
-                "NTU": "07:15",
-                "RENAI_DUNHUA": "07:26"
+                "DAPINGLIN": "07:01",
+                "JINGMEI": "07:04",
+                "GONGGUAN": "07:11",
+                "NTU": "07:14",
+                "RENAI_DUNHUA": "07:25"
               }
             },
             {
@@ -1819,12 +1819,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:20",
                 "NTHU_NORTH_GATE": "17:30",
-                "XIAOBITAN": "19:07",
-                "DAPINGLIN": "19:16",
-                "JINGMEI": "19:19",
-                "GONGGUAN": "19:26",
-                "NTU": "19:29",
-                "RENAI_DUNHUA": "19:39"
+                "XIAOBITAN": "19:06",
+                "DAPINGLIN": "19:15",
+                "JINGMEI": "19:18",
+                "GONGGUAN": "19:25",
+                "NTU": "19:28",
+                "RENAI_DUNHUA": "19:38"
               }
             },
             {
@@ -1837,12 +1837,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:50",
                 "NTHU_NORTH_GATE": "18:00",
-                "XIAOBITAN": "19:34",
-                "DAPINGLIN": "19:43",
-                "JINGMEI": "19:46",
-                "GONGGUAN": "19:53",
-                "NTU": "19:56",
-                "RENAI_DUNHUA": "20:07"
+                "XIAOBITAN": "19:33",
+                "DAPINGLIN": "19:42",
+                "JINGMEI": "19:45",
+                "GONGGUAN": "19:52",
+                "NTU": "19:55",
+                "RENAI_DUNHUA": "20:06"
               }
             },
             {
@@ -1860,7 +1860,7 @@
                 "JINGMEI": "21:01",
                 "GONGGUAN": "21:08",
                 "NTU": "21:11",
-                "RENAI_DUNHUA": "21:20"
+                "RENAI_DUNHUA": "21:19"
               }
             },
             {
@@ -1885,12 +1885,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "12:40",
                 "NTHU_NORTH_GATE": "12:49",
-                "XIAOBITAN": "14:07",
-                "DAPINGLIN": "14:15",
-                "JINGMEI": "14:17",
-                "GONGGUAN": "14:24",
-                "NTU": "14:27",
-                "RENAI_DUNHUA": "14:36"
+                "XIAOBITAN": "14:06",
+                "DAPINGLIN": "14:14",
+                "JINGMEI": "14:16",
+                "GONGGUAN": "14:23",
+                "NTU": "14:26",
+                "RENAI_DUNHUA": "14:35"
               }
             },
             {
@@ -1945,12 +1945,12 @@
               "times": {
                 "HSINCHU_BUS_STATION": "17:40",
                 "NTHU_NORTH_GATE": "17:50",
-                "XIAOBITAN": "19:23",
-                "DAPINGLIN": "19:32",
-                "JINGMEI": "19:35",
-                "GONGGUAN": "19:42",
-                "NTU": "19:45",
-                "RENAI_DUNHUA": "19:55"
+                "XIAOBITAN": "19:22",
+                "DAPINGLIN": "19:31",
+                "JINGMEI": "19:34",
+                "GONGGUAN": "19:41",
+                "NTU": "19:44",
+                "RENAI_DUNHUA": "19:54"
               }
             },
             {
@@ -1980,7 +1980,7 @@
                 "JINGMEI": "21:21",
                 "GONGGUAN": "21:28",
                 "NTU": "21:31",
-                "RENAI_DUNHUA": "21:40"
+                "RENAI_DUNHUA": "21:39"
               }
             },
             {
@@ -1989,13 +1989,13 @@
               ],
               "times": {
                 "HSINCHU_BUS_STATION": "20:20",
-                "NTHU_NORTH_GATE": "20:29",
-                "XIAOBITAN": "21:47",
-                "DAPINGLIN": "21:54",
-                "JINGMEI": "21:57",
-                "GONGGUAN": "22:04",
-                "NTU": "22:07",
-                "RENAI_DUNHUA": "22:15"
+                "NTHU_NORTH_GATE": "20:30",
+                "XIAOBITAN": "21:48",
+                "DAPINGLIN": "21:55",
+                "JINGMEI": "21:58",
+                "GONGGUAN": "22:05",
+                "NTU": "22:08",
+                "RENAI_DUNHUA": "22:16"
               }
             }
           ]
@@ -2768,7 +2768,7 @@
               "times": {
                 "TAIPEI_BUS_STATION": "06:00",
                 "NTHU_NORTH_GATE": "07:07",
-                "HSINCHU_BUS_STATION": "07:16"
+                "HSINCHU_BUS_STATION": "07:15"
               }
             },
             {
@@ -2848,7 +2848,7 @@
               "times": {
                 "TAIPEI_BUS_STATION": "15:25",
                 "NTHU_NORTH_GATE": "16:32",
-                "HSINCHU_BUS_STATION": "16:40"
+                "HSINCHU_BUS_STATION": "16:41"
               }
             },
             {
@@ -3390,11 +3390,11 @@
                 "ZHONGQING_ZHONGMING": "21:03",
                 "ZHONGQING_JIANXING": "21:04",
                 "TAICHUNG_SECOND_HS": "21:06",
-                "WUQUAN_XUESHI": "21:10",
-                "JUGUANG_NEW_VILLAGE": "21:13",
-                "TAICHUNG_FIRST_HS": "21:15",
-                "TAICHUNG_PARK_SHUANGSHI": "21:17",
-                "TAICHUNG_TRANSFER_CENTER": "21:18"
+                "WUQUAN_XUESHI": "21:09",
+                "JUGUANG_NEW_VILLAGE": "21:12",
+                "TAICHUNG_FIRST_HS": "21:14",
+                "TAICHUNG_PARK_SHUANGSHI": "21:16",
+                "TAICHUNG_TRANSFER_CENTER": "21:17"
               }
             }
           ]
@@ -3440,8 +3440,8 @@
                 "ZHONGSHAN_AGENCY": "06:38",
                 "SHUINAN_STATION": "06:50",
                 "SHUINAN_TRANSFER": "07:03",
-                "NTHU_NORTH_GATE": "08:21",
-                "HSINCHU_BUS_STATION": "08:31"
+                "NTHU_NORTH_GATE": "08:22",
+                "HSINCHU_BUS_STATION": "08:32"
               }
             },
             {
@@ -4212,9 +4212,9 @@
                 "TAICHUNG_TRANSFER_CENTER": "14:20",
                 "ZHONGSHAN_AGENCY": "14:26",
                 "SHUINAN_STATION": "14:41",
-                "SHUINAN_TRANSFER": "14:51",
-                "NTHU_NORTH_GATE": "15:56",
-                "HSINCHU_BUS_STATION": "16:06"
+                "SHUINAN_TRANSFER": "14:52",
+                "NTHU_NORTH_GATE": "15:57",
+                "HSINCHU_BUS_STATION": "16:07"
               }
             },
             {
@@ -4232,8 +4232,8 @@
                 "ZHONGSHAN_AGENCY": "15:06",
                 "SHUINAN_STATION": "15:22",
                 "SHUINAN_TRANSFER": "15:34",
-                "NTHU_NORTH_GATE": "16:44",
-                "HSINCHU_BUS_STATION": "16:54"
+                "NTHU_NORTH_GATE": "16:43",
+                "HSINCHU_BUS_STATION": "16:53"
               }
             },
             {
@@ -4445,7 +4445,7 @@
               ],
               "times": {
                 "HSINCHU_TRA": "16:40",
-                "NTHU_NORTH_GATE": "16:53"
+                "NTHU_NORTH_GATE": "16:52"
               }
             },
             {
@@ -4541,7 +4541,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "11:13",
-                "HSINCHU_TRA": "11:29"
+                "HSINCHU_TRA": "11:30"
               }
             },
             {
@@ -4684,8 +4684,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:30",
-                "NTHU_NORTH_GATE": "21:39",
-                "HSINCHU_BUS_STATION": "21:48"
+                "NTHU_NORTH_GATE": "21:38",
+                "HSINCHU_BUS_STATION": "21:47"
               }
             },
             {
@@ -4811,8 +4811,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:15",
-                "NTHU_NORTH_GATE": "21:24",
-                "HSINCHU_BUS_STATION": "21:33"
+                "NTHU_NORTH_GATE": "21:23",
+                "HSINCHU_BUS_STATION": "21:32"
               }
             },
             {
@@ -4826,7 +4826,7 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:45",
-                "NTHU_NORTH_GATE": "21:54",
+                "NTHU_NORTH_GATE": "21:53",
                 "HSINCHU_BUS_STATION": "22:02"
               }
             },
@@ -4847,8 +4847,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:10",
-                "NTHU_NORTH_GATE": "21:19",
-                "HSINCHU_BUS_STATION": "21:28"
+                "NTHU_NORTH_GATE": "21:18",
+                "HSINCHU_BUS_STATION": "21:27"
               }
             },
             {
@@ -4857,8 +4857,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:20",
-                "NTHU_NORTH_GATE": "21:29",
-                "HSINCHU_BUS_STATION": "21:38"
+                "NTHU_NORTH_GATE": "21:28",
+                "HSINCHU_BUS_STATION": "21:37"
               }
             },
             {
@@ -4867,8 +4867,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "20:40",
-                "NTHU_NORTH_GATE": "21:49",
-                "HSINCHU_BUS_STATION": "21:58"
+                "NTHU_NORTH_GATE": "21:48",
+                "HSINCHU_BUS_STATION": "21:57"
               }
             },
             {
@@ -6967,7 +6967,7 @@
                 "TAINAN_HOHSIN": "23:00",
                 "YONGKANG_HOHSIN": "23:17",
                 "MADOU": "23:37",
-                "HOHSIN_HSINCHU": "26:00"
+                "HOHSIN_HSINCHU": "25:59"
               }
             },
             {
@@ -6981,7 +6981,7 @@
                 "TAINAN_HOHSIN": "21:36",
                 "YONGKANG_HOHSIN": "21:56",
                 "MADOU": "22:16",
-                "HOHSIN_HSINCHU": "24:39"
+                "HOHSIN_HSINCHU": "24:38"
               }
             },
             {
@@ -7253,7 +7253,7 @@
                 "TAINAN_HOHSIN": "22:00",
                 "YONGKANG_HOHSIN": "22:19",
                 "MADOU": "22:39",
-                "HOHSIN_HSINCHU": "25:02"
+                "HOHSIN_HSINCHU": "25:01"
               }
             },
             {
@@ -7298,7 +7298,7 @@
                 "TAINAN_HOHSIN": "22:36",
                 "YONGKANG_HOHSIN": "22:55",
                 "MADOU": "23:15",
-                "HOHSIN_HSINCHU": "25:38"
+                "HOHSIN_HSINCHU": "25:37"
               }
             },
             {
@@ -7645,10 +7645,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "14:57",
-                "MADOU": "17:26",
-                "YONGKANG_HOHSIN": "17:56",
-                "LIUJIADING_HOHSIN": "18:19",
-                "TAINAN_HOHSIN": "18:28"
+                "MADOU": "17:27",
+                "YONGKANG_HOHSIN": "17:57",
+                "LIUJIADING_HOHSIN": "18:20",
+                "TAINAN_HOHSIN": "18:29"
               }
             },
             {
@@ -7826,10 +7826,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:34",
-                "MADOU": "25:51",
-                "YONGKANG_HOHSIN": "26:09",
-                "LIUJIADING_HOHSIN": "26:24",
-                "TAINAN_HOHSIN": "26:30"
+                "MADOU": "25:52",
+                "YONGKANG_HOHSIN": "26:10",
+                "LIUJIADING_HOHSIN": "26:25",
+                "TAINAN_HOHSIN": "26:31"
               }
             },
             {
@@ -7877,11 +7877,11 @@
                 "SUN"
               ],
               "times": {
-                "HOHSIN_HSINCHU": "13:42",
-                "MADOU": "16:10",
-                "YONGKANG_HOHSIN": "16:37",
-                "LIUJIADING_HOHSIN": "16:55",
-                "TAINAN_HOHSIN": "17:04"
+                "HOHSIN_HSINCHU": "13:41",
+                "MADOU": "16:09",
+                "YONGKANG_HOHSIN": "16:36",
+                "LIUJIADING_HOHSIN": "16:54",
+                "TAINAN_HOHSIN": "17:03"
               }
             },
             {
@@ -7894,10 +7894,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:37",
-                "MADOU": "24:54",
-                "YONGKANG_HOHSIN": "25:13",
-                "LIUJIADING_HOHSIN": "25:28",
-                "TAINAN_HOHSIN": "25:34"
+                "MADOU": "24:55",
+                "YONGKANG_HOHSIN": "25:14",
+                "LIUJIADING_HOHSIN": "25:29",
+                "TAINAN_HOHSIN": "25:35"
               }
             },
             {
@@ -8123,10 +8123,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:55",
-                "MADOU": "25:12",
-                "YONGKANG_HOHSIN": "25:30",
-                "LIUJIADING_HOHSIN": "25:45",
-                "TAINAN_HOHSIN": "25:51"
+                "MADOU": "25:13",
+                "YONGKANG_HOHSIN": "25:31",
+                "LIUJIADING_HOHSIN": "25:46",
+                "TAINAN_HOHSIN": "25:52"
               }
             },
             {
@@ -8195,10 +8195,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "14:27",
-                "MADOU": "16:56",
-                "YONGKANG_HOHSIN": "17:23",
-                "LIUJIADING_HOHSIN": "17:46",
-                "TAINAN_HOHSIN": "17:55"
+                "MADOU": "16:57",
+                "YONGKANG_HOHSIN": "17:24",
+                "LIUJIADING_HOHSIN": "17:47",
+                "TAINAN_HOHSIN": "17:56"
               }
             },
             {
@@ -8219,10 +8219,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:47",
-                "MADOU": "25:04",
-                "YONGKANG_HOHSIN": "25:22",
-                "LIUJIADING_HOHSIN": "25:37",
-                "TAINAN_HOHSIN": "25:43"
+                "MADOU": "25:05",
+                "YONGKANG_HOHSIN": "25:23",
+                "LIUJIADING_HOHSIN": "25:38",
+                "TAINAN_HOHSIN": "25:44"
               }
             },
             {
@@ -8246,10 +8246,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "14:47",
-                "MADOU": "17:16",
-                "YONGKANG_HOHSIN": "17:46",
-                "LIUJIADING_HOHSIN": "18:09",
-                "TAINAN_HOHSIN": "18:18"
+                "MADOU": "17:17",
+                "YONGKANG_HOHSIN": "17:47",
+                "LIUJIADING_HOHSIN": "18:10",
+                "TAINAN_HOHSIN": "18:19"
               }
             },
             {
@@ -8481,10 +8481,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:46",
-                "XINYING": "24:56",
-                "NANZI": "25:49",
-                "LINGYA_SPORTS_PARK": "25:59",
-                "KAOHSIUNG_HOHSIN": "26:10"
+                "XINYING": "25:01",
+                "NANZI": "26:00",
+                "LINGYA_SPORTS_PARK": "26:10",
+                "KAOHSIUNG_HOHSIN": "26:22"
               }
             },
             {
@@ -8494,9 +8494,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "05:23",
                 "XINYING": "07:30",
-                "NANZI": "08:30",
-                "LINGYA_SPORTS_PARK": "08:43",
-                "KAOHSIUNG_HOHSIN": "08:56"
+                "NANZI": "08:31",
+                "LINGYA_SPORTS_PARK": "08:45",
+                "KAOHSIUNG_HOHSIN": "08:58"
               }
             },
             {
@@ -8529,10 +8529,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "18:09",
-                "XINYING": "20:24",
-                "NANZI": "21:21",
-                "LINGYA_SPORTS_PARK": "21:31",
-                "KAOHSIUNG_HOHSIN": "21:43"
+                "XINYING": "20:23",
+                "NANZI": "21:20",
+                "LINGYA_SPORTS_PARK": "21:30",
+                "KAOHSIUNG_HOHSIN": "21:42"
               }
             },
             {
@@ -8638,9 +8638,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "24:44",
                 "XINYING": "26:49",
-                "NANZI": "27:40",
-                "LINGYA_SPORTS_PARK": "27:50",
-                "KAOHSIUNG_HOHSIN": "28:02"
+                "NANZI": "27:41",
+                "LINGYA_SPORTS_PARK": "27:51",
+                "KAOHSIUNG_HOHSIN": "28:03"
               }
             },
             {
@@ -8652,10 +8652,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:45",
-                "XINYING": "25:55",
-                "NANZI": "26:54",
-                "LINGYA_SPORTS_PARK": "27:04",
-                "KAOHSIUNG_HOHSIN": "27:16"
+                "XINYING": "26:00",
+                "NANZI": "26:52",
+                "LINGYA_SPORTS_PARK": "27:02",
+                "KAOHSIUNG_HOHSIN": "27:14"
               }
             },
             {
@@ -8756,9 +8756,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "05:43",
                 "XINYING": "07:50",
-                "NANZI": "08:50",
-                "LINGYA_SPORTS_PARK": "09:03",
-                "KAOHSIUNG_HOHSIN": "09:16"
+                "NANZI": "08:51",
+                "LINGYA_SPORTS_PARK": "09:05",
+                "KAOHSIUNG_HOHSIN": "09:18"
               }
             },
             {
@@ -8772,10 +8772,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "18:02",
-                "XINYING": "20:17",
-                "NANZI": "21:14",
-                "LINGYA_SPORTS_PARK": "21:24",
-                "KAOHSIUNG_HOHSIN": "21:36"
+                "XINYING": "20:16",
+                "NANZI": "21:13",
+                "LINGYA_SPORTS_PARK": "21:23",
+                "KAOHSIUNG_HOHSIN": "21:35"
               }
             },
             {
@@ -8840,10 +8840,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "04:23",
-                "XINYING": "06:27",
-                "NANZI": "07:22",
-                "LINGYA_SPORTS_PARK": "07:34",
-                "KAOHSIUNG_HOHSIN": "07:45"
+                "XINYING": "06:28",
+                "NANZI": "07:23",
+                "LINGYA_SPORTS_PARK": "07:35",
+                "KAOHSIUNG_HOHSIN": "07:46"
               }
             },
             {
@@ -8878,10 +8878,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "04:43",
-                "XINYING": "06:47",
-                "NANZI": "07:42",
-                "LINGYA_SPORTS_PARK": "07:54",
-                "KAOHSIUNG_HOHSIN": "08:05"
+                "XINYING": "06:48",
+                "NANZI": "07:43",
+                "LINGYA_SPORTS_PARK": "07:55",
+                "KAOHSIUNG_HOHSIN": "08:06"
               }
             },
             {
@@ -8998,10 +8998,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:41",
-                "XINYING": "25:51",
-                "NANZI": "26:50",
-                "LINGYA_SPORTS_PARK": "27:00",
-                "KAOHSIUNG_HOHSIN": "27:12"
+                "XINYING": "25:56",
+                "NANZI": "26:55",
+                "LINGYA_SPORTS_PARK": "27:05",
+                "KAOHSIUNG_HOHSIN": "27:17"
               }
             },
             {
@@ -9022,10 +9022,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "22:26",
-                "XINYING": "24:36",
-                "NANZI": "25:29",
-                "LINGYA_SPORTS_PARK": "25:39",
-                "KAOHSIUNG_HOHSIN": "25:50"
+                "XINYING": "24:41",
+                "NANZI": "25:34",
+                "LINGYA_SPORTS_PARK": "25:44",
+                "KAOHSIUNG_HOHSIN": "25:55"
               }
             },
             {
@@ -9053,10 +9053,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "04:03",
-                "XINYING": "06:07",
-                "NANZI": "07:02",
-                "LINGYA_SPORTS_PARK": "07:14",
-                "KAOHSIUNG_HOHSIN": "07:25"
+                "XINYING": "06:08",
+                "NANZI": "07:03",
+                "LINGYA_SPORTS_PARK": "07:15",
+                "KAOHSIUNG_HOHSIN": "07:26"
               }
             },
             {
@@ -9120,10 +9120,10 @@
               ],
               "times": {
                 "HOHSIN_HSINCHU": "23:05",
-                "XINYING": "25:15",
-                "NANZI": "26:14",
-                "LINGYA_SPORTS_PARK": "26:24",
-                "KAOHSIUNG_HOHSIN": "26:36"
+                "XINYING": "25:20",
+                "NANZI": "26:19",
+                "LINGYA_SPORTS_PARK": "26:29",
+                "KAOHSIUNG_HOHSIN": "26:41"
               }
             },
             {
@@ -9134,9 +9134,9 @@
               "times": {
                 "HOHSIN_HSINCHU": "24:24",
                 "XINYING": "26:29",
-                "NANZI": "27:20",
-                "LINGYA_SPORTS_PARK": "27:30",
-                "KAOHSIUNG_HOHSIN": "27:42"
+                "NANZI": "27:21",
+                "LINGYA_SPORTS_PARK": "27:31",
+                "KAOHSIUNG_HOHSIN": "27:43"
               }
             }
           ]
@@ -9190,10 +9190,10 @@
               "times": {
                 "KAOHSIUNG_HOHSIN": "18:45",
                 "ZHONGZHENG_HOHSIN": "18:56",
-                "JIURU_HOHSIN": "19:07",
-                "NANZI": "19:20",
-                "XINYING": "20:12",
-                "HOHSIN_HSINCHU": "22:26"
+                "JIURU_HOHSIN": "19:06",
+                "NANZI": "19:19",
+                "XINYING": "20:11",
+                "HOHSIN_HSINCHU": "22:24"
               }
             },
             {
@@ -9276,7 +9276,7 @@
                 "JIURU_HOHSIN": "23:01",
                 "NANZI": "23:10",
                 "XINYING": "23:57",
-                "HOHSIN_HSINCHU": "26:11"
+                "HOHSIN_HSINCHU": "26:10"
               }
             },
             {
@@ -9406,9 +9406,9 @@
                 "KAOHSIUNG_HOHSIN": "13:45",
                 "ZHONGZHENG_HOHSIN": "13:57",
                 "JIURU_HOHSIN": "14:04",
-                "NANZI": "14:17",
-                "XINYING": "15:15",
-                "HOHSIN_HSINCHU": "17:41"
+                "NANZI": "14:16",
+                "XINYING": "15:14",
+                "HOHSIN_HSINCHU": "17:40"
               }
             },
             {
@@ -9529,7 +9529,7 @@
                 "JIURU_HOHSIN": "06:41",
                 "NANZI": "06:53",
                 "XINYING": "07:47",
-                "HOHSIN_HSINCHU": "10:01"
+                "HOHSIN_HSINCHU": "10:02"
               }
             },
             {
@@ -9568,7 +9568,7 @@
                 "JIURU_HOHSIN": "06:00",
                 "NANZI": "06:12",
                 "XINYING": "07:06",
-                "HOHSIN_HSINCHU": "09:20"
+                "HOHSIN_HSINCHU": "09:21"
               }
             },
             {
@@ -9594,7 +9594,7 @@
                 "JIURU_HOHSIN": "06:21",
                 "NANZI": "06:33",
                 "XINYING": "07:27",
-                "HOHSIN_HSINCHU": "09:41"
+                "HOHSIN_HSINCHU": "09:42"
               }
             },
             {
@@ -9656,10 +9656,10 @@
               "times": {
                 "KAOHSIUNG_HOHSIN": "18:41",
                 "ZHONGZHENG_HOHSIN": "18:52",
-                "JIURU_HOHSIN": "19:03",
-                "NANZI": "19:16",
-                "XINYING": "20:08",
-                "HOHSIN_HSINCHU": "22:22"
+                "JIURU_HOHSIN": "19:02",
+                "NANZI": "19:15",
+                "XINYING": "20:07",
+                "HOHSIN_HSINCHU": "22:20"
               }
             },
             {
@@ -9714,7 +9714,7 @@
                 "JIURU_HOHSIN": "22:03",
                 "NANZI": "22:13",
                 "XINYING": "23:04",
-                "HOHSIN_HSINCHU": "25:18"
+                "HOHSIN_HSINCHU": "25:17"
               }
             },
             {
@@ -9749,11 +9749,11 @@
               ],
               "times": {
                 "KAOHSIUNG_HOHSIN": "19:05",
-                "ZHONGZHENG_HOHSIN": "19:16",
-                "JIURU_HOHSIN": "19:25",
-                "NANZI": "19:38",
-                "XINYING": "20:30",
-                "HOHSIN_HSINCHU": "22:44"
+                "ZHONGZHENG_HOHSIN": "19:15",
+                "JIURU_HOHSIN": "19:24",
+                "NANZI": "19:37",
+                "XINYING": "20:29",
+                "HOHSIN_HSINCHU": "22:42"
               }
             },
             {
@@ -9777,11 +9777,11 @@
               ],
               "times": {
                 "KAOHSIUNG_HOHSIN": "19:41",
-                "ZHONGZHENG_HOHSIN": "19:52",
-                "JIURU_HOHSIN": "20:01",
-                "NANZI": "20:11",
-                "XINYING": "21:04",
-                "HOHSIN_HSINCHU": "23:15"
+                "ZHONGZHENG_HOHSIN": "19:51",
+                "JIURU_HOHSIN": "20:00",
+                "NANZI": "20:10",
+                "XINYING": "21:03",
+                "HOHSIN_HSINCHU": "23:14"
               }
             },
             {
@@ -9870,9 +9870,9 @@
                 "KAOHSIUNG_HOHSIN": "14:25",
                 "ZHONGZHENG_HOHSIN": "14:37",
                 "JIURU_HOHSIN": "14:44",
-                "NANZI": "14:57",
-                "XINYING": "15:55",
-                "HOHSIN_HSINCHU": "18:21"
+                "NANZI": "14:56",
+                "XINYING": "15:54",
+                "HOHSIN_HSINCHU": "18:20"
               }
             },
             {
@@ -9897,10 +9897,10 @@
               "times": {
                 "KAOHSIUNG_HOHSIN": "18:25",
                 "ZHONGZHENG_HOHSIN": "18:36",
-                "JIURU_HOHSIN": "18:47",
-                "NANZI": "19:06",
-                "XINYING": "19:58",
-                "HOHSIN_HSINCHU": "22:12"
+                "JIURU_HOHSIN": "18:46",
+                "NANZI": "19:05",
+                "XINYING": "19:57",
+                "HOHSIN_HSINCHU": "22:11"
               }
             },
             {
@@ -9914,7 +9914,7 @@
                 "JIURU_HOHSIN": "22:41",
                 "NANZI": "22:51",
                 "XINYING": "23:42",
-                "HOHSIN_HSINCHU": "25:56"
+                "HOHSIN_HSINCHU": "25:55"
               }
             }
           ]
@@ -10128,10 +10128,10 @@
               ],
               "times": {
                 "HSINCHU_BUS_STATION": "08:01",
-                "NTHU_TSMC_BUILDING": "08:13",
-                "NTHU_LIFE_SCIENCES": "08:14",
-                "NTHU_GENERAL_BUILDING_II": "08:16",
-                "NTHU_CAMPUS_NORTH_GATE": "08:17"
+                "NTHU_TSMC_BUILDING": "08:14",
+                "NTHU_LIFE_SCIENCES": "08:15",
+                "NTHU_GENERAL_BUILDING_II": "08:17",
+                "NTHU_CAMPUS_NORTH_GATE": "08:18"
               }
             },
             {
@@ -10144,10 +10144,10 @@
               ],
               "times": {
                 "HSINCHU_BUS_STATION": "08:16",
-                "NTHU_TSMC_BUILDING": "08:28",
-                "NTHU_LIFE_SCIENCES": "08:29",
-                "NTHU_GENERAL_BUILDING_II": "08:31",
-                "NTHU_CAMPUS_NORTH_GATE": "08:32"
+                "NTHU_TSMC_BUILDING": "08:29",
+                "NTHU_LIFE_SCIENCES": "08:30",
+                "NTHU_GENERAL_BUILDING_II": "08:32",
+                "NTHU_CAMPUS_NORTH_GATE": "08:33"
               }
             },
             {
@@ -11261,8 +11261,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "15:15",
-                "NTHU_NORTH_GATE": "16:25",
-                "HSINCHU_BUS_STATION": "16:35"
+                "NTHU_NORTH_GATE": "16:24",
+                "HSINCHU_BUS_STATION": "16:34"
               }
             },
             {
@@ -11273,8 +11273,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "15:40",
-                "NTHU_NORTH_GATE": "16:50",
-                "HSINCHU_BUS_STATION": "17:00"
+                "NTHU_NORTH_GATE": "16:49",
+                "HSINCHU_BUS_STATION": "16:59"
               }
             },
             {
@@ -11515,8 +11515,8 @@
               ],
               "times": {
                 "TAIPEI_BUS_STATION": "15:30",
-                "NTHU_NORTH_GATE": "16:40",
-                "HSINCHU_BUS_STATION": "16:50"
+                "NTHU_NORTH_GATE": "16:39",
+                "HSINCHU_BUS_STATION": "16:49"
               }
             },
             {
@@ -11728,7 +11728,7 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:00",
                 "NTHU_NORTH_GATE": "06:09",
-                "TAIPEI_BUS_STATION": "07:17"
+                "TAIPEI_BUS_STATION": "07:16"
               }
             },
             {
@@ -11740,7 +11740,7 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:40",
                 "NTHU_NORTH_GATE": "06:49",
-                "TAIPEI_BUS_STATION": "07:57"
+                "TAIPEI_BUS_STATION": "07:56"
               }
             },
             {
@@ -12010,7 +12010,7 @@
               "times": {
                 "HSINCHU_BUS_STATION": "06:30",
                 "NTHU_NORTH_GATE": "06:39",
-                "TAIPEI_BUS_STATION": "07:47"
+                "TAIPEI_BUS_STATION": "07:46"
               }
             },
             {
@@ -12767,8 +12767,8 @@
               "times": {
                 "TAICHUNG_TRANSFER_CENTER": "17:30",
                 "CHAOMA": "17:56",
-                "NTHU_NORTH_GATE": "19:10",
-                "HSINCHU_BUS_STATION": "19:21"
+                "NTHU_NORTH_GATE": "19:09",
+                "HSINCHU_BUS_STATION": "19:20"
               }
             },
             {
@@ -12943,7 +12943,7 @@
                 "TAICHUNG_TRANSFER_CENTER": "10:55",
                 "CHAOMA": "11:15",
                 "NTHU_NORTH_GATE": "12:24",
-                "HSINCHU_BUS_STATION": "12:34"
+                "HSINCHU_BUS_STATION": "12:35"
               }
             },
             {
@@ -12956,7 +12956,7 @@
                 "TAICHUNG_TRANSFER_CENTER": "11:25",
                 "CHAOMA": "11:45",
                 "NTHU_NORTH_GATE": "12:54",
-                "HSINCHU_BUS_STATION": "13:04"
+                "HSINCHU_BUS_STATION": "13:05"
               }
             },
             {
@@ -12994,8 +12994,8 @@
               "times": {
                 "TAICHUNG_TRANSFER_CENTER": "16:55",
                 "CHAOMA": "17:17",
-                "NTHU_NORTH_GATE": "18:31",
-                "HSINCHU_BUS_STATION": "18:41"
+                "NTHU_NORTH_GATE": "18:30",
+                "HSINCHU_BUS_STATION": "18:40"
               }
             },
             {
@@ -13191,8 +13191,8 @@
               "times": {
                 "TAICHUNG_TRANSFER_CENTER": "17:30",
                 "CHAOMA": "17:56",
-                "NTHU_NORTH_GATE": "19:10",
-                "HSINCHU_BUS_STATION": "19:21"
+                "NTHU_NORTH_GATE": "19:09",
+                "HSINCHU_BUS_STATION": "19:20"
               }
             },
             {
@@ -13235,7 +13235,7 @@
                 "TAICHUNG_TRANSFER_CENTER": "10:40",
                 "CHAOMA": "11:00",
                 "NTHU_NORTH_GATE": "12:09",
-                "HSINCHU_BUS_STATION": "12:19"
+                "HSINCHU_BUS_STATION": "12:20"
               }
             },
             {
@@ -13434,8 +13434,8 @@
               "times": {
                 "TAICHUNG_TRANSFER_CENTER": "17:15",
                 "CHAOMA": "17:41",
-                "NTHU_NORTH_GATE": "18:55",
-                "HSINCHU_BUS_STATION": "19:06"
+                "NTHU_NORTH_GATE": "18:54",
+                "HSINCHU_BUS_STATION": "19:05"
               }
             },
             {
@@ -13742,9 +13742,9 @@
                 "NATIONAL_MUSEUM_NATURAL_SCIENCE": "17:19",
                 "MINQUAN_INTERSECTION": "17:24",
                 "TAICHUNG_EDUCATION_UNIVERSITY": "17:26",
-                "TAICHUNG_PREFECTURAL_HALL": "17:30",
-                "TAICHUNG_STATION_MINZU": "17:33",
-                "TAICHUNG_TRANSFER_CENTER": "17:36"
+                "TAICHUNG_PREFECTURAL_HALL": "17:29",
+                "TAICHUNG_STATION_MINZU": "17:32",
+                "TAICHUNG_TRANSFER_CENTER": "17:35"
               }
             },
             {
@@ -13782,9 +13782,9 @@
                 "NATIONAL_MUSEUM_NATURAL_SCIENCE": "16:57",
                 "MINQUAN_INTERSECTION": "17:02",
                 "TAICHUNG_EDUCATION_UNIVERSITY": "17:04",
-                "TAICHUNG_PREFECTURAL_HALL": "17:08",
-                "TAICHUNG_STATION_MINZU": "17:11",
-                "TAICHUNG_TRANSFER_CENTER": "17:14"
+                "TAICHUNG_PREFECTURAL_HALL": "17:07",
+                "TAICHUNG_STATION_MINZU": "17:10",
+                "TAICHUNG_TRANSFER_CENTER": "17:13"
               }
             },
             {
@@ -13970,9 +13970,9 @@
                 "NATIONAL_MUSEUM_NATURAL_SCIENCE": "17:19",
                 "MINQUAN_INTERSECTION": "17:24",
                 "TAICHUNG_EDUCATION_UNIVERSITY": "17:26",
-                "TAICHUNG_PREFECTURAL_HALL": "17:30",
-                "TAICHUNG_STATION_MINZU": "17:33",
-                "TAICHUNG_TRANSFER_CENTER": "17:36"
+                "TAICHUNG_PREFECTURAL_HALL": "17:29",
+                "TAICHUNG_STATION_MINZU": "17:32",
+                "TAICHUNG_TRANSFER_CENTER": "17:35"
               }
             },
             {
@@ -15182,8 +15182,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "05:56",
-                "HSINCHU_TRA": "06:08"
+                "NTHU_NORTH_GATE": "05:57",
+                "HSINCHU_TRA": "06:09"
               }
             },
             {
@@ -15429,8 +15429,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:24",
-                "HSINCHU_TRA": "14:38"
+                "NTHU_NORTH_GATE": "14:23",
+                "HSINCHU_TRA": "14:37"
               }
             },
             {
@@ -15442,8 +15442,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:44",
-                "HSINCHU_TRA": "14:58"
+                "NTHU_NORTH_GATE": "14:43",
+                "HSINCHU_TRA": "14:57"
               }
             },
             {
@@ -15455,8 +15455,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:54",
-                "HSINCHU_TRA": "15:08"
+                "NTHU_NORTH_GATE": "14:53",
+                "HSINCHU_TRA": "15:07"
               }
             },
             {
@@ -15469,7 +15469,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "15:19",
-                "HSINCHU_TRA": "15:35"
+                "HSINCHU_TRA": "15:34"
               }
             },
             {
@@ -15482,7 +15482,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "15:39",
-                "HSINCHU_TRA": "15:55"
+                "HSINCHU_TRA": "15:54"
               }
             },
             {
@@ -15520,8 +15520,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "17:23",
-                "HSINCHU_TRA": "17:42"
+                "NTHU_NORTH_GATE": "17:24",
+                "HSINCHU_TRA": "17:43"
               }
             },
             {
@@ -15533,8 +15533,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "17:40",
-                "HSINCHU_TRA": "17:59"
+                "NTHU_NORTH_GATE": "17:41",
+                "HSINCHU_TRA": "18:00"
               }
             },
             {
@@ -15546,8 +15546,8 @@
                 "FRI"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "18:12",
-                "HSINCHU_TRA": "18:31"
+                "NTHU_NORTH_GATE": "18:13",
+                "HSINCHU_TRA": "18:32"
               }
             },
             {
@@ -15702,8 +15702,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:19",
-                "HSINCHU_TRA": "14:33"
+                "NTHU_NORTH_GATE": "14:18",
+                "HSINCHU_TRA": "14:32"
               }
             },
             {
@@ -15712,8 +15712,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:34",
-                "HSINCHU_TRA": "14:48"
+                "NTHU_NORTH_GATE": "14:33",
+                "HSINCHU_TRA": "14:47"
               }
             },
             {
@@ -15722,8 +15722,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "14:49",
-                "HSINCHU_TRA": "15:03"
+                "NTHU_NORTH_GATE": "14:48",
+                "HSINCHU_TRA": "15:02"
               }
             },
             {
@@ -15733,7 +15733,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "15:34",
-                "HSINCHU_TRA": "15:50"
+                "HSINCHU_TRA": "15:49"
               }
             },
             {
@@ -15743,7 +15743,7 @@
               ],
               "times": {
                 "NTHU_NORTH_GATE": "15:49",
-                "HSINCHU_TRA": "16:06"
+                "HSINCHU_TRA": "16:05"
               }
             },
             {
@@ -15752,8 +15752,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "17:27",
-                "HSINCHU_TRA": "17:46"
+                "NTHU_NORTH_GATE": "17:28",
+                "HSINCHU_TRA": "17:47"
               }
             },
             {
@@ -15762,8 +15762,8 @@
                 "SUN"
               ],
               "times": {
-                "NTHU_NORTH_GATE": "17:45",
-                "HSINCHU_TRA": "18:04"
+                "NTHU_NORTH_GATE": "17:46",
+                "HSINCHU_TRA": "18:05"
               }
             },
             {
@@ -17070,8 +17070,8 @@
               ],
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "15:13",
-                "NTHU_NORTH_GATE": "15:25",
-                "HSR_HSINCHU": "15:56"
+                "NTHU_NORTH_GATE": "15:24",
+                "HSR_HSINCHU": "15:55"
               }
             },
             {
@@ -17084,8 +17084,8 @@
               ],
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "15:48",
-                "NTHU_NORTH_GATE": "16:00",
-                "HSR_HSINCHU": "16:37"
+                "NTHU_NORTH_GATE": "15:59",
+                "HSR_HSINCHU": "16:36"
               }
             },
             {
@@ -17141,7 +17141,7 @@
               "times": {
                 "HSINCHU_TRA_ZHONGZHENG": "19:53",
                 "NTHU_NORTH_GATE": "20:02",
-                "HSR_HSINCHU": "20:36"
+                "HSR_HSINCHU": "20:37"
               }
             }
           ]
@@ -17403,8 +17403,8 @@
               ],
               "times": {
                 "HSR_HSINCHU": "17:51",
-                "NTHU_NORTH_GATE": "18:48",
-                "HSINCHU_TRA_ZHONGZHENG": "18:58"
+                "NTHU_NORTH_GATE": "18:49",
+                "HSINCHU_TRA_ZHONGZHENG": "18:59"
               }
             },
             {
@@ -17417,8 +17417,8 @@
               ],
               "times": {
                 "HSR_HSINCHU": "18:31",
-                "NTHU_NORTH_GATE": "19:17",
-                "HSINCHU_TRA_ZHONGZHENG": "19:25"
+                "NTHU_NORTH_GATE": "19:18",
+                "HSINCHU_TRA_ZHONGZHENG": "19:26"
               }
             },
             {
@@ -17431,8 +17431,8 @@
               ],
               "times": {
                 "HSR_HSINCHU": "19:20",
-                "NTHU_NORTH_GATE": "20:02",
-                "HSINCHU_TRA_ZHONGZHENG": "20:08"
+                "NTHU_NORTH_GATE": "20:00",
+                "HSINCHU_TRA_ZHONGZHENG": "20:06"
               }
             },
             {
